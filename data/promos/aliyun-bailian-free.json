@@ -1,0 +1,97 @@
+{
+  "id": "aliyun-bailian-free",
+  "provider": {
+    "id": "aliyun-bailian",
+    "name_en": "Aliyun Bailian",
+    "name_zh": "阿里云百炼",
+    "country": "CN",
+    "homepage": "https://bailian.console.aliyun.com/"
+  },
+  "offer": {
+    "type": "free_tier",
+    "headline": "阿里云百炼免费模型额度（含 Qwen 全系）",
+    "summary": "百炼平台为每个开通用户提供 Qwen、Llama、DeepSeek 等主流模型的免费 token 额度，按模型配额不同。",
+    "value_display": "Qwen 免费 100 万 tokens（新用户）",
+    "no_fixed_expiry": true,
+    "claim_url": "https://bailian.console.aliyun.com/"
+  },
+  "terms": [
+    {
+      "tag": "identity_verification",
+      "severity": "blocker",
+      "note": "阿里云账号需实名（个人 / 企业）"
+    },
+    {
+      "tag": "rate_limited",
+      "severity": "note",
+      "note": "按模型不同 RPM/TPM 限制"
+    },
+    {
+      "tag": "auto_renew",
+      "severity": "friction",
+      "note": "免费额度耗尽后默认按 Token 计费，可在控制台关闭"
+    }
+  ],
+  "difficulty": "medium",
+  "difficulty_reasons": [
+    "阿里云账号 + 实名 + 开通百炼"
+  ],
+  "estimated_setup_minutes": 12,
+  "region": {
+    "availability": "include",
+    "countries": [
+      "CN"
+    ]
+  },
+  "categories": [
+    "llm",
+    "embedding",
+    "image"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "high",
+    "last_verified_at": "2026-09-24T07:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://help.aliyun.com/zh/model-studio/getting-started/models"
+    ],
+    "first_seen_at": "2024-06-01T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 68,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "注册阿里云账号（aliyun.com）"
+      },
+      {
+        "n": 2,
+        "text": "完成个人实名（用支付宝 / 公安身份库秒过）"
+      },
+      {
+        "n": 3,
+        "text": "开通「百炼」服务并领取免费模型额度"
+      },
+      {
+        "n": 4,
+        "text": "获取 API Key 调用 Qwen 等模型"
+      }
+    ],
+    "gotchas": [
+      "关闭「自动续费/扣费」选项，避免额度用完后扣款"
+    ]
+  },
+  "created_at": "2024-06-01T00:00:00Z",
+  "updated_at": "2026-09-24T07:00:00Z"
+}
