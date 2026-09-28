@@ -27,31 +27,31 @@
     },
     "mcp-search": {
       "eventTitle": "MCP search_promos call",
-      "eventPriceUsd": 0.001
+      "eventPriceUsd": 0.005
     },
     "mcp-filter": {
       "eventTitle": "MCP filter_promos call",
-      "eventPriceUsd": 0.001
+      "eventPriceUsd": 0.005
     },
     "mcp-get-promo": {
       "eventTitle": "MCP get_promo call",
-      "eventPriceUsd": 0.0005
+      "eventPriceUsd": 0.002
     },
     "mcp-list-providers": {
       "eventTitle": "MCP list_providers call",
-      "eventPriceUsd": 0.0005
+      "eventPriceUsd": 0.002
     },
     "mcp-recent-updates": {
       "eventTitle": "MCP get_recent_updates call",
-      "eventPriceUsd": 0.001
+      "eventPriceUsd": 0.005
     },
     "mcp-expiring-soon": {
       "eventTitle": "MCP get_expiring_soon call",
-      "eventPriceUsd": 0.001
+      "eventPriceUsd": 0.005
     },
     "mcp-what-can-i-get": {
       "eventTitle": "MCP what_can_i_get call (premium reasoning)",
-      "eventPriceUsd": 0.002
+      "eventPriceUsd": 0.01
     },
     "mcp-report-issue": {
       "eventTitle": "MCP report_promo_issue call",
