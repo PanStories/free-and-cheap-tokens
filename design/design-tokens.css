@@ -1,0 +1,307 @@
+/* ============================================================================
+   Free & Cheap Tokens — Design Tokens (CSS Variables)
+   版本 1.0.0 · 2026-09-28 · 设计师：颜好看
+   ----------------------------------------------------------------------------
+   四层架构：A1-identity → A2 (有默认值) → B-slot (别名) → C-extension (项目专属)
+   主题：light（主）/ dark（可选，见文件末尾）
+   约束：零外部依赖 — 不引入任何 CDN、不 @import 任何远程字体、不引入外部图标包。
+
+   使用规则：
+   1. 组件样式中禁止出现除 #fff / #000 以外的裸 hex，一律 var(--token)。
+   2. 间距只取 --space-*（4px 网格）。
+   3. 动效时长只取 --motion-*，缓动只取 --ease-standard。
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* ---------- A1 · Identity — Surface ---------- */
+  --bg:             #F5F6F8;  /* 页面底色：冷调浅灰。禁止奶油/米色暖中性 */
+  --surface:        #FFFFFF;  /* 卡片 / 面板 / 输入控件 */
+  --surface-sunken: #EAECF0;  /* 凹陷区：表头、代码块、骨架屏 */
+
+  /* ---------- A1 · Identity — Foreground ---------- */
+  --fg:             #15181D;  /* 主文本（带冷调，非纯黑 #000） */
+  --muted:          #5B6371;  /* 正文辅助 / 说明 */
+
+  /* ---------- A1 · Identity — Border ---------- */
+  --border:         #DFE3E9;  /* 默认发丝分隔线 */
+
+  /* ---------- A1 · Identity — Accent ---------- */
+  --accent:         #0B6E8F;  /* 深石油蓝 Petrol。刻意避开 Indigo #6366F1 与紫粉系 */
+  --accent-hover:   #095A76;
+  --accent-active:  #074B62;
+  --accent-on:      #FFFFFF;  /* accent 底上的前景：5.77:1 */
+
+  /* ---------- B · Slot — 表面别名 ---------- */
+  --surface-hover:      #F0F2F5;
+  --surface-selected:   var(--accent-tint);
+  --surface-warm:       var(--surface-sunken);   /* 本产品无暖色三级表面，别名指向凹陷层 */
+
+  /* ---------- B · Slot — 前景别名 ---------- */
+  --fg-2:           #383E48;  /* 卡片标题 / 次级强调 */
+  --meta:           #5E6672;  /* 三级元数据。白底 5.80:1 / 页底 5.37:1 / 凹陷底 4.91:1 */
+  --fg-disabled:    #8A929E;  /* 禁用态（WCAG 对 inactive 控件豁免） */
+
+  /* ---------- B · Slot — 边框别名 ---------- */
+  --border-soft:    #ECEEF2;  /* 卡片内部行分隔 */
+  --border-strong:  #B4BCC8;  /* hover / 分区容器边 */
+  --border-input:   #767E8B;  /* 表单控件。WCAG 1.4.11 达标 4.10:1 */
+
+  /* ---------- A2 · 语义色 ---------- */
+  --success:        #177245;  /* 生效中 / 已核验 / 免费额度确认 */
+  --warn:           #9A5B00;  /* 即将到期 ≤7 天 / 条款变动 */
+  --danger:         #B42318;  /* 已过期 / 已下线 / 条款收紧 */
+  --info:           var(--accent);
+
+  /* ---------- A1 · Identity — 字体 ---------- */
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC",
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", "JetBrains Mono", "Cascadia Mono",
+    Menlo, Consolas, "Liberation Mono", monospace;
+  --font-num: var(--font-mono);   /* 数字专用，配合 font-variant-numeric: tabular-nums */
+
+  /* ---------- A1 · Structure — 字号阶梯 ---------- */
+  --text-xs:   11px;   /* 徽章下限，禁止再小 */
+  --text-sm:   12px;   /* 元数据、筛选 chip */
+  --text-base: 14px;   /* 中文正文下限 */
+  --text-md:   16px;   /* promo 卡片标题 */
+  --text-lg:   20px;   /* 分区标题 */
+  --text-xl:   24px;   /* 页面标题 */
+  --text-2xl:  32px;   /* stat card 次级数字 */
+  --text-3xl:  40px;   /* stat card 主数字 / OG 卡数字 */
+
+  /* ---------- A1 · Structure — 行高 ---------- */
+  --leading-tight:   1.15;  /* ≥32px 数字与标题 */
+  --leading-heading: 1.3;
+  --leading-body:    1.6;   /* 中文正文，不低于 1.5 */
+  --leading-control: 1.0;   /* 按钮 / chip 单行 */
+
+  /* ---------- A1 · Structure — 字重 ---------- */
+  --weight-regular:  400;   /* Read */
+  --weight-medium:   500;   /* Emphasize（系统字族下 510 的落地值） */
+  --weight-semibold: 600;   /* Announce（系统字族下 590 的落地值） */
+
+  /* ---------- A1 · Structure — 字距 ---------- */
+  --tracking-tight:  -0.015em; /* ≥24px 标题与展示数字 */
+  --tracking-normal: 0;        /* 中文正文（中文禁止正字距） */
+  --tracking-caps:   0.08em;   /* 英文全大写标签 */
+  --tracking-small:  0.01em;   /* 11-12px 小字 */
+
+  /* ---------- A2 · 间距（4px 网格） ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ---------- A2 · 圆角 ---------- */
+  --radius-xs:   3px;
+  --radius-sm:   6px;
+  --radius-md:   10px;   /* 卡片上限，禁止 ≥24px */
+  --radius-lg:   14px;
+  --radius-pill: 9999px; /* 状态 pill */
+
+  /* ---------- A2 · 层级 ---------- */
+  --elev-flat:    none;                                                       /* 卡片默认：靠 1px 边框，不靠阴影 */
+  --elev-raised:  0 1px 2px rgba(21,24,29,0.04), 0 4px 10px rgba(21,24,29,0.05);
+  --elev-overlay: 0 8px 28px rgba(21,24,29,0.12), 0 2px 6px rgba(21,24,29,0.06);
+
+  /* ---------- A2 · 焦点与动效 ---------- */
+  --focus-ring:    0 0 0 2px #FFFFFF, 0 0 0 4px #0B6E8F;   /* 外环 5.77:1 */
+  --focus-outline: 2px solid var(--accent);                 /* outline-offset: 2px */
+  --motion-instant: 80ms;
+  --motion-fast:    150ms;   /* 全局收敛值 */
+  --motion-base:    200ms;
+  --ease-standard:  cubic-bezier(0.2, 0, 0, 1);
+  /* 禁止：任何 overshoot / 回弹型缓动曲线（含弹性 cubic-bezier） */
+
+  /* ---------- A2 · 层级 z-index ---------- */
+  --z-base:    0;
+  --z-sticky:  100;
+  --z-toolbar: 200;
+  --z-popover: 300;
+  --z-modal:   400;
+  --z-toast:   500;
+
+  /* ---------- A1 · Structure — 布局 ---------- */
+  --container-max:     1200px;
+  --gutter-desktop:    24px;
+  --gutter-tablet:     16px;
+  --gutter-mobile:     12px;
+  --section-y-desktop: 32px;   /* 密度 7：紧凑节区 */
+  --section-y-mobile:  24px;
+  --touch-target-min:  44px;   /* WCAG 2.5.5 */
+  --card-min-height:   132px;
+
+  /* ---------- A2 · 图标 ---------- */
+  --icon-stroke:      1.5;   /* 24 网格下统一描边 */
+  --icon-inline:      16px;
+  --icon-control:     20px;
+  --icon-free:        24px;
+
+  /* ==========================================================================
+     C · Extension — 项目专属
+     ======================================================================== */
+
+  /* 条款归类标签：默认中性，不抢语义色的注意力 */
+  --term-tag-bg:      #EAECF0;
+  --term-tag-fg:      #383E48;
+
+  /* 状态 pill 底色（与文字搭配均 ≥4.5:1） */
+  --tint-success:     #E7F2EC;
+  --tint-warn:        #FCF3E2;
+  --tint-danger:      #FCECEA;
+  --accent-tint:      #DDEEF4;  /* accent 文字其上 4.84:1 */
+  --accent-subtle:    #F0F7FA;  /* 分区标题左侧标记块 */
+
+  /* 上手难度徽章 — accent 同族三阶 + 条形计量图 + 文字（三重编码） */
+  --difficulty-easy-fg:   #0E5C74;   --difficulty-easy-bg:   #EAF3F6;  /* 6.66:1 */
+  --difficulty-medium-fg: #0A4B60;   --difficulty-medium-bg: #D8E9EE;  /* 7.68:1 */
+  --difficulty-hard-fg:   #073D4F;   --difficulty-hard-bg:   #C3DCE4;  /* 8.20:1 */
+
+  /* 联盟披露（合规强制） */
+  --disclosure-bg:     #FBF3E4;   /* 低饱和琥珀，与告警色区分 */
+  --disclosure-fg:     #6B4708;   /* 其上 7.53:1，远超 AA */
+  --disclosure-border: #E8D3A9;
+  --disclosure-bar-h:  36px;      /* sticky 披露条高度，移动端 44px */
+
+  /* 法定「广告」标识 —— 中国《互联网广告管理办法》第九条要求显著标明。
+     透明底 + 描边，保证在琥珀披露条内仍被识别为独立标识。
+     对比度：披露条底 7.53:1 / 页底色 7.68:1 / 卡片白底 8.30:1 */
+  /* 骨架屏 */
+  --skeleton:        #EAECF0;
+  --skeleton-sheen:  #F3F4F7;
+}
+
+/* ============================================================================
+   基础排版重置（零依赖，直接可用）
+   ========================================================================== */
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 所有数字、倒计时、金额：等宽数字对齐 */
+.num,
+time,
+[data-num] {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* 英文全大写标签（如 REGION / FREE）必须加字距 */
+.caps {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+
+/* ---------------------------------------------------------------------------
+   焦点：统一可见焦点环。禁止 outline: none 而不提供替代。
+   ------------------------------------------------------------------------- */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* 尊重系统减弱动效偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 高对比偏好：加粗分隔线，去掉浅灰发丝线 */
+@media (prefers-contrast: more) {
+  :root {
+    --border: #767E8B;
+    --border-soft: #767E8B;
+    --muted: #383E48;
+    --meta: #383E48;
+  }
+}
+
+/* ============================================================================
+   可选深色主题 — 通过亮度递进表达层级，不使用阴影
+   （首版为浅色，此段供后续启用，无需删除）
+   ========================================================================== */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg:             #0E1116;
+  --surface:        #161A21;
+  --surface-sunken: #1E242D;
+  --surface-hover:  #1A1F27;
+
+  --fg:             #E9EDF2;
+  --fg-2:           #C6CDD6;
+  --muted:          #98A1AD;
+  --meta:           #8A939F;
+  --fg-disabled:    #5C6570;
+
+  --border:         #2A323D;
+  --border-soft:    #232A33;
+  --border-strong:  #3B4552;
+  --border-input:   #5B6472;
+
+  --accent:         #4EA8C7;
+  --accent-hover:   #63B7D4;
+  --accent-active:  #7AC6DF;
+  --accent-on:      #06222C;
+  --accent-tint:    #14313C;
+  --accent-subtle:  #122730;
+
+  --success:        #4FBF84;
+  --warn:           #D9A035;
+  --danger:         #F0736A;
+  --tint-success:   #12281D;
+  --tint-warn:      #2B2314;
+  --tint-danger:    #2E1917;
+
+  --term-tag-bg:    #1E242D;
+  --term-tag-fg:    #C6CDD6;
+
+  --difficulty-easy-fg:   #7FC4DA;   --difficulty-easy-bg:   #12303B;
+  --difficulty-medium-fg: #9BD3E4;   --difficulty-medium-bg: #143945;
+  --difficulty-hard-fg:   #B9E1EE;   --difficulty-hard-bg:   #16424F;
+
+  --disclosure-bg:     #2A2414;
+  --disclosure-fg:     #E0C58C;
+  --disclosure-border: #4A3F1E;
+
+  --elev-flat:    none;
+  --elev-raised:  0 1px 2px rgba(0,0,0,0.4);
+  --elev-overlay: 0 8px 28px rgba(0,0,0,0.55);
+
+  --focus-ring: 0 0 0 2px #0E1116, 0 0 0 4px #4EA8C7;
+
+  --skeleton:       #1E242D;
+  --skeleton-sheen: #262E38;
+}
