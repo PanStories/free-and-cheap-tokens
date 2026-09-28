@@ -1,0 +1,93 @@
+{
+  "id": "tencent-hunyuan-free",
+  "provider": {
+    "id": "tencent-hunyuan",
+    "name_en": "Tencent Hunyuan",
+    "name_zh": "腾讯混元",
+    "country": "CN",
+    "homepage": "https://cloud.tencent.com/product/hunyuan"
+  },
+  "offer": {
+    "type": "free_tier",
+    "headline": "腾讯混元大模型免费层（hunyuan-pro / standard）",
+    "summary": "腾讯云混元大模型新用户免费 token 额度，含 hunyuan-pro 与 hunyuan-standard。",
+    "value_display": "免费 token 额度（按模型配置）",
+    "no_fixed_expiry": true,
+    "claim_url": "https://console.cloud.tencent.com/hunyuan"
+  },
+  "terms": [
+    {
+      "tag": "identity_verification",
+      "severity": "blocker",
+      "note": "腾讯云账号需实名"
+    },
+    {
+      "tag": "credit_card_required",
+      "severity": "friction",
+      "note": "开通大模型服务需绑卡验证（不会扣费）"
+    },
+    {
+      "tag": "auto_renew",
+      "severity": "friction",
+      "note": "免费额度耗尽按 token 计费"
+    }
+  ],
+  "difficulty": "medium",
+  "difficulty_reasons": [
+    "腾讯云账号 + 实名 + 开通混元 + 绑卡"
+  ],
+  "estimated_setup_minutes": 15,
+  "region": {
+    "availability": "include",
+    "countries": [
+      "CN"
+    ]
+  },
+  "categories": [
+    "llm",
+    "embedding"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "high",
+    "last_verified_at": "2026-09-26T05:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://cloud.tencent.com/document/product/1729"
+    ],
+    "first_seen_at": "2024-09-01T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 60,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "注册腾讯云账号"
+      },
+      {
+        "n": 2,
+        "text": "完成实名（个人 / 企业）"
+      },
+      {
+        "n": 3,
+        "text": "开通「混元大模型」服务"
+      },
+      {
+        "n": 4,
+        "text": "在控制台获取 API key（建议创建子账号 AccessKey）"
+      }
+    ]
+  },
+  "created_at": "2024-09-01T00:00:00Z",
+  "updated_at": "2026-09-26T05:00:00Z"
+}
