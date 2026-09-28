@@ -22,10 +22,13 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json* ./
 RUN npm ci --omit=dev --no-audit --no-fund
 
-# Runtime artifacts
+# Runtime artifacts (catalog is generated in-image from curated data —
+# apify push upload skips .gitignore'd build/, so we never COPY it)
 COPY dist ./dist
 COPY schemas ./schemas
-COPY build ./build
+COPY data ./data
+COPY scripts/build-catalog.mjs ./scripts/build-catalog.mjs
+RUN node scripts/build-catalog.mjs
 
 ENV NODE_ENV=production
 ENV APIFY_CONTAINER_PORT=4321
