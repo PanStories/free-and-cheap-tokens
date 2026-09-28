@@ -131,11 +131,14 @@ app.all('/mcp', async (req: Request, res: Response) => {
 /**
  * Map an MCP JSON-RPC request to a billable Apify event and charge it.
  *
- * Pricing rationale (see .actor/actor.json):
+ * Pricing rationale (see .actor/actor.json, market-calibrated 2026-09-28):
+ *   Apify Store MCP reference points: $0.03-$0.035/tool call (travel-tools-mcp,
+ *   enterprise-mcp-gateway), $0.045-$0.50 for intelligence MCPs. We position
+ *   3-7x below that band since our catalog is read-only with zero upstream cost.
  *   - initialize / tools/list: free, so agents can discover cheaply
- *   - search/filter/updates/expiring: $0.001 each (cheap)
- *   - get_promo / list_providers: $0.0005 (cheapest reads)
- *   - what_can_i_get: $0.002 (premium reasoning path)
+ *   - get_promo / list_providers: $0.002 (single-item reads)
+ *   - search/filter/updates/expiring: $0.005 each (queries)
+ *   - what_can_i_get: $0.01 (premium reasoning path)
  *   - report_promo_issue: free (encourage corrections)
  */
 async function chargeForRequest(body: unknown): Promise<void> {
