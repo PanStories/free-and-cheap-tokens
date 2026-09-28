@@ -1,0 +1,57 @@
+name: build-site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'
+      - 'schemas/**'
+      - 'scripts/**'
+      - '.github/workflows/build-site.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.21.0
+          cache: npm
+
+      - name: Install dependencies (including sharp for OG)
+        run: npm ci
+
+      - name: Validate schema (no remote data deps)
+        run: node scripts/build-catalog.mjs --check
+
+      - name: Build catalog.json
+        run: npm run build:catalog
+
+      - name: Generate static site
+        run: npm run build:site
+
+      - name: Generate OG image
+        run: node scripts/generate-og.mjs
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
