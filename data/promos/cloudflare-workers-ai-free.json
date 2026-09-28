@@ -1,0 +1,88 @@
+{
+  "id": "cloudflare-workers-ai-free",
+  "provider": {
+    "id": "cloudflare",
+    "name_en": "Cloudflare",
+    "name_zh": null,
+    "country": "US",
+    "homepage": "https://developers.cloudflare.com/workers-ai/"
+  },
+  "offer": {
+    "type": "free_tier",
+    "headline": "Cloudflare Workers AI 免费额度：每天 10,000 次神经元推理",
+    "summary": "Workers AI 包含 Llama 3.1、Gemma、Mistral 等模型，按神经元数计费；免费账号每天 10,000 神经元。",
+    "value_display": "10,000 neurons/天",
+    "no_fixed_expiry": true,
+    "claim_url": "https://dash.cloudflare.com/?to=/:account/ai/workers-ai"
+  },
+  "terms": [
+    {
+      "tag": "rate_limited",
+      "severity": "friction",
+      "note": "10,000 neurons/天；按模型消耗不同神经元数"
+    },
+    {
+      "tag": "quota_capped",
+      "severity": "note",
+      "note": "模型列表由 Cloudflare 控制，不可指定任意模型"
+    }
+  ],
+  "difficulty": "medium",
+  "difficulty_reasons": [
+    "需要绑卡（即使免费层也要求，但不会扣费）"
+  ],
+  "estimated_setup_minutes": 8,
+  "region": {
+    "availability": "global"
+  },
+  "categories": [
+    "llm",
+    "embedding"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "high",
+    "last_verified_at": "2026-09-22T03:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://developers.cloudflare.com/workers-ai/platform/pricing/"
+    ],
+    "first_seen_at": "2024-04-01T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 75,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "登录 dash.cloudflare.com 注册账号"
+      },
+      {
+        "n": 2,
+        "text": "绑卡（免费层不扣费，但需绑卡验证身份）"
+      },
+      {
+        "n": 3,
+        "text": "左侧 Workers & Pages → 创建 Worker"
+      },
+      {
+        "n": 4,
+        "text": "在 Worker 代码中调用 env.AI.run('@cf/meta/llama-3.1-8b-instruct', {...})"
+      }
+    ],
+    "gotchas": [
+      "需准备 $0 的卡；中国大陆用户建议用全币种信用卡"
+    ]
+  },
+  "created_at": "2024-04-01T00:00:00Z",
+  "updated_at": "2026-09-22T03:00:00Z"
+}
