@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Free &amp; Cheap Tokens</title>
+    <link>https://freeandcheaptokens.dev/</link>
+    <atom:link href="https://freeandcheaptokens.dev/feed.xml" rel="self" type="application/rss+xml" />
+    <description>每日核实的 AI 模型/服务免费额度与低价 token 促销清单。开源 · 不接硬广 · 不挂联盟 · MIT</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 28 Sep 2026 13:37:48 GMT</lastBuildDate>
+    <generator>fct build-site.mjs</generator>
+    <item>
+      <title>火山方舟体验额度：豆包 1.5 Pro 500 万 tokens · 火山方舟 / 豆包</title>
+      <link>https://www.volcengine.com/product/ark</link>
+      <guid isPermaLink="false">doubao-ark-free</guid>
+      <pubDate>Sat, 26 Sep 2026 01:00:00 GMT</pubDate>
+      <description><![CDATA[新开通方舟 ARK 的用户获赠豆包 1.5 Pro 体验额度，含文本/图像/视频模型。 · 额度: 500 万 tokens 体验 · 难度: medium · 到期: 2026-12-31T23:59:59+08:00 · 核验于 2026-09-26]]></description>
+    </item>
+    <item>
+      <title>硅基流动新用户 ¥16 通用代金券 · 硅基流动</title>
+      <link>https://cloud.siliconflow.cn/</link>
+      <guid isPermaLink="false">siliconflow-free-tier</guid>
+      <pubDate>Sat, 26 Sep 2026 01:00:00 GMT</pubDate>
+      <description><![CDATA[实名注册后获 ¥16 通用代金券（2000 万 tokens 量级），可用于 SiliconCloud 全模型。 · 额度: ¥16 代金券（约 2000 万 tokens） · 难度: medium · 到期: 2026-12-31T23:59:59+08:00 · 核验于 2026-09-26]]></description>
+    </item>
+    <item>
+      <title>阿里云百炼免费模型额度（含 Qwen 全系） · 阿里云百炼</title>
+      <link>https://bailian.console.aliyun.com/</link>
+      <guid isPermaLink="false">aliyun-bailian-free</guid>
+      <pubDate>Thu, 24 Sep 2026 07:00:00 GMT</pubDate>
+      <description><![CDATA[百炼平台为每个开通用户提供 Qwen、Llama、DeepSeek 等主流模型的免费 token 额度，按模型配额不同。 · 额度: Qwen 免费 100 万 tokens（新用户） · 难度: medium · 到期: 长期 · 核验于 2026-09-24]]></description>
+    </item>
+    <item>
+      <title>Cloudflare Workers AI 免费额度：每天 10,000 次神经元推理 · Cloudflare</title>
+      <link>https://dash.cloudflare.com/?to=/:account/ai/workers-ai</link>
+      <guid isPermaLink="false">cloudflare-workers-ai-free</guid>
+      <pubDate>Tue, 22 Sep 2026 03:00:00 GMT</pubDate>
+      <description><![CDATA[Workers AI 包含 Llama 3.1、Gemma、Mistral 等模型，按神经元数计费；免费账号每天 10,000 神经元。 · 额度: 10,000 neurons/天 · 难度: medium · 到期: 长期 · 核验于 2026-09-22]]></description>
+    </item>
+    <item>
+      <title>Cohere Trial API：每月 1000 次免费调用 · Cohere</title>
+      <link>https://dashboard.cohere.com/</link>
+      <guid isPermaLink="false">cohere-trial-free</guid>
+      <pubDate>Mon, 21 Sep 2026 07:00:00 GMT</pubDate>
+      <description><![CDATA[Cohere Trial key 提供每月 1000 次免费 API 调用（含 Command 系列模型）。 · 额度: 1000 calls/月 · 难度: easy · 到期: 长期 · 核验于 2026-09-21]]></description>
+    </item>
+    <item>
+      <title>GitHub Models 个人 Playground 免费试用 · GitHub Models</title>
+      <link>https://github.com/marketplace/models</link>
+      <guid isPermaLink="false">github-models-free</guid>
+      <pubDate>Fri, 25 Sep 2026 08:00:00 GMT</pubDate>
+      <description><![CDATA[GitHub Marketplace Models 提供 GPT-4o、Llama、Phi-3 等模型 Playground 体验，Copilot 个人订阅含限额 API 访问。 · 额度: Playground 免费 · Copilot 个人月配额 · 难度: easy · 到期: 长期 · 核验于 2026-09-25]]></description>
+    </item>
+    <item>
+      <title>Gemini 2.5 Flash 免费 API · Google AI Studio</title>
+      <link>https://aistudio.google.com/apikey</link>
+      <guid isPermaLink="false">google-ai-studio-free-tier</guid>
+      <pubDate>Sat, 26 Sep 2026 07:00:00 GMT</pubDate>
+      <description><![CDATA[Google AI Studio 提供 Gemini 2.5 Flash 免费层，每分钟 15 次请求、每日 1500 次。 · 额度: 15 RPM · 1500 RPD · 难度: easy · 到期: 长期 · 核验于 2026-09-26]]></description>
+    </item>
+    <item>
+      <title>Groq 免费层：Llama 3.1 8B / 70B 高吞吐推理 · Groq</title>
+      <link>https://console.groq.com/</link>
+      <guid isPermaLink="false">groq-free-tier</guid>
+      <pubDate>Sun, 20 Sep 2026 05:00:00 GMT</pubDate>
+      <description><![CDATA[免费 API 接入 Llama 3.1 / Mixtral 等开源模型，号称业内最快 token/s。 · 额度: Llama 3.1 70B · 14400 RPD（free） · 难度: easy · 到期: 长期 · 核验于 2026-09-20]]></description>
+    </item>
+    <item>
+      <title>Hugging Face Inference Providers 月度 $0.10 免费额度 · Hugging Face</title>
+      <link>https://huggingface.co/settings/billing</link>
+      <guid isPermaLink="false">hugging-face-inference-providers</guid>
+      <pubDate>Fri, 25 Sep 2026 05:00:00 GMT</pubDate>
+      <description><![CDATA[新 HF 账号含 $0.10/月（约 2000 次小模型推理）免费 Inference Providers 额度。 · 额度: $0.10/月免费额度 · 难度: medium · 到期: 长期 · 核验于 2026-09-25]]></description>
+    </item>
+    <item>
+      <title>Moonshot Kimi 开放平台免费额度 · 月之暗面 Kimi</title>
+      <link>https://platform.moonshot.cn/</link>
+      <guid isPermaLink="false">kimi-moonshot-free</guid>
+      <pubDate>Sat, 26 Sep 2026 05:00:00 GMT</pubDate>
+      <description><![CDATA[Moonshot 开放平台新用户获 ¥5 等值 tokens 体验额度；kimi-k2 系列可在 Cloudflare Workers AI 免费接入。 · 额度: 免费体验额度 · 难度: easy · 到期: 长期 · 核验于 2026-09-26]]></description>
+    </item>
+    <item>
+      <title>Mistral La Plateforme 实验层免费 API · Mistral AI</title>
+      <link>https://console.mistral.ai/</link>
+      <guid isPermaLink="false">mistral-la-plateforme</guid>
+      <pubDate>Tue, 22 Sep 2026 07:00:00 GMT</pubDate>
+      <description><![CDATA[Mistral 提供实验模型的免费 API 层，含 Codestral、Mistral-Nemo 等。 · 额度: 实验模型免费层（1 RPM / 月度限制） · 难度: easy · 到期: 长期 · 核验于 2026-09-22]]></description>
+    </item>
+    <item>
+      <title>NVIDIA NIM 免费层：1000 次 API 调用 / 90 天 · NVIDIA NIM</title>
+      <link>https://build.nvidia.com/</link>
+      <guid isPermaLink="false">nvidia-build-nim-free</guid>
+      <pubDate>Wed, 23 Sep 2026 03:00:00 GMT</pubDate>
+      <description><![CDATA[build.nvidia.com 提供 Llama / Mistral / DeepSeek 等开源模型的免费 API 调用额度（每模型独立配额）。 · 额度: 1000 calls / 模型 / 90 天 · 难度: easy · 到期: 长期 · 核验于 2026-09-23]]></description>
+    </item>
+    <item>
+      <title>ChatGPT 免费层（GPT-4o mini，无限消息） · OpenAI</title>
+      <link>https://chatgpt.com/</link>
+      <guid isPermaLink="false">openai-chatgpt-free</guid>
+      <pubDate>Fri, 25 Sep 2026 08:00:00 GMT</pubDate>
+      <description><![CDATA[网页与 iOS/Android 客户端可用 GPT-4o mini 无限对话，无需 API key。 · 额度: GPT-4o mini 无限 · 难度: easy · 到期: 长期 · 核验于 2026-09-25]]></description>
+    </item>
+    <item>
+      <title>OpenRouter 免费模型每日轮换阵容（Llama/Qwen/DeepSeek 等） · OpenRouter</title>
+      <link>https://openrouter.ai/</link>
+      <guid isPermaLink="false">openrouter-free-models</guid>
+      <pubDate>Sun, 27 Sep 2026 09:00:00 GMT</pubDate>
+      <description><![CDATA[OpenRouter 提供 :free 后缀模型免费调用，每天有请求上限，阵容每日调整。 · 额度: 免费模型阵容（每日 50 次） · 难度: easy · 到期: 长期 · 核验于 2026-09-27]]></description>
+    </item>
+    <item>
+      <title>腾讯混元大模型免费层（hunyuan-pro / standard） · 腾讯混元</title>
+      <link>https://console.cloud.tencent.com/hunyuan</link>
+      <guid isPermaLink="false">tencent-hunyuan-free</guid>
+      <pubDate>Sat, 26 Sep 2026 05:00:00 GMT</pubDate>
+      <description><![CDATA[腾讯云混元大模型新用户免费 token 额度，含 hunyuan-pro 与 hunyuan-standard。 · 额度: 免费 token 额度（按模型配置） · 难度: medium · 到期: 长期 · 核验于 2026-09-26]]></description>
+    </item>
+    <item>
+      <title>Together AI 开源模型免费层（Llama / Qwen / DeepSeek 等） · Together AI</title>
+      <link>https://api.together.xyz/</link>
+      <guid isPermaLink="false">together-ai-free-credit</guid>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
+      <description><![CDATA[Together AI 提供 200+ 开源模型的推理，新账号含小额免费额度。 · 额度: 免费 token 额度（按模型不同） · 难度: medium · 到期: 长期 · 核验于 2026-09-24]]></description>
+    </item>
+    <item>
+      <title>智谱 BigModel 邀请奖励：邀友实名双方各得 2000 万 tokens · 智谱 BigModel</title>
+      <link>https://bigmodel.cn/invitation</link>
+      <guid isPermaLink="false">zhipu-bigmodel-invitation</guid>
+      <pubDate>Fri, 25 Sep 2026 03:00:00 GMT</pubDate>
+      <description><![CDATA[智谱开放平台个人邀请机制：邀友完成实名注册，双方各得 2000 万 tokens；每月可邀 10 人上限 2 亿 tokens。 · 额度: 2000 万 tokens / 邀友（双方各得） · 难度: medium · 到期: 长期 · 核验于 2026-09-25]]></description>
+    </item>
+  </channel>
+</rss>
