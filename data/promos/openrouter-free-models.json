@@ -1,0 +1,84 @@
+{
+  "id": "openrouter-free-models",
+  "provider": {
+    "id": "openrouter",
+    "name_en": "OpenRouter",
+    "name_zh": null,
+    "country": "US",
+    "homepage": "https://openrouter.ai/"
+  },
+  "offer": {
+    "type": "free_tier",
+    "headline": "OpenRouter 免费模型每日轮换阵容（Llama/Qwen/DeepSeek 等）",
+    "summary": "OpenRouter 提供 :free 后缀模型免费调用，每天有请求上限，阵容每日调整。",
+    "value_display": "免费模型阵容（每日 50 次）",
+    "no_fixed_expiry": true,
+    "claim_url": "https://openrouter.ai/"
+  },
+  "terms": [
+    {
+      "tag": "rate_limited",
+      "severity": "blocker",
+      "note": "免费档 20+ RPM 上限，每天总次数受限"
+    },
+    {
+      "tag": "quota_capped",
+      "severity": "friction",
+      "note": "仅 :free 后缀模型；闭源模型需付费"
+    }
+  ],
+  "difficulty": "easy",
+  "difficulty_reasons": [
+    "邮箱注册即得 key"
+  ],
+  "estimated_setup_minutes": 2,
+  "region": {
+    "availability": "global"
+  },
+  "categories": [
+    "llm"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "high",
+    "last_verified_at": "2026-09-27T09:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://openrouter.ai/models"
+    ],
+    "first_seen_at": "2024-01-01T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 88,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "登录 openrouter.ai"
+      },
+      {
+        "n": 2,
+        "text": "左侧「Keys」创建 API key（绑定信用卡才能调用非免费模型，免费模型可裸跑）"
+      },
+      {
+        "n": 3,
+        "text": "筛选带 :free 后缀的模型（如 meta-llama/llama-3.1-8b-instruct:free）"
+      },
+      {
+        "n": 4,
+        "text": "OpenAI 兼容接入 base_url=https://openrouter.ai/api/v1"
+      }
+    ]
+  },
+  "created_at": "2024-01-01T00:00:00Z",
+  "updated_at": "2026-09-27T09:00:00Z"
+}
