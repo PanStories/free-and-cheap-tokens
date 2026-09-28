@@ -1,6 +1,4 @@
 node_modules/
-dist/
-build/
 site/og.png
 *.log
 .DS_Store
