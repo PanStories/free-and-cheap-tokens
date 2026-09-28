@@ -1,0 +1,84 @@
+{
+  "id": "groq-free-tier",
+  "provider": {
+    "id": "groq",
+    "name_en": "Groq",
+    "name_zh": null,
+    "country": "US",
+    "homepage": "https://groq.com/"
+  },
+  "offer": {
+    "type": "free_tier",
+    "headline": "Groq 免费层：Llama 3.1 8B / 70B 高吞吐推理",
+    "summary": "免费 API 接入 Llama 3.1 / Mixtral 等开源模型，号称业内最快 token/s。",
+    "value_display": "Llama 3.1 70B · 14400 RPD（free）",
+    "no_fixed_expiry": true,
+    "claim_url": "https://console.groq.com/"
+  },
+  "terms": [
+    {
+      "tag": "rate_limited",
+      "severity": "friction",
+      "note": "14400 RPD / 30 RPM（实际配额以控制台为准）"
+    },
+    {
+      "tag": "quota_capped",
+      "severity": "note",
+      "note": "仅开源模型，无 GPT/Claude 同款闭源模型"
+    }
+  ],
+  "difficulty": "easy",
+  "difficulty_reasons": [
+    "Google/GitHub 账号注册即得 key"
+  ],
+  "estimated_setup_minutes": 3,
+  "region": {
+    "availability": "global"
+  },
+  "categories": [
+    "llm"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "high",
+    "last_verified_at": "2026-09-20T05:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://console.groq.com/docs/rate-limits"
+    ],
+    "first_seen_at": "2024-03-01T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 82,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "登录 console.groq.com（Google/GitHub/Email 均可）"
+      },
+      {
+        "n": 2,
+        "text": "左侧「API Keys」→「Create API Key」"
+      },
+      {
+        "n": 3,
+        "text": "选择模型（推荐 llama-3.1-70b-versatile）"
+      },
+      {
+        "n": 4,
+        "text": "用 OpenAI 兼容接口接入 base_url=https://api.groq.com/openai/v1"
+      }
+    ]
+  },
+  "created_at": "2024-03-01T00:00:00Z",
+  "updated_at": "2026-09-20T05:00:00Z"
+}
