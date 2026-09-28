@@ -1,0 +1,1018 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://freeandcheaptokens.dev/schemas/promo.schema.json",
+  "title": "Promo",
+  "description": "2026-09-28 更新：MVP 不做联盟返佣变现，disclosure 字段从 required 移除并标记 deprecated（保留 nullable 以备未来 premium 形态，例如'赞助条目'标识 —— 但 MVP 不引入）。前端永远不设 affiliate=true；MCP/Skill 不消费 affiliate_url。",
+  "type": "object",
+  "required": [
+    "id",
+    "provider",
+    "offer",
+    "terms",
+    "difficulty",
+    "region",
+    "categories",
+    "status",
+    "verification",
+    "provenance",
+    "created_at",
+    "updated_at"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/promo_id",
+      "description": "全局稳定 slug，人工策展时分配，一经发布不再变更。命名：{provider_id}-{offer 核心}-{限定条件}，至少三段。"
+    },
+    "provider": {
+      "$ref": "#/$defs/provider"
+    },
+    "offer": {
+      "$ref": "#/$defs/offer"
+    },
+    "terms": {
+      "type": "array",
+      "description": "归类后的条款。每条必须是受控词表中的 tag，附严重度与一句人话说明。禁止把条款写成自由长文本。",
+      "minItems": 0,
+      "items": {
+        "$ref": "#/$defs/term"
+      }
+    },
+    "difficulty": {
+      "$ref": "#/$defs/difficulty",
+      "description": "上手难度。判定口径见 ADR-003：easy=注册/登录即用，无需信用卡、无需审批；medium=需信用卡、实名或等待审批，小时内可完成；hard=需申请、审批、教育/企业资质或技术配置，天级或不确定。"
+    },
+    "difficulty_reasons": {
+      "type": "array",
+      "description": "难度的具体依据，每条一句事实，禁止“较复杂”“需要一定技术”这类空话。",
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 200
+      },
+      "minItems": 1,
+      "maxItems": 5
+    },
+    "region": {
+      "$ref": "#/$defs/region"
+    },
+    "categories": {
+      "type": "array",
+      "description": "覆盖的能力类别，用于语义检索与分类浏览。",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/category"
+      },
+      "uniqueItems": true
+    },
+    "models": {
+      "type": "array",
+      "description": "具体覆盖的模型或服务名，来自提供方官方命名。没有明确清单时留空数组。",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80
+      },
+      "maxItems": 20
+    },
+    "status": {
+      "$ref": "#/$defs/promo_status"
+    },
+    "verification": {
+      "$ref": "#/$defs/verification"
+    },
+    "disclosure": {
+      "$ref": "#/$defs/disclosure",
+      "deprecated": true,
+      "description": "已废弃字段。MVP 不引入联盟返佣；保留 nullable 以备未来'赞助条目'等 premium 形态。前端 / MCP / Skill 不消费此字段。出现此字段时一律忽略。"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "actionability": {
+      "$ref": "#/$defs/actionability"
+    },
+    "tags": {
+      "type": "array",
+      "description": "自由主题词，仅作补充检索，不替代 terms 受控词表。",
+      "items": {
+        "$ref": "#/$defs/slug"
+      },
+      "maxItems": 10
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "deleted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "description": "软删除。非 null 时该条不计入任何对外输出。"
+    },
+    "estimated_setup_minutes": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 10080,
+      "description": "从零到可用的预估分钟数（对齐 types.ts Promo.estimated_setup_minutes）。"
+    }
+  },
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 2,
+      "maxLength": 60,
+      "description": "小写连字符短标识，用于 provider.id 与自由主题词。允许单词，禁止下划线与大写。",
+      "examples": [
+        "siliconflow",
+        "qwen",
+        "free-credit"
+      ]
+    },
+    "promo_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+){2,}$",
+      "minLength": 8,
+      "maxLength": 90,
+      "description": "promo 的稳定主键，至少三段：provider id + offer + 限定条件。",
+      "examples": [
+        "openai-api-credit-5-usd-new-users",
+        "siliconflow-free-tier-qwen"
+      ]
+    },
+    "iso3166_alpha2": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "description": "ISO 3166-1 alpha-2 国家/地区代码。",
+      "examples": [
+        "CN",
+        "US",
+        "SG",
+        "HK",
+        "TW",
+        "DE"
+      ]
+    },
+    "provider": {
+      "type": "object",
+      "title": "Provider",
+      "required": [
+        "id",
+        "name_en",
+        "country",
+        "homepage"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/slug",
+          "description": "提供方稳定 slug，与 promo.id 前缀一致。"
+        },
+        "name_en": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "英文法定名称，任何语言环境下都必须存在，用于去重与检索。"
+        },
+        "name_zh": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 120,
+          "description": "中文名称。渲染规则（项目硬约束）：country == 'CN' 且本字段非 null 时展示中文名，否则一律展示 name_en。"
+        },
+        "country": {
+          "$ref": "#/$defs/iso3166_alpha2"
+        },
+        "homepage": {
+          "type": "string",
+          "format": "uri"
+        },
+        "logo_asset": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "本地 inline SVG symbol id，形如 i-logo-openai，前缀与图标集一致（#i-）。禁止外链 CDN 图片。为 null 时页面只渲染厂商名文字。"
+        }
+      }
+    },
+    "offer": {
+      "type": "object",
+      "title": "Offer",
+      "required": [
+        "type",
+        "headline",
+        "claim_url"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/offer_type"
+        },
+        "headline": {
+          "type": "string",
+          "minLength": 6,
+          "maxLength": 140,
+          "description": "一句话说明给了什么。必须含具体数字或具体范围，禁止“超值福利”“限时特惠”这类空洞表述。"
+        },
+        "amount": {
+          "$ref": "#/$defs/amount"
+        },
+        "expires_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time",
+          "description": "到期时间。常驻免费层填 null 并把 no_fixed_expiry 设为 true。"
+        },
+        "no_fixed_expiry": {
+          "type": "boolean",
+          "description": "true 表示无固定到期日（常驻额度/免费层）。与 expires_at 互斥：no_fixed_expiry=true 时 expires_at 必须为 null。"
+        },
+        "claim_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "领取入口，必须是可访问的官方页面。"
+        },
+        "claim_steps": {
+          "type": "array",
+          "description": "领取步骤，面向非技术用户。每步一个动作，禁止“按提示操作”。minLength 按字符计数，中文短句同样合法。",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 240
+          }
+        },
+        "estimated_setup_minutes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 10080,
+          "description": "从零到可用的预估分钟数，用于 actionability 排序。"
+        },
+        "summary": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "一句话摘要（v1 字段，对齐 types.ts offer.summary）。"
+        },
+        "value_display": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "额度的人类可读展示，如「500 万 tokens」（v1 字段）。"
+        },
+        "expiry_type": {
+          "type": "string",
+          "enum": [
+            "fixed_date",
+            "rolling_window",
+            "no_fixed_expiry"
+          ],
+          "description": "到期类型（v1 字段）。"
+        },
+        "claim_window": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "start": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date-time"
+            },
+            "end": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date-time"
+            }
+          },
+          "description": "可领取时间窗（v1 字段）。"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "no_fixed_expiry": {
+                "const": true
+              }
+            },
+            "required": [
+              "no_fixed_expiry"
+            ]
+          },
+          "then": {
+            "properties": {
+              "expires_at": {
+                "const": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "amount": {
+      "type": "object",
+      "title": "Amount",
+      "required": [
+        "value",
+        "unit",
+        "raw_text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "number",
+          "description": "数值。percent_off 用 0-100 的百分比；unit=other 时填 0 并在 raw_text 写清。"
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-Z]{3}$",
+          "description": "ISO 4217。仅当 unit 为 usd_credit/cny_credit 等金额类时必填。"
+        },
+        "unit": {
+          "$ref": "#/$defs/amount_unit"
+        },
+        "raw_text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "官网原文中的额度表述，用于核对与争议追溯。"
+        }
+      }
+    },
+    "term": {
+      "type": "object",
+      "title": "Term",
+      "required": [
+        "tag",
+        "severity"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "tag": {
+          "$ref": "#/$defs/term_tag"
+        },
+        "severity": {
+          "$ref": "#/$defs/term_severity"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 300,
+          "description": "这条条款对用户意味着什么，一句人话。"
+        },
+        "source_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri",
+          "description": "该条款在官网的出处，条款类争议时以此为准。"
+        }
+      }
+    },
+    "region": {
+      "type": "object",
+      "title": "Region",
+      "required": [
+        "availability"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "availability": {
+          "$ref": "#/$defs/region_availability"
+        },
+        "countries": {
+          "type": "array",
+          "description": "availability=include 时为可用国家；exclude 时为不可用国家；global 时必须为空数组。",
+          "items": {
+            "$ref": "#/$defs/iso3166_alpha2"
+          },
+          "maxItems": 60,
+          "uniqueItems": true
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300,
+          "description": "区域限制的补充说明，例如需要境外手机号、需要特定币种卡。"
+        },
+        "excluded_countries": {
+          "type": "array",
+          "maxItems": 60,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/iso3166_alpha2"
+          },
+          "description": "availability=exclude 时的排除国家。"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "availability": {
+                "const": "global"
+              }
+            },
+            "required": [
+              "availability"
+            ]
+          },
+          "then": {
+            "properties": {
+              "countries": {
+                "maxItems": 0,
+                "type": "array"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "availability": {
+                "const": "include"
+              }
+            },
+            "required": [
+              "availability"
+            ]
+          },
+          "then": {
+            "properties": {
+              "countries": {
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "countries"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "availability": {
+                "const": "exclude"
+              }
+            },
+            "required": [
+              "availability"
+            ]
+          },
+          "then": {
+            "properties": {
+              "excluded_countries": {
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "excluded_countries"
+            ]
+          }
+        }
+      ]
+    },
+    "verification": {
+      "type": "object",
+      "title": "Verification",
+      "required": [
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/verification_status"
+        },
+        "method": {
+          "$ref": "#/$defs/verification_method"
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "description": "核验置信度（v1：high/medium/low 字符串）。"
+        },
+        "last_verified_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time",
+          "description": "最后一次实质核验时间。从未核验过填 null 且 status 必须为 unverified。"
+        },
+        "verified_by": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 60,
+          "description": "核验者标识，人工策展填 curator，自动任务填 refresh-bot。"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "unverified"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "last_verified_at": {
+                "const": null
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "verified"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "last_verified_at": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "last_verified_at"
+            ]
+          }
+        }
+      ]
+    },
+    "disclosure": {
+      "type": "object",
+      "title": "Disclosure",
+      "required": [
+        "affiliate",
+        "affiliate_url",
+        "disclosure_text"
+      ],
+      "additionalProperties": false,
+      "description": "联盟/返佣披露。项目硬约束：affiliate=true 时 disclosure_text 必填且必须出现在所有对外渲染中。",
+      "properties": {
+        "affiliate": {
+          "type": "boolean",
+          "description": "该领取链接是否为联盟/返佣链接。"
+        },
+        "affiliate_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri",
+          "description": "联盟链接。affiliate=false 时必须为 null。"
+        },
+        "disclosure_text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 6,
+          "maxLength": 200,
+          "description": "强制披露文案，面向终端用户。affiliate=true 时必填，且不得写成“可能包含推广链接”这类模糊表述。"
+        },
+        "relationship_note": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300,
+          "description": "与提供方的商业关系说明，例如是否收受固定费用。"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "affiliate": {
+                "const": true
+              }
+            },
+            "required": [
+              "affiliate"
+            ]
+          },
+          "then": {
+            "required": [
+              "affiliate_url",
+              "disclosure_text"
+            ],
+            "properties": {
+              "affiliate_url": {
+                "type": "string"
+              },
+              "disclosure_text": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "affiliate": {
+                "const": false
+              }
+            },
+            "required": [
+              "affiliate"
+            ]
+          },
+          "then": {
+            "properties": {
+              "affiliate_url": {
+                "const": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "title": "Provenance",
+      "required": [
+        "source_urls",
+        "first_seen_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_urls": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "核验来源官方链接。"
+        },
+        "first_seen_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_changed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "review_required": {
+          "type": "boolean",
+          "description": "不可信源时为 true → verification.status 强制降级为 reported。"
+        },
+        "change_log": {
+          "type": "array",
+          "maxItems": 50,
+          "items": {
+            "type": "object",
+            "required": [
+              "at",
+              "field",
+              "reason",
+              "actor"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "field": {
+                "type": "string"
+              },
+              "old_value": {},
+              "new_value": {},
+              "reason": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "actionability": {
+      "type": "object",
+      "title": "Actionability",
+      "required": [],
+      "additionalProperties": false,
+      "properties": {
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "可薅指数 0..100。"
+        },
+        "blockers": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 200
+          }
+        },
+        "agent_degraded_path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "hard 难度必填，给 Agent 帮人做的降级路径。"
+        },
+        "next_steps": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": [
+              "n",
+              "text"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "n": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 240
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "uri"
+              }
+            }
+          },
+          "description": "领取步骤（对齐 types.ts OfferClaimStep[]）。"
+        },
+        "gotchas": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 240
+          }
+        }
+      }
+    },
+    "offer_type": {
+      "type": "string",
+      "enum": [
+        "free_tier",
+        "trial_credit",
+        "signup_bonus",
+        "referral_bonus",
+        "promo_code",
+        "daily_allowance",
+        "startup_program",
+        "academic_program",
+        "limited_event"
+      ]
+    },
+    "amount_unit": {
+      "type": "string",
+      "enum": [
+        "usd_credit",
+        "cny_credit",
+        "tokens",
+        "tokens_per_month",
+        "requests_per_month",
+        "seats",
+        "percent_off",
+        "days",
+        "other"
+      ]
+    },
+    "term_tag": {
+      "type": "string",
+      "description": "条款受控词表。新增 tag 必须先改本 schema 并同步 ARCHITECTURE.md 的条款表，禁止就地发明。",
+      "enum": [
+        "no_credit_card",
+        "credit_card_required",
+        "phone_verification",
+        "identity_verification",
+        "new_users_only",
+        "one_per_account",
+        "auto_renew",
+        "quota_capped",
+        "time_limited",
+        "region_locked",
+        "vpn_required",
+        "edu_email_required",
+        "business_email_required",
+        "oss_project_required",
+        "byok_required",
+        "rate_limited",
+        "non_commercial_only",
+        "data_used_for_training",
+        "deposit_required",
+        "waitlist_approval",
+        "manual_application",
+        "stackable",
+        "deprecated_service"
+      ]
+    },
+    "term_severity": {
+      "type": "string",
+      "enum": [
+        "blocker",
+        "friction",
+        "note"
+      ],
+      "description": "blocker=不满足就完全拿不到；friction=增加成本或时间；note=需要知情但不影响领取。"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "llm",
+        "embedding",
+        "image",
+        "video",
+        "audio",
+        "agent_hosting",
+        "vector_db",
+        "gpu_compute",
+        "other"
+      ]
+    },
+    "promo_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "expiring_soon",
+        "expired",
+        "unverified",
+        "rumored"
+      ],
+      "description": "expiring_soon 由构建期按 expires_at 距今天数自动置位。"
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "reported",
+        "stale",
+        "unverified"
+      ],
+      "description": "verified=官方页面/接口核验过；reported=社区或用户上报未核验；stale=曾核验但已超过 30 天；unverified=未核验。"
+    },
+    "verification_method": {
+      "type": "string",
+      "enum": [
+        "human",
+        "crawler",
+        "agent",
+        "community"
+      ]
+    },
+    "source_kind": {
+      "type": "string",
+      "enum": [
+        "curator",
+        "crawler",
+        "user_report",
+        "official_feed"
+      ]
+    },
+    "region_availability": {
+      "type": "string",
+      "enum": [
+        "global",
+        "include",
+        "exclude"
+      ]
+    },
+    "issue_kind": {
+      "type": "string",
+      "enum": [
+        "expired",
+        "link_broken",
+        "terms_wrong",
+        "amount_wrong",
+        "region_wrong",
+        "other"
+      ]
+    },
+    "catalog": {
+      "type": "object",
+      "title": "Catalog",
+      "description": "构建期产出的只读读模型，MCP 与静态页只消费这个文件，不直接消费 Git 源。",
+      "required": [
+        "schema_version",
+        "generated_at",
+        "checksum",
+        "promos"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "checksum": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "description": "promos 数组的 sha256，Standby 容器据此判断是否需要热更新。"
+        },
+        "source_commit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 40
+        },
+        "promos": {
+          "type": "array",
+          "items": {
+            "$ref": "#"
+          },
+          "maxItems": 2000
+        },
+        "providers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/provider"
+          },
+          "maxItems": 500
+        },
+        "review_queue": {
+          "type": "array",
+          "description": "待复核条目，provenance.review_required=true 的 promo 镜像，供人工处理。",
+          "items": {
+            "$ref": "#"
+          },
+          "maxItems": 500
+        }
+      }
+    }
+  }
+}
