@@ -1,0 +1,76 @@
+{
+  "id": "cohere-trial-free",
+  "provider": {
+    "id": "cohere",
+    "name_en": "Cohere",
+    "name_zh": null,
+    "country": "CA",
+    "homepage": "https://cohere.com/"
+  },
+  "offer": {
+    "type": "trial_credit",
+    "headline": "Cohere Trial API：每月 1000 次免费调用",
+    "summary": "Cohere Trial key 提供每月 1000 次免费 API 调用（含 Command 系列模型）。",
+    "value_display": "1000 calls/月",
+    "no_fixed_expiry": true,
+    "claim_url": "https://dashboard.cohere.com/"
+  },
+  "terms": [
+    {
+      "tag": "rate_limited",
+      "severity": "blocker",
+      "note": "Trial 档限 1000 calls/月"
+    }
+  ],
+  "difficulty": "easy",
+  "difficulty_reasons": [
+    "邮箱注册即得 trial key"
+  ],
+  "estimated_setup_minutes": 3,
+  "region": {
+    "availability": "global"
+  },
+  "categories": [
+    "llm",
+    "embedding"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "high",
+    "last_verified_at": "2026-09-21T07:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://docs.cohere.com/docs/going-rate-limited"
+    ],
+    "first_seen_at": "2024-05-01T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 70,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "登录 dashboard.cohere.com"
+      },
+      {
+        "n": 2,
+        "text": "左侧「API Keys」→「Trial Keys」创建 key"
+      },
+      {
+        "n": 3,
+        "text": "调用 cohere.command-r-plus 等模型"
+      }
+    ]
+  },
+  "created_at": "2024-05-01T00:00:00Z",
+  "updated_at": "2026-09-21T07:00:00Z"
+}
