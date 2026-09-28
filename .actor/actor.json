@@ -1,7 +1,7 @@
 {
   "actorSpecification": 1,
   "name": "free-and-cheap-tokens",
-  "version": "1.1.0",
+  "version": "1.1",
   "title": "Free & Cheap Tokens — AI Promo MCP Server",
   "description": "Curated, daily-verified catalog of free AI model API credits and token promotions. MCP server with 8 tools, structured terms, difficulty grading, and regional filtering. Open source · No paid placements · No affiliate links · MIT.",
   "main": "dist/index.js",
@@ -11,6 +11,7 @@
     "bundle": false
   },
   "Dockerfile": ".actor/Dockerfile",
+  "usesStandbyMode": true,
   "webServer": {
     "requestHandler": "src/handler.ts",
     "type": "nodejs"
@@ -58,8 +59,6 @@
       "eventPriceUsd": 0
     }
   },
-  "input": {},
-  "output": {
-    "build": "dist"
-  }
+  "input": "./input_schema.json",
+  "output": "./output_schema.json"
 }
