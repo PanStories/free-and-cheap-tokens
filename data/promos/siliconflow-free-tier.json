@@ -1,0 +1,106 @@
+{
+  "id": "siliconflow-free-tier",
+  "provider": {
+    "id": "siliconflow",
+    "name_en": "SiliconFlow",
+    "name_zh": "硅基流动",
+    "country": "CN",
+    "homepage": "https://siliconflow.cn/"
+  },
+  "offer": {
+    "type": "signup_bonus",
+    "headline": "硅基流动新用户 ¥16 通用代金券",
+    "summary": "实名注册后获 ¥16 通用代金券（2000 万 tokens 量级），可用于 SiliconCloud 全模型。",
+    "value_display": "¥16 代金券（约 2000 万 tokens）",
+    "expires_at": "2026-12-31T23:59:59+08:00",
+    "expiry_type": "fixed_date",
+    "claim_window": {
+      "end": "2026-12-31T23:59:59+08:00"
+    },
+    "claim_url": "https://cloud.siliconflow.cn/"
+  },
+  "terms": [
+    {
+      "tag": "identity_verification",
+      "severity": "blocker",
+      "note": "需大陆手机号 + 实名认证"
+    },
+    {
+      "tag": "one_per_account",
+      "severity": "blocker",
+      "note": "每个身份证只能领一次"
+    },
+    {
+      "tag": "rate_limited",
+      "severity": "note",
+      "note": "免费档 RPM 限制"
+    },
+    {
+      "tag": "stackable",
+      "severity": "friction",
+      "note": "可与「推荐官」邀请券叠加，但合计有上限"
+    }
+  ],
+  "difficulty": "medium",
+  "difficulty_reasons": [
+    "需实名认证（手机号 + 身份证）"
+  ],
+  "estimated_setup_minutes": 10,
+  "region": {
+    "availability": "include",
+    "countries": [
+      "CN"
+    ]
+  },
+  "categories": [
+    "llm",
+    "embedding",
+    "image"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "high",
+    "last_verified_at": "2026-09-26T01:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://siliconflow.cn/"
+    ],
+    "first_seen_at": "2024-01-01T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 78,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "打开 cloud.siliconflow.cn 注册"
+      },
+      {
+        "n": 2,
+        "text": "用大陆手机号注册并完成实名认证"
+      },
+      {
+        "n": 3,
+        "text": "在控制台「卡券中心」领取 ¥16 代金券（部分账号自动发放）"
+      },
+      {
+        "n": 4,
+        "text": "获取 API key，用于 SiliconCloud 全模型"
+      }
+    ],
+    "gotchas": [
+      "券 180 天有效；活动期 2026-12-31 截止"
+    ]
+  },
+  "created_at": "2024-01-01T00:00:00Z",
+  "updated_at": "2026-09-26T01:00:00Z"
+}
