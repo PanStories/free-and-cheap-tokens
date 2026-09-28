@@ -19,6 +19,7 @@ import express from 'express';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { createMcpServer } from './mcp/server.js';
+import { chargeForRequest } from './billing.js';
 import { parseCallerContext, callerHash, isPaidCaller, setTierIsPaid } from './tier/quota.js';
 import { checkLimit } from './tier/rate-limit.js';
 
@@ -50,7 +51,12 @@ async function runHttpMode() {
   });
 
   // Origin / Host 白名单（DNS rebinding 防护 —— SDK 1.30.1 已标 deprecated 必须自己实现）
+  // 在 Apify 平台上无需此检查：网关已做 Bearer 鉴权，且 hostname 是平台动态分配的。
   app.use((req, res, next) => {
+    if (process.env.APIFY_IS_AT_HOME) {
+      next();
+      return;
+    }
     const allowedHosts = new Set([
       'localhost',
       '127.0.0.1',
@@ -59,7 +65,7 @@ async function runHttpMode() {
       'www.freeandcheaptokens.dev',
     ]);
     const host = req.headers.host?.split(':')[0];
-    if (host && !allowedHosts.has(host)) {
+    if (host && !allowedHosts.has(host) && !host.endsWith('.apify.actor') && !host.endsWith('.apify.com')) {
       res.status(403).json({ error: 'Forbidden host' });
       return;
     }
@@ -83,6 +89,9 @@ async function runHttpMode() {
       });
       return;
     }
+
+    // Charge the PPE event before serving (free events are skipped internally).
+    await chargeForRequest(req.body, Actor);
 
     const server = createMcpServer();
     const transport = new StreamableHTTPServerTransport({
