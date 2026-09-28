@@ -50,7 +50,7 @@ HTTP 请求 → Apify 网关 → 启动 Actor run（冷启动 2-4s）
                               ↓
                         路由到对应 tool / resource / prompt
                               ↓
-                   Actor.charge({ eventName: 'mcp-search', eventPriceUsd: 0.001 })
+                   Actor.charge({ eventName: 'mcp-search' })
                               ↓
                         返回 JSON-RPC 响应 + 立即回收 run
 ```
@@ -67,18 +67,20 @@ HTTP 请求 → Apify 网关 → 启动 Actor run（冷启动 2-4s）
 |--------|------|----------|------|
 | `mcp-initialize` | 握手 | $0 | 免费，让 Agent 试探 |
 | `mcp-list-tools` | 工具发现 | $0 | 免费，让 Agent 探索 |
-| `mcp-search` | 语义搜索 | $0.001 | 主入口 |
-| `mcp-filter` | 纯结构化过滤 | $0.001 | 同上 |
-| `mcp-get-promo` | 单条详情 | $0.0005 | 简单读取 |
-| `mcp-list-providers` | 厂商列表 | $0.0005 | 简单读取 |
-| `mcp-recent-updates` | 变更追踪 | $0.001 | 同搜索 |
-| `mcp-expiring-soon` | 7-30 天到期 | $0.001 | 同搜索 |
-| `mcp-what-can-i-get` | 行动建议（高推理） | $0.002 | 溢价：要走 `actionability` 引擎 |
+| `mcp-search` | 语义搜索 | $0.005 | 主入口 |
+| `mcp-filter` | 纯结构化过滤 | $0.005 | 同上 |
+| `mcp-get-promo` | 单条详情 | $0.002 | 简单读取 |
+| `mcp-list-providers` | 厂商列表 | $0.002 | 简单读取 |
+| `mcp-recent-updates` | 变更追踪 | $0.005 | 同搜索 |
+| `mcp-expiring-soon` | 7-30 天到期 | $0.005 | 同搜索 |
+| `mcp-what-can-i-get` | 行动建议（高推理） | $0.01 | 溢价：要走 `actionability` 引擎 |
 | `mcp-report-issue` | 报错 | $0 | 免费，鼓励纠错 |
 
+> 定价依据（2026-09-28 市场校准）：Apify Store MCP actor 参考价 $0.03–0.035/tool call（travel-tools-mcp、enterprise-mcp-gateway），情报类 MCP $0.045–0.50。我们定位为该区间下沿的 1/6–1/7（只读 catalog、无上游 API 成本）。注意 Apify PPE 提价有 14 天通知期、降价即时生效，故首次发布前定准。
+
 **月成本估算**（以保守场景算）：
-- 1000 calls/月（早期用户）：约 $1 / 月
-- 10000 calls/月（早期活跃）：约 $10 / 月
+- 1000 calls/月（早期用户）：约 $4 / 月
+- 10000 calls/月（早期活跃）：约 $40 / 月
 - **月成本与使用量线性相关，且 Apify 抽成后我们仍能拿到事件单价的 80% 左右**
 
 ### 2.4 与 Standby 方案对比（为什么这是升级不是降级）
