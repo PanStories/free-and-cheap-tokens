@@ -1,0 +1,13 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Free & Cheap Tokens MCP output",
+  "description": "This Actor is a remote MCP server: it does not write results to the default dataset. All output is delivered synchronously to MCP clients over the Streamable HTTP endpoint listed below. See README.md for the format returned by each tool (search_promos, filter_promos, get_promo, list_providers, get_recent_updates, get_expiring_soon, what_can_i_get, report_promo_issue).",
+  "properties": {
+    "mcpEndpoint": {
+      "type": "string",
+      "title": "MCP endpoint",
+      "description": "Streamable HTTP MCP endpoint of this Actor run. Connect an MCP client here (Authorization: Bearer <APIFY_TOKEN>). POST JSON-RPC messages: initialize, tools/list, tools/call.",
+      "template": "{{run.containerUrl}}/mcp"
+    }
+  }
+}
