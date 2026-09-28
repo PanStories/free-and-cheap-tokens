@@ -84,7 +84,7 @@ stdio transport 启动后，按 `mcp.json` 配你的 client：
 }
 ```
 
-**计费**：每个 MCP tool call = 1 个事件（如 `mcp-search` = $0.001 / 次）。**无月费** —— 没有调用时 Apify 不产生任何费用。这是 v1.1.0（2026-09-28）的关键切换：从 Standby 常驻容器改为 Pay-Per-Event 按事件计费，详见 [`docs/decisions/ADR-001-stack.md`](docs/decisions/ADR-001-stack.md) §1 与 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) §2。
+**计费**：每个 MCP tool call = 1 个事件（查询类 $0.005 / 次，单条读取 $0.002 / 次，推理推荐 $0.01 / 次，握手与工具发现免费）。**无月费** —— 没有调用时 Apify 不产生任何费用。这是 v1.1.0（2026-09-28）的关键切换：从 Standby 常驻容器改为 Pay-Per-Event 按事件计费，详见 [`docs/decisions/ADR-001-stack.md`](docs/decisions/ADR-001-stack.md) §1 与 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) §2。
 
 **Agentic Payments**：本 Actor 满足 Apify Agentic Payments 资格（Pay-per-event + 无 Standby + 有限权限 + KYC）。AI Agent 可用 x402 / Skyfire 协议直接按调用付费，无需 Apify 账号。
 
