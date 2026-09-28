@@ -1,0 +1,564 @@
+openapi: 3.0.3
+info:
+  title: Free & Cheap Tokens Actor Web Server
+  version: 1.0.0
+  description: >
+    Free & Cheap Tokens 的非 MCP HTTP 端点。MCP 协议端点为 POST/GET/DELETE /mcp，
+    使用 MCP Streamable HTTP 传输（无状态模式），其契约不在本文件中描述——
+    MCP 的 tools / resources / prompts 清单见 docs/ARCHITECTURE.md 第 7 节。
+    本文件供 Apify Console 的 Endpoints 标签页渲染，通过 .actor/actor.json 的
+    webServerSchema 字段引用。
+servers:
+  - url: https://{taskHostname}.apify.actor
+    description: Apify Standby Task 的稳定 hostname
+    variables:
+      taskHostname:
+        default: free-and-cheap-tokens
+        description: Apify Task 的 hostname，在 Console 的 Endpoints 标签页获取
+  - url: http://127.0.0.1:8080
+    description: 本地开发（APIFY_META_ORIGIN=STANDBY ACTOR_WEB_SERVER_PORT=8080）
+
+security:
+  - apifyBearerAuth: []
+
+paths:
+  /:
+    get:
+      operationId: root
+      summary: 就绪探针与服务说明
+      description: >
+        Apify 平台在 run 启动前发送带 x-apify-container-server-readiness-probe 头的
+        GET /。命中该头时立即返回 200，否则该 run 永远不会被标记为 ready。
+        普通访问返回服务说明文本。
+      security: []
+      parameters:
+        - name: x-apify-container-server-readiness-probe
+          in: header
+          required: false
+          schema:
+            type: string
+          description: 平台就绪探针标记，存在即表示这是探针请求
+      responses:
+        '200':
+          description: 就绪或返回服务说明
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootResponse'
+            text/plain:
+              schema:
+                type: string
+
+  /healthz:
+    get:
+      operationId: healthz
+      summary: 自检
+      description: >
+        平台启动后不再探活，因此本端点供外部监控轮询。catalog_source 为 baked_in
+        表示 KVS 不可达、正在使用镜像内置 catalog 兜底，此时服务仍可用但数据可能过期。
+      responses:
+        '200':
+          description: 服务存活
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+
+  /api/v1/daily:
+    get:
+      operationId: getDaily
+      summary: 当日清单
+      description: >
+        给外部程序化消费者用的清单接口，不是每日清单页的数据源。
+        静态清单页由 scripts/build-site.ts 在构建期把同一形状的 DailyItem 直接内联进 HTML，
+        运行时不发起任何网络请求（零依赖约束），也无法携带 Apify Bearer token。
+        输出前必须过滤 deleted_at 非 null 的软删除条目，本接口不返回墓碑数据。
+      parameters:
+        - name: date
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date
+            pattern: '^\d{4}-\d{2}-\d{2}$'
+          description: 取指定日期的清单，缺省为今天
+        - name: region
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/CountryCode'
+        - name: difficulty
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/Difficulty'
+      responses:
+        '200':
+          description: 清单数据
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Envelope'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/DailyListing'
+        '404':
+          description: 该日期无清单
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Envelope'
+                  - type: object
+                    properties:
+                      code:
+                        example: 40401
+                      message:
+                        example: 该日期无清单，最近一次清单为 2026-09-27
+
+  /api/v1/schema:
+    get:
+      operationId: getSchema
+      summary: promo JSON Schema 原文
+      responses:
+        '200':
+          description: JSON Schema Draft 2020-12 文档
+          content:
+            application/json:
+              schema:
+                type: object
+                description: schemas/promo.schema.json 的完整内容
+
+  /api/v1/stats:
+    get:
+      operationId: getStats
+      summary: 策展库统计
+      responses:
+        '200':
+          description: 统计信息
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Envelope'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Stats'
+
+  /mcp:
+    post:
+      operationId: mcpPost
+      summary: MCP Streamable HTTP 端点（JSON-RPC 请求）
+      description: >
+        MCP 协议端点。无状态模式：响应不含 MCP-Session-Id 头，每个请求独立处理。
+        本端点同时接受 GET（打开 SSE 流，本实现返回 405）与 DELETE（终止会话，
+        本实现返回 405）。入站请求必须通过 Origin / Host 白名单校验，
+        未通过返回 403（DNS rebinding 防护）。
+      parameters:
+        - name: MCP-Protocol-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            example: '2025-11-25'
+          description: >
+            SDK 1.30.1 声明的 LATEST_PROTOCOL_VERSION 为 2025-11-25。
+            不支持 2026-07-28。缺失时按规范回落到 2025-03-26。
+        - name: Accept
+          in: header
+          required: true
+          schema:
+            type: string
+            example: application/json, text/event-stream
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: 单条 JSON-RPC 请求、通知或响应
+      responses:
+        '200':
+          description: JSON 响应（本实现使用 enableJsonResponse，不开 SSE 流）
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: 非法的会话 ID 或协议版本
+        '403':
+          description: Origin 或 Host 不在白名单内
+        '405':
+          description: 不支持的 HTTP 方法
+    get:
+      operationId: mcpGet
+      summary: MCP Streamable HTTP 端点（GET）
+      description: 本实现不开 SSE 流，固定返回 405 Method Not Allowed。
+      responses:
+        '405':
+          description: 本实现不提供 SSE 流
+    delete:
+      operationId: mcpDelete
+      summary: MCP Streamable HTTP 端点（DELETE）
+      description: 无状态模式没有会话可终止，固定返回 405 Method Not Allowed。
+      responses:
+        '405':
+          description: 无状态模式不支持会话终止
+
+components:
+  securitySchemes:
+    apifyBearerAuth:
+      type: http
+      scheme: bearer
+      description: >
+        Apify API token。所有发往 Standby URL 的请求都必须携带，
+        用 Authorization: Bearer <token> 或 ?token=<token>。
+        推荐使用请求头，避免 token 落入服务端访问日志。
+
+  schemas:
+    Envelope:
+      type: object
+      required: [code, data, message]
+      properties:
+        code:
+          type: integer
+          description: 0 表示成功，非 0 为错误码
+          example: 0
+        data:
+          description: 响应数据
+        message:
+          type: string
+          description: 错误时的人类可读描述，成功时为空字符串
+
+    CountryCode:
+      type: string
+      pattern: '^[A-Z]{2}$'
+      description: ISO 3166-1 alpha-2
+      example: CN
+
+    Difficulty:
+      type: string
+      enum: [easy, medium, hard]
+
+    OfferType:
+      type: string
+      enum:
+        - free_credit
+        - free_tier
+        - trial
+        - discount
+        - deposit_match
+        - quota_boost
+        - edu_grant
+        - oss_grant
+        - giveaway
+
+    Category:
+      type: string
+      enum:
+        - llm
+        - embedding
+        - image
+        - video
+        - audio
+        - agent_hosting
+        - vector_db
+        - gpu_compute
+        - other
+
+    VerificationStatus:
+      type: string
+      enum: [verified, reported, stale, unverified]
+
+    RootResponse:
+      type: object
+      properties:
+        service:
+          type: string
+          example: free-and-cheap-tokens
+        mcp_endpoint:
+          type: string
+          example: /mcp
+        docs:
+          type: string
+          format: uri
+
+    HealthResponse:
+      type: object
+      required: [status, catalog_source, catalog_checksum, promo_count]
+      properties:
+        status:
+          type: string
+          enum: [ok, degraded]
+        catalog_source:
+          type: string
+          enum: [baked_in, kvs]
+          description: baked_in 表示 KVS 不可达，正在用镜像内置 catalog 兜底
+        catalog_checksum:
+          type: string
+          pattern: '^sha256:[0-9a-f]{64}$'
+        catalog_generated_at:
+          type: string
+          format: date-time
+        promo_count:
+          type: integer
+          minimum: 0
+        uptime_sec:
+          type: integer
+          minimum: 0
+
+    ProviderRef:
+      type: object
+      required: [id, name, country]
+      properties:
+        id:
+          type: string
+          example: siliconflow
+        name:
+          type: string
+          description: >
+            已按显示规则解析后的名称：country 为 CN 且 name_zh 存在时用中文名，
+            否则用英文名
+          example: 硅基流动
+        country:
+          $ref: '#/components/schemas/CountryCode'
+        homepage:
+          type: [string, 'null']
+          format: uri
+          description: 厂商官网，厂商名可点击跳转；为 null 时渲染为不可点文本
+        logo_asset:
+          type: [string, 'null']
+          description: >
+            本地 inline SVG symbol id，形如 i-logo-openai（前缀为 #i-，与图标集一致）。
+            为 null 时只渲染厂商名文字，不渲染占位灰块。禁止外链 CDN 图片。
+
+    Amount:
+      type: object
+      required: [value, unit, raw_text]
+      properties:
+        value:
+          type: number
+        currency:
+          type: [string, 'null']
+          pattern: '^[A-Z]{3}$'
+        unit:
+          type: string
+          enum:
+            - usd_credit
+            - cny_credit
+            - tokens
+            - tokens_per_month
+            - requests_per_month
+            - seats
+            - percent_off
+            - days
+            - other
+        raw_text:
+          type: string
+
+    Term:
+      type: object
+      required: [tag, severity, note]
+      properties:
+        tag:
+          type: string
+          enum:
+            - no_credit_card
+            - credit_card_required
+            - phone_verification
+            - identity_verification
+            - new_users_only
+            - one_per_account
+            - auto_renew
+            - quota_capped
+            - time_limited
+            - region_locked
+            - vpn_required
+            - edu_email_required
+            - business_email_required
+            - oss_project_required
+            - byok_required
+            - rate_limited
+            - non_commercial_only
+            - data_used_for_training
+            - deposit_required
+            - waitlist_approval
+            - manual_application
+            - stackable
+            - deprecated_service
+        severity:
+          type: string
+          enum: [blocker, friction, note]
+        note:
+          type: string
+
+    Disclosure:
+      type: object
+      required: [affiliate, affiliate_url, disclosure_text]
+      properties:
+        affiliate:
+          type: boolean
+        affiliate_url:
+          type: [string, 'null']
+          format: uri
+        disclosure_text:
+          type: [string, 'null']
+          description: affiliate 为 true 时必填，且必须在所有对外渲染中可见
+
+    Region:
+      type: object
+      required: [availability, countries]
+      description: >
+        结构化区域。前端做「可用区域」筛选必须用它，不要用 region_summary 做子串匹配——
+        「除 US 外可用」含 "US" 但美国不可用，子串匹配会误判。
+      properties:
+        availability:
+          type: string
+          enum: [global, include, exclude]
+          description: global=全球可用；include=countries 为可用国家；exclude=countries 为不可用国家
+        countries:
+          type: array
+          items:
+            $ref: '#/components/schemas/CountryCode'
+          description: availability 为 global 时为空数组
+        notes:
+          type: [string, 'null']
+
+    DailyItem:
+      type: object
+      required:
+        [id, provider, type, headline, amount, difficulty, region_summary, region,
+         verification_status, terms, disclosure, claim_url, next_step, next_steps]
+      properties:
+        id:
+          type: string
+        provider:
+          $ref: '#/components/schemas/ProviderRef'
+        type:
+          $ref: '#/components/schemas/OfferType'
+          description: promo 类型，卡片左上角类型标记
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+          description: 能力类别，用于类别筛选
+        models:
+          type: array
+          items:
+            type: string
+          description: 覆盖的具体模型/服务名，用于模型级搜索。无明确清单时为空数组
+        headline:
+          type: string
+        amount:
+          $ref: '#/components/schemas/Amount'
+        difficulty:
+          $ref: '#/components/schemas/Difficulty'
+        difficulty_reasons:
+          type: array
+          items:
+            type: string
+          description: 难度的具体依据，用于难度徽章 tooltip
+        estimated_setup_minutes:
+          type: [integer, 'null']
+          description: 从零到可用的预估分钟数
+        region_summary:
+          type: string
+          description: 仅供展示的一句话区域摘要，禁止用于筛选判定
+          example: 仅中国大陆
+        region:
+          $ref: '#/components/schemas/Region'
+        days_to_expiry:
+          type: [integer, 'null']
+          description: 无固定到期日的常驻额度为 null
+        verification_status:
+          $ref: '#/components/schemas/VerificationStatus'
+        last_verified_at:
+          type: [string, 'null']
+          format: date-time
+          description: 卡片级核验时间，配合 verification_status 显示新鲜度
+        terms:
+          type: array
+          items:
+            $ref: '#/components/schemas/Term'
+        disclosure:
+          $ref: '#/components/schemas/Disclosure'
+        curator_note:
+          type: [string, 'null']
+          description: >
+            人工复核结论原文，例如「官网页面确认，额度从 5 改为 10」。
+            null 表示尚未经人工复核。这是「人工策展」卖点在页面上的直接体现。
+        claim_url:
+          type: string
+          format: uri
+        next_step:
+          type: string
+          description: >
+            面向非技术用户的第一个可执行动作。不变式：next_step === next_steps[0]。
+            保留此字段是为了单行展示场景不必取数组首元素。
+        next_steps:
+          type: array
+          minItems: 1
+          maxItems: 5
+          items:
+            type: string
+          description: 完整的多步引导，用于「如何薅」多步面板。第一步必须是可立即执行的动作
+
+    DailyListing:
+      type: object
+      required: [date, generated_at, sections]
+      properties:
+        date:
+          type: string
+          format: date
+        generated_at:
+          type: string
+          format: date-time
+        sections:
+          type: object
+          properties:
+            added:
+              type: array
+              items:
+                $ref: '#/components/schemas/DailyItem'
+            expiring:
+              type: array
+              items:
+                $ref: '#/components/schemas/DailyItem'
+            available_now:
+              type: array
+              items:
+                $ref: '#/components/schemas/DailyItem'
+        disclosure_notice:
+          type: string
+          description: 页面级联盟披露说明，固定文案
+
+    Stats:
+      type: object
+      required: [promo_count, provider_count, by_difficulty, by_region]
+      properties:
+        promo_count:
+          type: integer
+        provider_count:
+          type: integer
+        by_difficulty:
+          type: object
+          properties:
+            easy:
+              type: integer
+            medium:
+              type: integer
+            hard:
+              type: integer
+        by_region:
+          type: object
+          additionalProperties:
+            type: integer
+          description: 键为 ISO 3166-1 alpha-2 国家码，值为该区域可用 promo 数
+        catalog_checksum:
+          type: string
+        catalog_generated_at:
+          type: string
+          format: date-time
