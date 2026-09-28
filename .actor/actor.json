@@ -1,0 +1,65 @@
+{
+  "actorSpecification": 1,
+  "name": "free-and-cheap-tokens",
+  "version": "1.1.0",
+  "title": "Free & Cheap Tokens — AI Promo MCP Server",
+  "description": "Curated, daily-verified catalog of free AI model API credits and token promotions. MCP server with 8 tools, structured terms, difficulty grading, and regional filtering. Open source · No paid placements · No affiliate links · MIT.",
+  "main": "dist/index.js",
+  "type": "module",
+  "transforms": {
+    "source": "src/index.ts",
+    "bundle": false
+  },
+  "Dockerfile": ".actor/Dockerfile",
+  "webServer": {
+    "requestHandler": "src/handler.ts",
+    "type": "nodejs"
+  },
+  "pricingModel": "PAY_PER_EVENT",
+  "pricingEvents": {
+    "mcp-initialize": {
+      "eventTitle": "MCP initialize handshake",
+      "eventPriceUsd": 0
+    },
+    "mcp-list-tools": {
+      "eventTitle": "MCP list_tools discovery",
+      "eventPriceUsd": 0
+    },
+    "mcp-search": {
+      "eventTitle": "MCP search_promos call",
+      "eventPriceUsd": 0.001
+    },
+    "mcp-filter": {
+      "eventTitle": "MCP filter_promos call",
+      "eventPriceUsd": 0.001
+    },
+    "mcp-get-promo": {
+      "eventTitle": "MCP get_promo call",
+      "eventPriceUsd": 0.0005
+    },
+    "mcp-list-providers": {
+      "eventTitle": "MCP list_providers call",
+      "eventPriceUsd": 0.0005
+    },
+    "mcp-recent-updates": {
+      "eventTitle": "MCP get_recent_updates call",
+      "eventPriceUsd": 0.001
+    },
+    "mcp-expiring-soon": {
+      "eventTitle": "MCP get_expiring_soon call",
+      "eventPriceUsd": 0.001
+    },
+    "mcp-what-can-i-get": {
+      "eventTitle": "MCP what_can_i_get call (premium reasoning)",
+      "eventPriceUsd": 0.002
+    },
+    "mcp-report-issue": {
+      "eventTitle": "MCP report_promo_issue call",
+      "eventPriceUsd": 0
+    }
+  },
+  "input": {},
+  "output": {
+    "build": "dist"
+  }
+}
