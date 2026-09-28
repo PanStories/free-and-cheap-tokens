@@ -1,0 +1,53 @@
+{
+  "mcp-search": {
+    "eventTitle": "MCP search_promos call",
+    "eventDescription": "Charged once per semantic search over the curated promo catalog (search_promos).",
+    "eventPriceUsd": 0.005,
+    "isPrimaryEvent": true
+  },
+  "mcp-filter": {
+    "eventTitle": "MCP filter_promos call",
+    "eventDescription": "Charged once per structured filter query (filter_promos) over provider/offer metadata.",
+    "eventPriceUsd": 0.005
+  },
+  "mcp-get-promo": {
+    "eventTitle": "MCP get_promo call",
+    "eventDescription": "Charged once per single promo detail lookup (get_promo) with full terms and claim steps.",
+    "eventPriceUsd": 0.002
+  },
+  "mcp-list-providers": {
+    "eventTitle": "MCP list_providers call",
+    "eventDescription": "Charged once per provider list request (list_providers).",
+    "eventPriceUsd": 0.002
+  },
+  "mcp-recent-updates": {
+    "eventTitle": "MCP get_recent_updates call",
+    "eventDescription": "Charged once per change-tracking query (get_recent_updates).",
+    "eventPriceUsd": 0.005
+  },
+  "mcp-expiring-soon": {
+    "eventTitle": "MCP get_expiring_soon call",
+    "eventDescription": "Charged once per expiry-window query (get_expiring_soon).",
+    "eventPriceUsd": 0.005
+  },
+  "mcp-what-can-i-get": {
+    "eventTitle": "MCP what_can_i_get call (premium reasoning)",
+    "eventDescription": "Charged once per personalized recommendation (what_can_i_get), which runs the actionability engine.",
+    "eventPriceUsd": 0.01
+  },
+  "mcp-initialize": {
+    "eventTitle": "MCP initialize handshake",
+    "eventDescription": "Free. Agents can discover the server without cost.",
+    "eventPriceUsd": 0
+  },
+  "mcp-list-tools": {
+    "eventTitle": "MCP list_tools discovery",
+    "eventDescription": "Free. Tool discovery stays free so agents can inspect capabilities.",
+    "eventPriceUsd": 0
+  },
+  "mcp-report-issue": {
+    "eventTitle": "MCP report_promo_issue call",
+    "eventDescription": "Free. Community corrections improve catalog accuracy.",
+    "eventPriceUsd": 0
+  }
+}
