@@ -54,7 +54,7 @@ Free & Cheap Tokens 需要同时交付三件套：一个可被 AI Agent 调用�
 - `.actor/actor.json` 设 `pricingModel: "PAY_PER_EVENT"` + `pricingEvents` 字典（每个 MCP tool 对应一个事件名 + 单价）+ `webServer.requestHandler: "src/handler.ts"`。
 - **不写** `usesStandbyMode: true`（该字段不存在或必须为 false 以保留 Agentic Payments 资格）。
 - 传输：`@modelcontextprotocol/sdk` 的 `StreamableHTTPServerTransport`，**stateless** 模式（ADR-002）。
-- 计费：`src/handler.ts` 在路由到对应 tool 后立即 `Actor.charge({ eventName: 'mcp-search', eventPriceUsd: 0.001 })`。
+- 计费：`src/handler.ts` 在路由到对应 tool 后立即 `Actor.charge({ eventName: 'mcp-search' })`（单价定义在 `.actor/actor.json`，2026-09-28 市场校准：查询 $0.005 / 读取 $0.002 / 推理 $0.01）。
 - 静态页：GitHub Pages，零依赖 HTML/CSS/JS。
 
 ### 方案 B：Apify Standby + Streamable HTTP + TS（**v1.0 已选定，v1.1.0 退役**）
