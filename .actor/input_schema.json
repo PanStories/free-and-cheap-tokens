@@ -1,0 +1,26 @@
+{
+  "title": "Free & Cheap Tokens — MCP Server",
+  "description": "Run the Free & Cheap Tokens MCP server. Connect any MCP client to the Actor's /mcp endpoint. Tool calls are metered pay-per-event; no monthly fee.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "maxTotalChargeUsd": {
+      "type": "number",
+      "title": "Maximum total charge (USD)",
+      "description": "Hard cap on how much this run may charge. Recommended when letting an autonomous agent call the server. Example: 0.10 USD ≈ 20 search calls.",
+      "minimum": 0,
+      "maximum": 1000,
+      "unit": "USD",
+      "editor": "hidden"
+    },
+    "maxItems": {
+      "type": "integer",
+      "title": "Maximum number of results per query",
+      "description": "Upper bound for how many promos a single tool call may return.",
+      "minimum": 1,
+      "maximum": 100,
+      "editor": "hidden"
+    }
+  },
+  "additionalProperties": false
+}
