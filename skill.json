@@ -1,0 +1,68 @@
+{
+  "name": "free-and-cheap-tokens",
+  "version": "1.1.1",
+  "description": "Find free and cheap AI model token promotions. Curated, machine-readable, daily verified. Bilingual (中文 / English).",
+  "author": "Free & Cheap Tokens Contributors",
+  "license": "MIT",
+  "transports": [
+    {
+      "kind": "mcp",
+      "command": "node",
+      "args": ["dist/index.js"],
+      "description": "Local stdio MCP (after `npm ci && npm run build`)"
+    },
+    {
+      "kind": "mcp-remote",
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://YOUR-APIFY-HOSTNAME/mcp", "--header", "Authorization: Bearer YOUR-APIFY-TOKEN"],
+      "description": "Remote MCP via Apify Pay-Per-Event (no Standby)"
+    }
+  ],
+  "languages": ["zh-CN", "en"],
+  "language_notes": {
+    "zh-CN": "默认文档与站点。所有 promo headline/summary 为中文（策展数据原文）。",
+    "en": "Sibling docs and /en.html. UI fully translated; promo body remains Chinese until v1.2 adds headline_en / summary_en fields."
+  },
+  "triggers": [
+    "推荐免费 AI 接口",
+    "找 AI 羊毛",
+    "如何薅 token",
+    "哪个 AI 有免费额度",
+    "free AI API",
+    "AI 优惠",
+    "免费 embedding",
+    "免费 LLM API",
+    "GitHub-like 列表但更结构化"
+  ],
+  "capabilities": {
+    "data": "AI 模型/推理服务的免费额度与低价 token 促销，每条结构化记录提供方、归类条款、上手难度、区域、到期、核验时间",
+    "tools": 8,
+    "resources": 4,
+    "prompts": 3,
+    "promo_count": 17,
+    "provider_count": 17
+  },
+  "prompts": {
+    "daily-deal-brief": "生成每日羊毛简报（≤200 字）",
+    "pick-for-me": "根据用户区域/信用卡/意愿难度，挑 ≤3 条最合适的 promo",
+    "explain-terms": "把一条 promo 的 22 项受控术语翻成人话"
+  },
+  "tiers": {
+    "free": "≤ 100 calls / 24h / IP+UA · ≤ 10 results per call",
+    "paid": "Apify Store Actor (PayPal/US Bank) · WorkBuddy Skill (微信支付) · 不限频次 · 全量字段 · 提前 30 天到期告警"
+  },
+  "principles": [
+    "开源 MIT · 代码完全免费可自部署",
+    "不接硬广 · 不挂联盟 · 不为付费修改排序",
+    "每条 promo 显示 last_verified_at · 点击可看到完整审计链",
+    "任何用户可经 GitHub Issue 或 MCP report_promo_issue 纠错 · 人工回复"
+  ],
+  "links": {
+    "homepage": "https://freeandcheaptokens.dev",
+    "rss": "https://freeandcheaptokens.dev/feed.xml",
+    "ics": "https://freeandcheaptokens.dev/promos.ics",
+    "github": "https://github.com/PanStories/free-and-cheap-tokens",
+    "issues": "https://github.com/PanStories/free-and-cheap-tokens/issues",
+    "schema": "schemas/promo.schema.json"
+  }
+}
