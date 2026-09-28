@@ -1,0 +1,98 @@
+{
+  "id": "google-ai-studio-free-tier",
+  "provider": {
+    "id": "google-ai-studio",
+    "name_en": "Google AI Studio",
+    "name_zh": null,
+    "country": "US",
+    "homepage": "https://aistudio.google.com/"
+  },
+  "offer": {
+    "type": "free_tier",
+    "headline": "Gemini 2.5 Flash 免费 API",
+    "summary": "Google AI Studio 提供 Gemini 2.5 Flash 免费层，每分钟 15 次请求、每日 1500 次。",
+    "value_display": "15 RPM · 1500 RPD",
+    "no_fixed_expiry": true,
+    "claim_url": "https://aistudio.google.com/apikey"
+  },
+  "terms": [
+    {
+      "tag": "rate_limited",
+      "severity": "friction",
+      "note": "15 RPM / 1500 RPD，可能撞 429"
+    },
+    {
+      "tag": "region_locked",
+      "severity": "note",
+      "note": "部分国家不可用，参考 https://ai.google.dev/available_regions"
+    },
+    {
+      "tag": "data_used_for_training",
+      "severity": "friction",
+      "note": "默认 opt-in（可在控制台 opt-out）"
+    }
+  ],
+  "difficulty": "easy",
+  "difficulty_reasons": [
+    "Google 账号 + 一键创建 API key"
+  ],
+  "estimated_setup_minutes": 3,
+  "region": {
+    "availability": "exclude",
+    "excluded_countries": [
+      "CU",
+      "IR",
+      "KP",
+      "SY"
+    ]
+  },
+  "categories": [
+    "llm"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "high",
+    "last_verified_at": "2026-09-26T07:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://ai.google.dev/pricing"
+    ],
+    "first_seen_at": "2024-12-01T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 85,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "登录 aistudio.google.com（需 Google 账号）"
+      },
+      {
+        "n": 2,
+        "text": "左侧「Get API Key」→ 「Create API Key」"
+      },
+      {
+        "n": 3,
+        "text": "在控制台关闭「Improve Google products with my prompts」以避免数据被训练"
+      },
+      {
+        "n": 4,
+        "text": "把 API key 存到环境变量 GOOGLE_API_KEY"
+      }
+    ],
+    "gotchas": [
+      "超过 RPM/RPD 会 429；可在请求层加重试 backoff"
+    ]
+  },
+  "created_at": "2024-12-01T00:00:00Z",
+  "updated_at": "2026-09-26T07:00:00Z"
+}
