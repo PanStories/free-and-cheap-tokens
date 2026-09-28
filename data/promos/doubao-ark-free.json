@@ -1,0 +1,107 @@
+{
+  "id": "doubao-ark-free",
+  "provider": {
+    "id": "doubao",
+    "name_en": "Volcengine Ark (Doubao)",
+    "name_zh": "火山方舟 / 豆包",
+    "country": "CN",
+    "homepage": "https://www.volcengine.com/product/ark"
+  },
+  "offer": {
+    "type": "free_tier",
+    "headline": "火山方舟体验额度：豆包 1.5 Pro 500 万 tokens",
+    "summary": "新开通方舟 ARK 的用户获赠豆包 1.5 Pro 体验额度，含文本/图像/视频模型。",
+    "value_display": "500 万 tokens 体验",
+    "expires_at": "2026-12-31T23:59:59+08:00",
+    "expiry_type": "fixed_date",
+    "claim_url": "https://www.volcengine.com/product/ark"
+  },
+  "terms": [
+    {
+      "tag": "identity_verification",
+      "severity": "blocker",
+      "note": "火山引擎账号需实名"
+    },
+    {
+      "tag": "credit_card_required",
+      "severity": "friction",
+      "note": "需绑卡才能开通方舟 ARK"
+    },
+    {
+      "tag": "rate_limited",
+      "severity": "note",
+      "note": "体验期内有 RPM/TPM 限制"
+    },
+    {
+      "tag": "one_per_account",
+      "severity": "note",
+      "note": "每个实名账号只领一次"
+    }
+  ],
+  "difficulty": "medium",
+  "difficulty_reasons": [
+    "火山引擎账号 + 实名 + 开通方舟 + 绑卡"
+  ],
+  "estimated_setup_minutes": 18,
+  "region": {
+    "availability": "include",
+    "countries": [
+      "CN"
+    ]
+  },
+  "categories": [
+    "llm",
+    "image",
+    "video"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "high",
+    "last_verified_at": "2026-09-26T01:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://www.volcengine.com/docs/82379"
+    ],
+    "first_seen_at": "2024-10-01T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 65,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "注册火山引擎账号"
+      },
+      {
+        "n": 2,
+        "text": "完成实名 + 绑卡"
+      },
+      {
+        "n": 3,
+        "text": "开通「方舟 ARK」服务"
+      },
+      {
+        "n": 4,
+        "text": "在体验中心领取 500 万 tokens 体验券"
+      },
+      {
+        "n": 5,
+        "text": "创建 API Key 调用模型（豆包 / 即梦 / 其他）"
+      }
+    ],
+    "gotchas": [
+      "券期 2026-12-31 截止"
+    ]
+  },
+  "created_at": "2024-10-01T00:00:00Z",
+  "updated_at": "2026-09-26T01:00:00Z"
+}
