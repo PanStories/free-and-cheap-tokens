@@ -1,0 +1,47 @@
+name: preflight
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'scripts/**'
+      - 'schemas/**'
+      - 'tests/**'
+      - 'data/**'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.21.0
+          cache: npm
+
+      - name: Install (full)
+        run: npm ci
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Schema tests
+        run: npm test
+
+      - name: P0 红线自查（emoji / 紫粉渐变 / 回弹缓动 / 空洞占位）
+        run: node scripts/check-p0.mjs
+
+      - name: Build catalog (sanity)
+        run: npm run build:catalog
