@@ -1,0 +1,19 @@
+node_modules/
+dist/
+build/
+site/og.png
+*.log
+.DS_Store
+.env
+.env.local
+.env.*.local
+*.tsbuildinfo
+coverage/
+.vscode/
+.idea/
+.apify/
+*.tgz
+.cache/
+.pnp.*
+# source archive (self-referential, keep local only)
+fact-mcp-*.tar.gz
