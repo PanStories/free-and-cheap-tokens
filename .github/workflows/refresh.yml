@@ -1,0 +1,36 @@
+name: refresh
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.21.0
+
+      - name: Install
+        run: npm ci --omit=dev
+
+      - name: Run discovery feed
+        run: node scripts/refresh.mjs
+
+      - name: Upload discovery artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: discovery-${{ github.run_id }}
+          path: .refresh/discovery.jsonl
+          retention-days: 14
+
+      # 产物由策展团队在 PR 中人工评审后才进入主 catalog.json
+      # 见 scripts/refresh.mjs 头部注释
