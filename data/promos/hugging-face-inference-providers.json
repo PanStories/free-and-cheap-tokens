@@ -1,0 +1,91 @@
+{
+  "id": "hugging-face-inference-providers",
+  "provider": {
+    "id": "hugging-face",
+    "name_en": "Hugging Face",
+    "name_zh": null,
+    "country": "FR",
+    "homepage": "https://huggingface.co/"
+  },
+  "offer": {
+    "type": "free_tier",
+    "headline": "Hugging Face Inference Providers 月度 $0.10 免费额度",
+    "summary": "新 HF 账号含 $0.10/月（约 2000 次小模型推理）免费 Inference Providers 额度。",
+    "value_display": "$0.10/月免费额度",
+    "no_fixed_expiry": true,
+    "claim_url": "https://huggingface.co/settings/billing"
+  },
+  "terms": [
+    {
+      "tag": "rate_limited",
+      "severity": "friction",
+      "note": "$0.10 月度上限；超额按 Inference Providers 费率"
+    },
+    {
+      "tag": "credit_card_required",
+      "severity": "friction",
+      "note": "2025 起强制绑卡才能用付费 inference"
+    },
+    {
+      "tag": "quota_capped",
+      "severity": "note",
+      "note": "支持模型取决于 Inference Providers 接入列表"
+    }
+  ],
+  "difficulty": "medium",
+  "difficulty_reasons": [
+    "需 HF 账号 + 绑卡（即使免费层也要求）"
+  ],
+  "estimated_setup_minutes": 6,
+  "region": {
+    "availability": "global"
+  },
+  "categories": [
+    "llm",
+    "embedding",
+    "image"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "high",
+    "last_verified_at": "2026-09-25T05:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://huggingface.co/docs/inference-providers"
+    ],
+    "first_seen_at": "2024-09-01T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 65,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "注册 huggingface.co 账号"
+      },
+      {
+        "n": 2,
+        "text": "进入 Settings → Billing 绑卡（即使免费层也要求）"
+      },
+      {
+        "n": 3,
+        "text": "创建 Access Token（Settings → Access Tokens）"
+      },
+      {
+        "n": 4,
+        "text": "通过 inferenceClient 调用模型"
+      }
+    ]
+  },
+  "created_at": "2024-09-01T00:00:00Z",
+  "updated_at": "2026-09-25T05:00:00Z"
+}
