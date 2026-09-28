@@ -10,6 +10,26 @@
 
 ---
 
+## 🚀 线上 MCP 端点（Apify）
+
+```
+https://neeenja--free-and-cheap-tokens.apify.actor/mcp
+```
+
+任何 MCP 客户端都能连，用 Bearer token 鉴权（Apify API token）：
+
+```bash
+curl -X POST https://neeenja--free-and-cheap-tokens.apify.actor/mcp \
+  -H "Authorization: Bearer $APIFY_TOKEN" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"my-client","version":"1.0"}}}'
+```
+
+Apify Store 页：https://apify.com/neeenja/free-and-cheap-tokens
+
+---
+
 ## 这项目是什么
 
 `free-and-cheap-tokens` 把全球 AI 模型/推理服务（OpenAI / Anthropic / Google / 智谱 / 硅基流动 / 阿里云百炼 / Cloudflare Workers AI / Groq …）的**免费额度与低价 token 促销**整理成**结构化数据**，对外提供三种使用方式：
