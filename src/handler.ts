@@ -22,20 +22,7 @@ import { createMcpServer } from './mcp/server.js';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import { loadCatalog } from './data/catalog.js';
 import { requireTier, setTierIsPaid } from './tier/quota.js';
-
-const PRICING_EVENTS: Record<string, string> = {
-  initialize: 'mcp-initialize',
-  'tools/list': 'mcp-list-tools',
-  'tools/call': undefined as never, // resolved per-tool below
-  'search_promos': 'mcp-search',
-  'filter_promos': 'mcp-filter',
-  'get_promo': 'mcp-get-promo',
-  'list_providers': 'mcp-list-providers',
-  'get_recent_updates': 'mcp-recent-updates',
-  'get_expiring_soon': 'mcp-expiring-soon',
-  'what_can_i_get': 'mcp-what-can-i-get',
-  'report_promo_issue': 'mcp-report-issue',
-};
+import { chargeForRequest } from './billing.js';
 
 /**
  * Apify webServer wraps this module: it imports the default export as
@@ -119,51 +106,26 @@ app.all('/mcp', async (req: Request, res: Response) => {
     return;
   }
 
-  // Charge the PPE event for this request before handling.
-  // Apify SDK tracks events; if the handler throws, the event is still
-  // recorded (this matches Apify docs: events are counted regardless of outcome).
-  await chargeForRequest(req.body);
+  // Charge the PPE event for this request before serving (free events skipped).
+  await chargeForRequest(req.body, Actor);
 
   // Delegate to MCP Streamable HTTP transport
   await transport!.handleRequest(req, res, req.body);
 });
 
 /**
- * Map an MCP JSON-RPC request to a billable Apify event and charge it.
- *
- * Pricing rationale (see .actor/actor.json, market-calibrated 2026-09-28):
+ * Pricing rationale (see .actor/pay_per_event.json, market-calibrated 2026-09-28):
  *   Apify Store MCP reference points: $0.03-$0.035/tool call (travel-tools-mcp,
  *   enterprise-mcp-gateway), $0.045-$0.50 for intelligence MCPs. We position
  *   3-7x below that band since our catalog is read-only with zero upstream cost.
- *   - initialize / tools/list: free, so agents can discover cheaply
+ *   Free (never registered as charge events, so never billed):
+ *   - initialize / tools/list: so agents can connect and discover at zero cost
+ *   - report_promo_issue: community corrections improve the catalog
+ *   Paid, registered in Apify pricing (isPrimaryEvent = mcp-search):
  *   - get_promo / list_providers: $0.002 (single-item reads)
  *   - search/filter/updates/expiring: $0.005 each (queries)
  *   - what_can_i_get: $0.01 (premium reasoning path)
- *   - report_promo_issue: free (encourage corrections)
  */
-async function chargeForRequest(body: unknown): Promise<void> {
-  if (!body || typeof body !== 'object') return;
-  const b = body as { method?: string; params?: { name?: string } };
-  const method = b.method ?? '';
-  let eventName: string | undefined;
-
-  if (method === 'initialize') eventName = 'mcp-initialize';
-  else if (method === 'tools/list') eventName = 'mcp-list-tools';
-  else if (method === 'tools/call') {
-    const toolName = b.params?.name ?? '';
-    eventName = PRICING_EVENTS[toolName];
-  }
-
-  if (!eventName) return; // unknown methods (resources/read, prompts/get) are free
-
-  try {
-    await Actor.charge({ eventName });
-  } catch (err) {
-    // Don't fail the request on charge error — log and continue.
-    // Apify warns but doesn't block on missing events for free-tier events.
-    console.warn(`[PPE charge failed] ${eventName}: ${(err as Error).message}`);
-  }
-}
 
 // Apify webServer expects a default-exported Express app
 export default app;
