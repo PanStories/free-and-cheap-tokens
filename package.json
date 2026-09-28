@@ -47,7 +47,7 @@
     "apify:login": "apify login",
     "apify:push": "npm run build && apify push",
     "apify:run": "apify run",
-    "apify:validate": "node -e \"const a=require('./.actor/actor.json'); if(a.pricingModel!=='PAY_PER_EVENT') throw new Error('pricingModel must be PAY_PER_EVENT'); if(!a.webServer?.requestHandler) throw new Error('webServer.requestHandler required'); if(a.usesStandbyMode) throw new Error('usesStandbyMode must NOT be set (breaks Agentic Payments eligibility)'); const evts=a.pricingEvents||{}; const required=['mcp-initialize','mcp-search','mcp-filter','mcp-get-promo','mcp-list-providers','mcp-recent-updates','mcp-expiring-soon','mcp-what-can-i-get','mcp-report-issue']; const missing=required.filter(e=>!evts[e]); if(missing.length) throw new Error('missing pricingEvents: '+missing.join(',')); console.log('✓ actor.json PPE config valid');\""
+    "apify:validate": "node -e \"const a=require('./.actor/actor.json'); if(a.pricingModel!=='PAY_PER_EVENT') throw new Error('pricingModel must be PAY_PER_EVENT'); if(!a.webServer?.requestHandler) throw new Error('webServer.requestHandler required'); if(!a.usesStandbyMode) throw new Error('usesStandbyMode required: PPE actors need Standby to expose a stable public MCP endpoint'); const evts=a.pricingEvents||{}; const required=['mcp-initialize','mcp-search','mcp-filter','mcp-get-promo','mcp-list-providers','mcp-recent-updates','mcp-expiring-soon','mcp-what-can-i-get','mcp-report-issue']; const missing=required.filter(e=>!evts[e]); if(missing.length) throw new Error('missing pricingEvents: '+missing.join(',')); console.log('✓ actor.json PPE config valid');\""
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.1",
@@ -55,14 +55,16 @@
     "ajv-formats": "3.0.1",
     "apify": "3.7.2",
     "express": "5.2.1",
+    "proxy-agent": "^8.0.2",
     "zod": "4.6.5"
   },
   "devDependencies": {
     "@types/express": "5.0.0",
     "@types/node": "24.10.0",
-    "@typescript-eslint/eslint-plugin": "8.21.0",
-    "@typescript-eslint/parser": "8.21.0",
-    "eslint": "10.11.0",
+    "@typescript-eslint/eslint-plugin": "^8.70.1",
+    "@typescript-eslint/parser": "^8.70.1",
+    "apify-cli": "^1.10.0",
+    "eslint": "^9.39.5",
     "prettier": "3.9.9",
     "sharp": "0.35.5",
     "tsx": "4.23.15",
