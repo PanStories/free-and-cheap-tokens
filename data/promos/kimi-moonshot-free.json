@@ -1,0 +1,86 @@
+{
+  "id": "kimi-moonshot-free",
+  "provider": {
+    "id": "kimi",
+    "name_en": "Moonshot Kimi",
+    "name_zh": "月之暗面 Kimi",
+    "country": "CN",
+    "homepage": "https://platform.moonshot.cn/"
+  },
+  "offer": {
+    "type": "free_tier",
+    "headline": "Moonshot Kimi 开放平台免费额度",
+    "summary": "Moonshot 开放平台新用户获 ¥5 等值 tokens 体验额度；kimi-k2 系列可在 Cloudflare Workers AI 免费接入。",
+    "value_display": "免费体验额度",
+    "no_fixed_expiry": true,
+    "claim_url": "https://platform.moonshot.cn/"
+  },
+  "terms": [
+    {
+      "tag": "phone_verification",
+      "severity": "friction",
+      "note": "需大陆手机号"
+    },
+    {
+      "tag": "rate_limited",
+      "severity": "note"
+    }
+  ],
+  "difficulty": "easy",
+  "difficulty_reasons": [
+    "手机号注册即得 key"
+  ],
+  "estimated_setup_minutes": 5,
+  "region": {
+    "availability": "include",
+    "countries": [
+      "CN"
+    ]
+  },
+  "categories": [
+    "llm"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "high",
+    "last_verified_at": "2026-09-26T05:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://platform.moonshot.cn/docs/pricing/chat"
+    ],
+    "first_seen_at": "2024-01-01T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 75,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "打开 platform.moonshot.cn"
+      },
+      {
+        "n": 2,
+        "text": "用大陆手机号注册"
+      },
+      {
+        "n": 3,
+        "text": "在「账户总览」→「体验额度」查看并领取"
+      },
+      {
+        "n": 4,
+        "text": "获取 API key 调用 moonshot-v1-128k 等模型"
+      }
+    ]
+  },
+  "created_at": "2024-01-01T00:00:00Z",
+  "updated_at": "2026-09-26T05:00:00Z"
+}
