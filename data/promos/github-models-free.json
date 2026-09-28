@@ -1,0 +1,77 @@
+{
+  "id": "github-models-free",
+  "provider": {
+    "id": "github",
+    "name_en": "GitHub Models",
+    "name_zh": null,
+    "country": "US",
+    "homepage": "https://github.com/marketplace/models"
+  },
+  "offer": {
+    "type": "free_tier",
+    "headline": "GitHub Models 个人 Playground 免费试用",
+    "summary": "GitHub Marketplace Models 提供 GPT-4o、Llama、Phi-3 等模型 Playground 体验，Copilot 个人订阅含限额 API 访问。",
+    "value_display": "Playground 免费 · Copilot 个人月配额",
+    "no_fixed_expiry": true,
+    "claim_url": "https://github.com/marketplace/models"
+  },
+  "terms": [
+    {
+      "tag": "rate_limited",
+      "severity": "friction",
+      "note": "按 Copilot 订阅级别配额不同"
+    },
+    {
+      "tag": "quota_capped",
+      "severity": "note",
+      "note": "模型由 GitHub 选定"
+    }
+  ],
+  "difficulty": "easy",
+  "difficulty_reasons": [
+    "GitHub 账号即可用"
+  ],
+  "estimated_setup_minutes": 2,
+  "region": {
+    "availability": "global"
+  },
+  "categories": [
+    "llm",
+    "embedding"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "medium",
+    "last_verified_at": "2026-09-25T08:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://github.com/marketplace/models"
+    ],
+    "first_seen_at": "2024-08-01T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 78,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "登录 GitHub 账号"
+      },
+      {
+        "n": 2,
+        "text": "打开 marketplace/models 选模型体验"
+      }
+    ]
+  },
+  "created_at": "2024-08-01T00:00:00Z",
+  "updated_at": "2026-09-25T08:00:00Z"
+}
