@@ -1,0 +1,69 @@
+{
+  "id": "openai-chatgpt-free",
+  "provider": {
+    "id": "openai",
+    "name_en": "OpenAI",
+    "name_zh": null,
+    "country": "US",
+    "homepage": "https://openai.com/"
+  },
+  "offer": {
+    "type": "free_tier",
+    "headline": "ChatGPT 免费层（GPT-4o mini，无限消息）",
+    "summary": "网页与 iOS/Android 客户端可用 GPT-4o mini 无限对话，无需 API key。",
+    "value_display": "GPT-4o mini 无限",
+    "no_fixed_expiry": true,
+    "claim_url": "https://chatgpt.com/"
+  },
+  "terms": [],
+  "difficulty": "easy",
+  "difficulty_reasons": [
+    "无账号即可用网页版，注册只需邮箱"
+  ],
+  "estimated_setup_minutes": 2,
+  "region": {
+    "availability": "global"
+  },
+  "categories": [
+    "llm"
+  ],
+  "status": "active",
+  "verification": {
+    "status": "verified",
+    "method": "human",
+    "confidence": "high",
+    "last_verified_at": "2026-09-25T08:00:00Z"
+  },
+  "disclosure": {
+    "affiliate": false,
+    "affiliate_url": null,
+    "disclosure_text": null,
+    "relationship_note": null
+  },
+  "provenance": {
+    "source_urls": [
+      "https://chatgpt.com/"
+    ],
+    "first_seen_at": "2024-05-13T00:00:00Z",
+    "review_required": false
+  },
+  "actionability": {
+    "score": 70,
+    "next_steps": [
+      {
+        "n": 1,
+        "text": "打开 chatgpt.com 或下载 ChatGPT App"
+      },
+      {
+        "n": 2,
+        "text": "用邮箱注册 / 登录（如已有 OpenAI 账号可直接登录）"
+      },
+      {
+        "n": 3,
+        "text": "在模型选择器里确认选的是 GPT-4o mini（默认）"
+      }
+    ]
+  },
+  "created_at": "2024-05-13T00:00:00Z",
+  "updated_at": "2026-09-25T08:00:00Z"
+}
