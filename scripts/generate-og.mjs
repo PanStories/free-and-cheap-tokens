@@ -62,45 +62,53 @@ const H = 630;
 const SAFE_X = 100;
 const SAFE_Y = 90;
 
+// 与站点同一套设计语言（navy / #f5f7fa / 蓝）· 品牌标记为「价签 + 代币圆片」
+const BRAND_MARK = `<g transform="translate(${SAFE_X - 2} ${SAFE_Y - 40}) scale(1.6)" fill="none" stroke="#b45309" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/>
+    <circle cx="8.2" cy="8.2" r="2.7"/>
+    <circle cx="8.2" cy="8.2" r="0.9" fill="#b45309" stroke="none"/>
+  </g>`;
+
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
-  <rect width="${W}" height="${H}" fill="#F5F6F8"/>
+  <rect width="${W}" height="${H}" fill="#f5f7fa"/>
   <!-- 极淡网格线 -->
-  <g stroke="#E5E7EB" stroke-width="1" opacity="0.4">
+  <g stroke="#e3e8ef" stroke-width="1" opacity="0.5">
     ${Array.from({ length: 30 }, (_, i) => `<line x1="0" y1="${i * 25}" x2="${W}" y2="${i * 25}"/>`).join('')}
     ${Array.from({ length: 48 }, (_, i) => `<line x1="${i * 25}" y1="0" x2="${i * 25}" y2="${H}"/>`).join('')}
   </g>
 
-  <!-- 字标 + 日期 -->
-  <text x="${SAFE_X}" y="${SAFE_Y}" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, sans-serif" font-size="32" font-weight="600" fill="#15181D" letter-spacing="-0.5">Free &amp; Cheap Tokens</text>
-  <text x="${SAFE_X}" y="${SAFE_Y + 32}" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, sans-serif" font-size="16" fill="#5B6371">每日 AI 羊毛清单 · ${generatedDate}</text>
+  <!-- 品牌标记 + 字标 + 日期 -->
+  ${BRAND_MARK}
+  <text x="${SAFE_X + 52}" y="${SAFE_Y}" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, sans-serif" font-size="32" font-weight="700" fill="#0f2a4a" letter-spacing="-0.5">Free and Cheap Tokens</text>
+  <text x="${SAFE_X + 52}" y="${SAFE_Y + 32}" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, sans-serif" font-size="16" fill="#5b6b7e">Daily AI deal list · Verified ${generatedDate}</text>
 
   <!-- 2px accent 规则线 -->
-  <line x1="${SAFE_X}" y1="${SAFE_Y + 64}" x2="${W - SAFE_X}" y2="${SAFE_Y + 64}" stroke="#0B6E8F" stroke-width="2"/>
+  <line x1="${SAFE_X}" y1="${SAFE_Y + 64}" x2="${W - SAFE_X}" y2="${SAFE_Y + 64}" stroke="#2563eb" stroke-width="2"/>
 
   <!-- 三个统计数字 -->
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-weight="600" fill="#0A4B60">
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-weight="700" fill="#0f2a4a">
     <text x="${SAFE_X}" y="${SAFE_Y + 200}" font-size="88">${active}</text>
-    <text x="${SAFE_X}" y="${SAFE_Y + 232}" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif" font-size="14" font-weight="500" fill="#5B6371" letter-spacing="0.04em">当前可薅</text>
+    <text x="${SAFE_X}" y="${SAFE_Y + 232}" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif" font-size="14" font-weight="500" fill="#5b6b7e" letter-spacing="0.04em">Currently claimable</text>
 
     <text x="${SAFE_X + 320}" y="${SAFE_Y + 200}" font-size="88">${expiringSoon}</text>
-    <text x="${SAFE_X + 320}" y="${SAFE_Y + 232}" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif" font-size="14" font-weight="500" fill="#5B6371" letter-spacing="0.04em">14 天内到期</text>
+    <text x="${SAFE_X + 340}" y="${SAFE_Y + 232}" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif" font-size="14" font-weight="500" fill="#5b6b7e" letter-spacing="0.04em">Expiring in 14 days</text>
 
     <text x="${SAFE_X + 640}" y="${SAFE_Y + 200}" font-size="88">${noCard}</text>
-    <text x="${SAFE_X + 640}" y="${SAFE_Y + 232}" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif" font-size="14" font-weight="500" fill="#5B6371" letter-spacing="0.04em">免信用卡</text>
+    <text x="${SAFE_X + 640}" y="${SAFE_Y + 232}" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif" font-size="14" font-weight="500" fill="#5b6b7e" letter-spacing="0.04em">No credit card</text>
   </g>
 
   <!-- 分隔线 -->
-  <line x1="${SAFE_X}" y1="${SAFE_Y + 280}" x2="${W - SAFE_X}" y2="${SAFE_Y + 280}" stroke="#E5E7EB" stroke-width="1"/>
+  <line x1="${SAFE_X}" y1="${SAFE_Y + 280}" x2="${W - SAFE_X}" y2="${SAFE_Y + 280}" stroke="#e3e8ef" stroke-width="1"/>
 
   <!-- 厂商证据行 -->
-  <text x="${SAFE_X}" y="${SAFE_Y + 320}" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif" font-size="18" fill="#15181D">${evidence || ''}</text>
-  <text x="${SAFE_X}" y="${SAFE_Y + 350}" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif" font-size="13" fill="#5B6371"> ... 等 ${cat.counts.total} 家厂商 · 数据每日人工核实</text>
+  <text x="${SAFE_X}" y="${SAFE_Y + 320}" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif" font-size="18" fill="#1f2937">${evidence || ''}</text>
+  <text x="${SAFE_X}" y="${SAFE_Y + 350}" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif" font-size="13" fill="#5b6b7e">... and ${cat.counts.total} vendors in total · human-verified daily</text>
 
   <!-- 域名水印 -->
-  <text x="${SAFE_X}" y="${H - SAFE_Y + 20}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#5B6371">freeandcheaptokens.dev</text>
+  <text x="${SAFE_X}" y="${H - SAFE_Y + 20}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#5b6b7e">panstories.github.io/free-and-cheap-tokens</text>
 
   <!-- 透明度小字 -->
-  <text x="${W - SAFE_X}" y="${H - SAFE_Y + 20}" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif" font-size="12" fill="#5B6371">开源 · MIT · 不接硬广 · 不挂联盟</text>
+  <text x="${W - SAFE_X}" y="${H - SAFE_Y + 20}" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, PingFang SC, sans-serif" font-size="12" fill="#5b6b7e">Open source · MIT · No paid placements · No affiliate links</text>
 </svg>`;
 
 try {
