@@ -638,6 +638,7 @@ node dist/index.js          # stdio transport, free forever (MIT)</pre>
     <div class="fcols links">
       <a href="https://apify.com/neeenja/free-and-cheap-tokens" target="_blank" rel="noopener">Apify Store</a>
       <a href="https://github.com/PanStories/free-and-cheap-tokens" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://sartbot.com/mcp/free-and-cheap-tokens/" target="_blank" rel="noopener">Sartbot Featured</a>
       <a href="feed.xml">RSS</a>
       <a href="promos.ics">ICS</a>
       <span class="updated">${bi(EN.updatedTpl(generatedDate), ZH.updatedTpl(generatedDate))}</span>
