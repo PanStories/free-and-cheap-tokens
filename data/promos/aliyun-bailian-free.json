@@ -2,7 +2,7 @@
   "id": "aliyun-bailian-free",
   "provider": {
     "id": "aliyun-bailian",
-    "name_en": "Aliyun Bailian",
+    "name_en": "Alibaba Cloud Model Studio (Bailian)",
     "name_zh": "阿里云百炼",
     "country": "CN",
     "homepage": "https://bailian.console.aliyun.com/"
@@ -10,7 +10,7 @@
   "offer": {
     "type": "free_tier",
     "headline": "阿里云百炼免费模型额度（含 Qwen 全系）",
-    "headline_en": "Alibaba Cloud Bailian free model quota (incl. full Qwen lineup)",
+    "headline_en": "Alibaba Cloud Model Studio (Bailian) free model quota (incl. full Qwen lineup)",
     "summary_en": "Bailian grants every onboarded user free token allowances for mainstream models like Qwen, Llama, and DeepSeek, with quotas varying by model.",
     "value_display_en": "Qwen 1M free tokens (new users)",
 

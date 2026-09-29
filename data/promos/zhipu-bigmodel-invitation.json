@@ -2,7 +2,7 @@
   "id": "zhipu-bigmodel-invitation",
   "provider": {
     "id": "zhipu",
-    "name_en": "Zhipu BigModel",
+    "name_en": "Zhipu AI BigModel",
     "name_zh": "智谱 BigModel",
     "country": "CN",
     "homepage": "https://bigmodel.cn/"
@@ -10,8 +10,8 @@
   "offer": {
     "type": "referral_bonus",
     "headline": "智谱 BigModel 邀请奖励：邀友实名双方各得 2000 万 tokens",
-    "headline_en": "Zhipu BigModel referral reward: invite a verified friend, both get 20M tokens",
-    "summary_en": "Zhipu Open Platform's personal referral program: when your friend completes real-name registration, both of you get 20M tokens; up to 10 invites/month, capped at 200M tokens total.",
+    "headline_en": "Zhipu AI BigModel referral reward: invite a verified friend, both get 20M tokens",
+    "summary_en": "Zhipu AI Open Platform's personal referral program: when your friend completes real-name registration, both of you get 20M tokens; up to 10 invites/month, capped at 200M tokens total.",
     "value_display_en": "20M tokens / referral (both sides get it)",
 
     "summary": "智谱开放平台个人邀请机制：邀友完成实名注册，双方各得 2000 万 tokens；每月可邀 10 人上限 2 亿 tokens。",

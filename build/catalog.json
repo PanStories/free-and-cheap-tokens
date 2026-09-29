@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-29T15:07:38.096Z",
-  "sha256": "b54f80af179fbcf01e7927fcdfabce88c3996cecc318f1c0978cbd790575624e",
+  "generated_at": "2026-09-29T15:33:36.589Z",
+  "sha256": "00d8c189af1816d1b1a4a4282dca3aec19c905546f8ab9381b4abc6c758d580f",
   "providers": [
     {
       "id": "aliyun-bailian",
-      "name_en": "Aliyun Bailian",
+      "name_en": "Alibaba Cloud Model Studio (Bailian)",
       "name_zh": "阿里云百炼",
       "country": "CN",
       "homepage": "https://bailian.console.aliyun.com/"
@@ -32,14 +32,14 @@
     },
     {
       "id": "kimi",
-      "name_en": "Moonshot Kimi",
+      "name_en": "Moonshot AI (Kimi)",
       "name_zh": "月之暗面 Kimi",
       "country": "CN",
       "homepage": "https://platform.moonshot.cn/"
     },
     {
       "id": "zhipu",
-      "name_en": "Zhipu BigModel",
+      "name_en": "Zhipu AI BigModel",
       "name_zh": "智谱 BigModel",
       "country": "CN",
       "homepage": "https://bigmodel.cn/"
@@ -346,7 +346,7 @@
       "id": "aliyun-bailian-free",
       "provider": {
         "id": "aliyun-bailian",
-        "name_en": "Aliyun Bailian",
+        "name_en": "Alibaba Cloud Model Studio (Bailian)",
         "name_zh": "阿里云百炼",
         "country": "CN",
         "homepage": "https://bailian.console.aliyun.com/"
@@ -354,7 +354,7 @@
       "offer": {
         "type": "free_tier",
         "headline": "阿里云百炼免费模型额度（含 Qwen 全系）",
-        "headline_en": "Alibaba Cloud Bailian free model quota (incl. full Qwen lineup)",
+        "headline_en": "Alibaba Cloud Model Studio (Bailian) free model quota (incl. full Qwen lineup)",
         "summary_en": "Bailian grants every onboarded user free token allowances for mainstream models like Qwen, Llama, and DeepSeek, with quotas varying by model.",
         "value_display_en": "Qwen 1M free tokens (new users)",
         "summary": "百炼平台为每个开通用户提供 Qwen、Llama、DeepSeek 等主流模型的免费 token 额度，按模型配额不同。",
@@ -978,7 +978,7 @@
       "id": "kimi-moonshot-free",
       "provider": {
         "id": "kimi",
-        "name_en": "Moonshot Kimi",
+        "name_en": "Moonshot AI (Kimi)",
         "name_zh": "月之暗面 Kimi",
         "country": "CN",
         "homepage": "https://platform.moonshot.cn/"
@@ -986,8 +986,8 @@
       "offer": {
         "type": "free_tier",
         "headline": "Moonshot Kimi 开放平台免费额度",
-        "headline_en": "Moonshot Kimi open-platform free quota",
-        "summary_en": "New Moonshot Open Platform users get a ¥5-equivalent token trial allowance; the kimi-k2 series is also available free via Cloudflare Workers AI.",
+        "headline_en": "Moonshot AI (Kimi) open-platform free quota",
+        "summary_en": "New Moonshot AI Open Platform users get a ¥5-equivalent token trial allowance; the kimi-k2 series is also available free via Cloudflare Workers AI.",
         "value_display_en": "Free trial credit",
         "summary": "Moonshot 开放平台新用户获 ¥5 等值 tokens 体验额度；kimi-k2 系列可在 Cloudflare Workers AI 免费接入。",
         "value_display": "免费体验额度",
@@ -1589,7 +1589,7 @@
       "id": "zhipu-bigmodel-invitation",
       "provider": {
         "id": "zhipu",
-        "name_en": "Zhipu BigModel",
+        "name_en": "Zhipu AI BigModel",
         "name_zh": "智谱 BigModel",
         "country": "CN",
         "homepage": "https://bigmodel.cn/"
@@ -1597,8 +1597,8 @@
       "offer": {
         "type": "referral_bonus",
         "headline": "智谱 BigModel 邀请奖励：邀友实名双方各得 2000 万 tokens",
-        "headline_en": "Zhipu BigModel referral reward: invite a verified friend, both get 20M tokens",
-        "summary_en": "Zhipu Open Platform's personal referral program: when your friend completes real-name registration, both of you get 20M tokens; up to 10 invites/month, capped at 200M tokens total.",
+        "headline_en": "Zhipu AI BigModel referral reward: invite a verified friend, both get 20M tokens",
+        "summary_en": "Zhipu AI Open Platform's personal referral program: when your friend completes real-name registration, both of you get 20M tokens; up to 10 invites/month, capped at 200M tokens total.",
         "value_display_en": "20M tokens / referral (both sides get it)",
         "summary": "智谱开放平台个人邀请机制：邀友完成实名注册，双方各得 2000 万 tokens；每月可邀 10 人上限 2 亿 tokens。",
         "value_display": "2000 万 tokens / 邀友（双方各得）",

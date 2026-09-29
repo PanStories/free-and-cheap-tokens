@@ -4,7 +4,7 @@ PRODID:-//Free and Cheap Tokens//Daily AI Promos//ZH
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:doubao-ark-free@freeandcheaptokens.dev
-DTSTAMP:20260929T150739Z
+DTSTAMP:20260929T153341Z
 DTSTART:20261231T155959Z
 SUMMARY:火山方舟体验额度：豆包 1.5 Pro 500 万 tokens · 火山方舟 / 豆包
 DESCRIPTION:新开通方舟 ARK 的用户获赠豆包 1.5 Pro 体验额度，含文本/图像/视频模型。
@@ -17,7 +17,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:siliconflow-free-tier@freeandcheaptokens.dev
-DTSTAMP:20260929T150739Z
+DTSTAMP:20260929T153341Z
 DTSTART:20261231T155959Z
 SUMMARY:硅基流动新用户 ¥16 通用代金券 · 硅基流动
 DESCRIPTION:实名注册后获 ¥16 通用代金券（2000 万 tokens 量级），可用于 SiliconCloud 全模型。

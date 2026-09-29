@@ -30,7 +30,7 @@ A curated, **daily human-verified**, machine-readable catalog of **free tiers an
 - **8 tools** — `search_promos`, `filter_promos`, `get_promo`, `list_providers`, `get_recent_updates`, `get_expiring_soon`, `what_can_i_get`, `report_promo_issue`
 - **4 resources** — `catalog://snapshot`, `catalog://daily/{date}`, `schema://promo`, `providers://index`
 - **3 prompts** — `daily-deal-brief`, `pick-for-me`, `explain-terms`
-- **17 curated promos** covering OpenAI / Anthropic / Google / Zhipu / SiliconFlow / Aliyun Bailian / Cloudflare Workers AI / Groq …
+- **17 curated promos** covering OpenAI / Anthropic / Google / Zhipu / SiliconFlow / Alibaba Cloud Model Studio / Cloudflare Workers AI / Groq …
 
 Every promo record carries normalized terms (22 controlled tags), an onboarding difficulty rating (**easy / medium / hard**) with an Agent fallback path, region disclosure (global / include / exclude), an expiry timestamp (including `no_fixed_expiry`), a "how to claim" step list, and a **human-verified timestamp** — the last one is our core differentiator.
 
