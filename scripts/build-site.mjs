@@ -163,7 +163,7 @@ const LOCALES = {
     transparency2: '本站为策展型工具，<strong>不参与</strong>任何 promo 的注册、申领、代理、托管或转发；所有点击直达厂商官方页面。',
     transparency3: '托管服务（Apify Actor / WorkBuddy Skill）为付费便利层，源码完全免费可自托管。收录标准 / 排序规则 / 纠错流程见 GitHub 仓库 README。',
     metaLineTpl: (sha, gen) =>
-      `catalog sha256: <code>${sha}…</code> · generated_at: <code>${gen}</code>`,
+      `catalog sha256: <code>${esc(sha)}…</code> · generated_at: <code>${esc(gen)}</code>`,
     promoDataNote:
       '<strong>说明</strong>：promo 标题与摘要以中文为源文录入，每条约附英文翻译；切换英文界面时显示英文（headline_en / summary_en / value_display_en）。',
   },
@@ -297,7 +297,7 @@ const LOCALES = {
     transparency3:
       'Hosted services (Apify Actor / WorkBuddy Skill) are paid convenience layers; the source code is fully free and self-hostable. Inclusion criteria / sort rules / correction flow live in the GitHub repo README.',
     metaLineTpl: (sha, gen) =>
-      `catalog sha256: <code>${sha}…</code> · generated_at: <code>${gen}</code>`,
+      `catalog sha256: <code>${esc(sha)}…</code> · generated_at: <code>${esc(gen)}</code>`,
     promoDataNote:
       '<strong>Note</strong>: promo headlines and summaries are curated in Chinese at the source, and each entry also carries an English translation. The English UI shows the English text (<code>headline_en</code> / <code>summary_en</code> / <code>value_display_en</code>).',
   },
@@ -321,6 +321,12 @@ function esc(s) {
 function bi(en, zh) {
   if (!zh || en === zh) return esc(en);
   return `<span class="lang-en">${esc(en)}</span><span class="lang-zh hidden">${esc(zh)}</span>`;
+}
+
+/** 双语切换，但不转义：仅用于本脚本内部写死、可信的 HTML（含 <strong>/<code> 标签）字符串。动态插值仍须先 esc()。 */
+function biRaw(en, zh) {
+  if (!zh || en === zh) return en;
+  return `<span class="lang-en">${en}</span><span class="lang-zh hidden">${zh}</span>`;
 }
 
 /** 双语属性（placeholder / aria-label 之类，靠 JS 同步，见 APP_JS）。 */
@@ -624,10 +630,10 @@ node dist/index.js          # stdio transport, free forever (MIT)</pre>
 <footer>
   <div class="wrap">
     <div class="fcols">
-      <p class="transparency">${bi(EN.transparency1, ZH.transparency1)}</p>
-      <p class="transparency">${bi(EN.transparency2, ZH.transparency2)}</p>
-      <p class="transparency">${bi(EN.transparency3, ZH.transparency3)}</p>
-      <p class="meta-line">${bi(EN.metaLineTpl(cat.sha256.slice(0, 16), cat.generated_at), ZH.metaLineTpl(cat.sha256.slice(0, 16), cat.generated_at))}</p>
+      <p class="transparency">${biRaw(EN.transparency1, ZH.transparency1)}</p>
+      <p class="transparency">${biRaw(EN.transparency2, ZH.transparency2)}</p>
+      <p class="transparency">${biRaw(EN.transparency3, ZH.transparency3)}</p>
+      <p class="meta-line">${biRaw(EN.metaLineTpl(cat.sha256.slice(0, 16), cat.generated_at), ZH.metaLineTpl(cat.sha256.slice(0, 16), cat.generated_at))}</p>
     </div>
     <div class="fcols links">
       <a href="https://apify.com/neeenja/free-and-cheap-tokens" target="_blank" rel="noopener">Apify Store</a>
