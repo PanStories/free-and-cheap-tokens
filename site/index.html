@@ -1,579 +1,697 @@
 <!doctype html>
-<html lang="zh-CN" data-project="free-and-cheap-tokens" data-license="MIT" data-monetization="oss+hosted">
+<html lang="en" data-project="free-and-cheap-tokens" data-license="MIT" data-monetization="oss+hosted">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free and Cheap Tokens · 每日 AI 羊毛清单</title>
-<meta name="description" content="策展团队每日核实、机器可读的 AI 模型/服务免费与低价 token 促销清单。每条直达厂商官方页。">
-<meta property="og:title" content="Free and Cheap Tokens · 每日 AI 羊毛清单">
-<meta property="og:description" content="17 条 promo · 17 条免信用卡 · 数据核实于 2026-09-28">
-<meta property="og:image" content="/og.png">
+<title>Free and Cheap Tokens · Daily AI Deal List</title>
+<meta name="description" content="Curated, daily-verified, machine-readable catalog of free tiers and cheap token promos for AI models and inference services. Every entry links to the vendor's official page.">
+<link rel="canonical" href="https://panstories.github.io/free-and-cheap-tokens/">
+<meta property="og:title" content="Free and Cheap Tokens · Daily AI Deal List">
+<meta property="og:description" content="17 promos · 17 no credit card · Verified 2026-09-28">
+<meta property="og:image" content="og.png">
 <meta property="og:type" content="website">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
-<link rel="alternate" hreflang="zh-CN" href="/index.html">
-<link rel="alternate" hreflang="en" href="/en.html">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230f2a4a'/%3E%3Cpath d='M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z' fill='none' stroke='%23f0b429' stroke-width='1.9' stroke-linejoin='round'/%3E%3Ccircle cx='8.2' cy='8.2' r='2.7' fill='none' stroke='%23f0b429' stroke-width='1.9'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="disclosure-bar" role="banner">
-  开源 · 不接硬广 · 不挂联盟 · 数据每日核实 · MIT
-</header>
-
-<header class="page-head">
-  <div class="brand">Free and Cheap Tokens</div>
-  <div class="meta">
-    <span class="updated">数据生成于 2026-09-28</span>
-    <a class="lang-toggle" href="/en.html" hreflang="en">🇬🇧 English</a>
-    <a class="rss-link" href="/feed.xml" title="RSS">RSS</a>
-    <a class="ics-link" href="/promos.ics" title="ICS 日历">ICS 日历</a>
-    <button class="share-btn" id="share-btn" type="button">分享今日清单</button>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#f0b429" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/>
+        <circle cx="8.2" cy="8.2" r="2.7"/>
+        <circle cx="8.2" cy="8.2" r="0.9" fill="#f0b429" stroke="none"/>
+      </svg>
+      Free and Cheap Tokens
+    </div>
+    <nav class="main">
+      <a href="#promos"><span class="lang-en">Promos</span><span class="lang-zh hidden">今日清单</span></a>
+      <a href="#pricing"><span class="lang-en">Pricing</span><span class="lang-zh hidden">定价</span></a>
+      <a href="#connect"><span class="lang-en">Connect</span><span class="lang-zh hidden">接入</span></a>
+      <a href="https://github.com/PanStories/free-and-cheap-tokens" target="_blank" rel="noopener"><span class="lang-en">Source</span><span class="lang-zh hidden">源码</span></a>
+      <span class="lang">
+        <button id="enBtn" class="active" type="button" onclick="setLang('en')">EN</button>
+        <button id="zhBtn" type="button" onclick="setLang('zh')">中文</button>
+      </span>
+    </nav>
   </div>
 </header>
 
-<section class="intro">
-  <p class="intro-line">
-    17 条 promo · 17 条免信用卡 · 17 条已人工核验 · 数据核实于 2026-09-28
-  </p>
-  
-</section>
+<div class="hero">
+  <div class="wrap">
+    <h1 class="lang-en">Free tiers and cheap token promos for AI models and inference</h1>
+    <h1 class="lang-zh hidden">AI 模型与推理服务的免费额度 / 低价 token 清单</h1>
+    <p class="lead lang-en">A curated, daily-verified, machine-readable catalog of free and cheap AI token offers. No ads, no affiliate links — every entry goes straight to the vendor.</p>
+    <p class="lead lang-zh hidden">每日人工核实、机器可读的免费额度与低价 token 促销目录。零广告、零联盟链接，每条都直达厂商官方页面。</p>
+    <div class="badges">
+      <span class="badge"><span class="dot"></span> <span class="lang-en">Live on Apify Store</span><span class="lang-zh hidden">已上架 Apify Store</span></span>
+      <span class="badge">MIT</span>
+      <span class="badge">v1.1</span>
+      <span class="badge">17 promos</span>
+      <span class="badge"><span class="lang-en">Verified daily</span><span class="lang-zh hidden">每日核实</span></span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://apify.com/neeenja/free-and-cheap-tokens" target="_blank" rel="noopener">Apify Store</a>
+      <a class="btn ghost" href="https://github.com/PanStories/free-and-cheap-tokens" target="_blank" rel="noopener">View Source</a>
+      <a class="btn ghost" href="#connect"><span class="lang-en">Connect</span><span class="lang-zh hidden">接入方式</span></a>
+    </div>
+  </div>
+</div>
 
-<section class="stats">
-  
+<section id="promos">
+  <div class="wrap">
+    <h2><span class="lang-en">Today's list</span><span class="lang-zh hidden">今日清单</span></h2>
+    <p class="sub"><span class="lang-en">Shows what is claimable now or expiring soon. Filtering runs entirely in your browser — nothing is tracked.</span><span class="lang-zh hidden">默认只显示当前可领取与即将到期的条目；筛选在客户端完成，不上传任何行为数据。</span></p>
+
+    <div class="stats">
+      
     <div class="stat-card">
       <div class="stat-num">17</div>
-      <div class="stat-label">当前可薅</div>
+      <div class="stat-label"><span class="lang-en">Currently claimable</span><span class="lang-zh hidden">当前可薅</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-num">0</div>
-      <div class="stat-label">14 天内到期</div>
+      <div class="stat-label"><span class="lang-en">Expiring in 14 days</span><span class="lang-zh hidden">14 天内到期</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-num">17</div>
-      <div class="stat-label">免信用卡</div>
+      <div class="stat-label"><span class="lang-en">No credit card</span><span class="lang-zh hidden">免信用卡</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-num">17</div>
-      <div class="stat-label">已人工核验</div>
+      <div class="stat-label"><span class="lang-en">Human-verified</span><span class="lang-zh hidden">已人工核验</span></div>
     </div>
-</section>
+    </div>
 
-<nav class="filterbar" aria-label="筛选">
-  <input class="search" id="search" type="search" placeholder="按名称、优惠内容搜索…">
-  <select class="filter-region" id="filter-region" aria-label="区域">
-    <option value="">全部区域</option><option value="global">全球</option><option value="CN">中国大陆</option><option value="US">美国</option><option value="FR">法国</option><option value="CA">加拿大</option>
-  </select>
-  <select class="filter-difficulty" id="filter-difficulty" aria-label="上手难度">
-    <option value="">全部难度</option><option value="easy">易</option><option value="medium">中</option><option value="hard">难</option>
-  </select>
-  <label class="checkbox">
-    <input type="checkbox" id="filter-no-card"> 仅看免信用卡
-  </label>
-  <button class="reset-btn" id="reset-btn" type="button">清除全部筛选</button>
-</nav>
+    <div class="list-head">
+      <p class="intro-line lang-en">17 promos · 17 no credit card · 17 human-verified · Verified 2026-09-28</p>
+      <p class="intro-line lang-zh hidden">17 条 promo · 17 条免信用卡 · 17 条已人工核验 · 数据核实于 2026-09-28</p>
+      <div class="list-actions">
+        <a class="rss-link" href="feed.xml">RSS</a>
+        <a class="rss-link" href="promos.ics"><span class="lang-en">ICS calendar</span><span class="lang-zh hidden">ICS 日历</span></a>
+        <button class="share-btn" id="share-btn" type="button"><span class="lang-en">Share today's list</span><span class="lang-zh hidden">分享今日清单</span></button>
+      </div>
+    </div>
 
-<main class="card-grid" id="card-grid">
-  
-  <article class="card" data-id="doubao-ark-free" data-provider="doubao" data-difficulty="medium" data-region-availability="include" data-needs-card="1" data-exp-days="94">
-    <header class="card-head">
+    <p class="note lang-en"><strong>Note</strong>: promo headlines and summaries are currently curated in Chinese (the original source). The UI is fully translated; bilingual <code>headline_en</code> / <code>summary_en</code> fields are planned for v1.2.</p>
+    <p class="note lang-zh hidden"><strong>说明</strong>：promo 标题与摘要目前由策展团队以中文原文录入，界面已全量翻译；<code>headline_en</code> / <code>summary_en</code> 双语字段计划在 v1.2 提供。</p>
+
+    <div class="filterbar" role="group" aria-label="Filters">
+      <input class="search" id="search" type="search" placeholder="Search by name or offer…" data-en="Search by name or offer…" data-zh="按名称、优惠内容搜索…" aria-label="Filters">
+      <select class="filter-region" id="filter-region" aria-label="Region">
+<option value="" data-en="All regions" data-zh="全部区域">All regions</option><option value="global" data-en="Global" data-zh="全球">Global</option><option value="CN" data-en="China mainland" data-zh="中国大陆">China mainland</option><option value="US" data-en="United States" data-zh="美国">United States</option><option value="FR" data-en="France" data-zh="法国">France</option><option value="CA" data-en="Canada" data-zh="加拿大">Canada</option>
+      </select>
+      <select class="filter-difficulty" id="filter-difficulty" aria-label="Difficulty">
+<option value="" data-en="All difficulties" data-zh="全部难度">All difficulties</option><option value="easy" data-en="Easy" data-zh="易">Easy</option><option value="medium" data-en="Medium" data-zh="中">Medium</option><option value="hard" data-en="Hard" data-zh="难">Hard</option>
+      </select>
+      <label class="checkbox">
+        <input type="checkbox" id="filter-no-card"> <span class="lang-en">No credit card only</span><span class="lang-zh hidden">仅看免信用卡</span>
+      </label>
+      <button class="reset-btn" id="reset-btn" type="button"><span class="lang-en">Clear all filters</span><span class="lang-zh hidden">清除全部筛选</span></button>
+    </div>
+
+    <div class="card-grid" id="card-grid">
+
+  <article class="card" data-id="doubao-ark-free" data-provider="doubao" data-difficulty="medium" data-region-availability="include" data-needs-card="1" data-exp-days="93">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">火山方舟 / 豆包</span>
         <span class="provider-country">CN</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">火山方舟体验额度：豆包 1.5 Pro 500 万 tokens</h3>
       <div class="card-value">500 万 tokens 体验</div>
-    </header>
+    </div>
     <p class="card-summary">新开通方舟 ARK 的用户获赠豆包 1.5 Pro 体验额度，含文本/图像/视频模型。</p>
     <ul class="terms">
-      <li class="term term-blocker">需实名认证</li><li class="term term-friction">需信用卡</li><li class="term term-note">限速</li><li class="term term-note">每账号限一次</li>
+      <li class="term term-blocker"><span class="lang-en">Identity verification</span><span class="lang-zh hidden">需实名认证</span></li><li class="term term-friction"><span class="lang-en">Credit card required</span><span class="lang-zh hidden">需信用卡</span></li><li class="term term-note"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li><li class="term term-note"><span class="lang-en">One per account</span><span class="lang-zh hidden">每账号限一次</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-medium" aria-label="上手 · 中">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-medium" aria-label="Difficulty · Medium">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 中</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Medium</span><span class="lang-zh hidden">上手 · 中</span></span>
       </span>
-      <span class="region">仅 CN</span>
-      <span class="expiry">94 天内到期</span>
-      <a class="cta" href="https://www.volcengine.com/product/ark" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">CN only</span><span class="lang-zh hidden">仅 CN</span></span>
+      <span class="expiry"><span class="lang-en">Expires in 93 days</span><span class="lang-zh hidden">93 天内到期</span></span>
+      <a class="btn primary sm" href="https://www.volcengine.com/product/ark" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-26
-      · <a href="#" data-report="doubao-ark-free" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-26</span><span class="lang-zh hidden">数据核实于 2026-09-26</span>
+      · <a href="#" data-report="doubao-ark-free" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
-  <article class="card" data-id="siliconflow-free-tier" data-provider="siliconflow" data-difficulty="medium" data-region-availability="include" data-needs-card="0" data-exp-days="94">
-    <header class="card-head">
+  <article class="card" data-id="siliconflow-free-tier" data-provider="siliconflow" data-difficulty="medium" data-region-availability="include" data-needs-card="0" data-exp-days="93">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">硅基流动</span>
         <span class="provider-country">CN</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">硅基流动新用户 ¥16 通用代金券</h3>
       <div class="card-value">¥16 代金券（约 2000 万 tokens）</div>
-    </header>
+    </div>
     <p class="card-summary">实名注册后获 ¥16 通用代金券（2000 万 tokens 量级），可用于 SiliconCloud 全模型。</p>
     <ul class="terms">
-      <li class="term term-blocker">需实名认证</li><li class="term term-blocker">每账号限一次</li><li class="term term-note">限速</li><li class="term term-friction">可叠加</li>
+      <li class="term term-blocker"><span class="lang-en">Identity verification</span><span class="lang-zh hidden">需实名认证</span></li><li class="term term-blocker"><span class="lang-en">One per account</span><span class="lang-zh hidden">每账号限一次</span></li><li class="term term-note"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li><li class="term term-friction"><span class="lang-en">Stackable</span><span class="lang-zh hidden">可叠加</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-medium" aria-label="上手 · 中">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-medium" aria-label="Difficulty · Medium">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 中</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Medium</span><span class="lang-zh hidden">上手 · 中</span></span>
       </span>
-      <span class="region">仅 CN</span>
-      <span class="expiry">94 天内到期</span>
-      <a class="cta" href="https://cloud.siliconflow.cn/" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">CN only</span><span class="lang-zh hidden">仅 CN</span></span>
+      <span class="expiry"><span class="lang-en">Expires in 93 days</span><span class="lang-zh hidden">93 天内到期</span></span>
+      <a class="btn primary sm" href="https://cloud.siliconflow.cn/" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-26
-      · <a href="#" data-report="siliconflow-free-tier" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-26</span><span class="lang-zh hidden">数据核实于 2026-09-26</span>
+      · <a href="#" data-report="siliconflow-free-tier" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="aliyun-bailian-free" data-provider="aliyun-bailian" data-difficulty="medium" data-region-availability="include" data-needs-card="0" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">阿里云百炼</span>
         <span class="provider-country">CN</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">阿里云百炼免费模型额度（含 Qwen 全系）</h3>
       <div class="card-value">Qwen 免费 100 万 tokens（新用户）</div>
-    </header>
+    </div>
     <p class="card-summary">百炼平台为每个开通用户提供 Qwen、Llama、DeepSeek 等主流模型的免费 token 额度，按模型配额不同。</p>
     <ul class="terms">
-      <li class="term term-blocker">需实名认证</li><li class="term term-note">限速</li><li class="term term-friction">试用后自动续费</li>
+      <li class="term term-blocker"><span class="lang-en">Identity verification</span><span class="lang-zh hidden">需实名认证</span></li><li class="term term-note"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li><li class="term term-friction"><span class="lang-en">Auto-renew after trial</span><span class="lang-zh hidden">试用后自动续费</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-medium" aria-label="上手 · 中">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-medium" aria-label="Difficulty · Medium">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 中</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Medium</span><span class="lang-zh hidden">上手 · 中</span></span>
       </span>
-      <span class="region">仅 CN</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://bailian.console.aliyun.com/" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">CN only</span><span class="lang-zh hidden">仅 CN</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://bailian.console.aliyun.com/" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-24
-      · <a href="#" data-report="aliyun-bailian-free" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-24</span><span class="lang-zh hidden">数据核实于 2026-09-24</span>
+      · <a href="#" data-report="aliyun-bailian-free" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="cloudflare-workers-ai-free" data-provider="cloudflare" data-difficulty="medium" data-region-availability="global" data-needs-card="0" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">Cloudflare</span>
         <span class="provider-country">US</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">Cloudflare Workers AI 免费额度：每天 10,000 次神经元推理</h3>
       <div class="card-value">10,000 neurons/天</div>
-    </header>
+    </div>
     <p class="card-summary">Workers AI 包含 Llama 3.1、Gemma、Mistral 等模型，按神经元数计费；免费账号每天 10,000 神经元。</p>
     <ul class="terms">
-      <li class="term term-friction">限速</li><li class="term term-note">额度受限</li>
+      <li class="term term-friction"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li><li class="term term-note"><span class="lang-en">Capped quota</span><span class="lang-zh hidden">额度受限</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-medium" aria-label="上手 · 中">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-medium" aria-label="Difficulty · Medium">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 中</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Medium</span><span class="lang-zh hidden">上手 · 中</span></span>
       </span>
-      <span class="region">全球</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://dash.cloudflare.com/?to=/:account/ai/workers-ai" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">Global</span><span class="lang-zh hidden">全球</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://dash.cloudflare.com/?to=/:account/ai/workers-ai" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-22
-      · <a href="#" data-report="cloudflare-workers-ai-free" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-22</span><span class="lang-zh hidden">数据核实于 2026-09-22</span>
+      · <a href="#" data-report="cloudflare-workers-ai-free" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="cohere-trial-free" data-provider="cohere" data-difficulty="easy" data-region-availability="global" data-needs-card="0" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">Cohere</span>
         <span class="provider-country">CA</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">Cohere Trial API：每月 1000 次免费调用</h3>
       <div class="card-value">1000 calls/月</div>
-    </header>
+    </div>
     <p class="card-summary">Cohere Trial key 提供每月 1000 次免费 API 调用（含 Command 系列模型）。</p>
     <ul class="terms">
-      <li class="term term-blocker">限速</li>
+      <li class="term term-blocker"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-easy" aria-label="上手 · 易">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-easy" aria-label="Difficulty · Easy">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 易</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Easy</span><span class="lang-zh hidden">上手 · 易</span></span>
       </span>
-      <span class="region">全球</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://dashboard.cohere.com/" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">Global</span><span class="lang-zh hidden">全球</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://dashboard.cohere.com/" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-21
-      · <a href="#" data-report="cohere-trial-free" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-21</span><span class="lang-zh hidden">数据核实于 2026-09-21</span>
+      · <a href="#" data-report="cohere-trial-free" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="github-models-free" data-provider="github" data-difficulty="easy" data-region-availability="global" data-needs-card="0" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">GitHub Models</span>
         <span class="provider-country">US</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">GitHub Models 个人 Playground 免费试用</h3>
       <div class="card-value">Playground 免费 · Copilot 个人月配额</div>
-    </header>
+    </div>
     <p class="card-summary">GitHub Marketplace Models 提供 GPT-4o、Llama、Phi-3 等模型 Playground 体验，Copilot 个人订阅含限额 API 访问。</p>
     <ul class="terms">
-      <li class="term term-friction">限速</li><li class="term term-note">额度受限</li>
+      <li class="term term-friction"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li><li class="term term-note"><span class="lang-en">Capped quota</span><span class="lang-zh hidden">额度受限</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-easy" aria-label="上手 · 易">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-easy" aria-label="Difficulty · Easy">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 易</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Easy</span><span class="lang-zh hidden">上手 · 易</span></span>
       </span>
-      <span class="region">全球</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://github.com/marketplace/models" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">Global</span><span class="lang-zh hidden">全球</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://github.com/marketplace/models" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-25
-      · <a href="#" data-report="github-models-free" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-25</span><span class="lang-zh hidden">数据核实于 2026-09-25</span>
+      · <a href="#" data-report="github-models-free" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="google-ai-studio-free-tier" data-provider="google-ai-studio" data-difficulty="easy" data-region-availability="exclude" data-needs-card="0" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">Google AI Studio</span>
         <span class="provider-country">US</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">Gemini 2.5 Flash 免费 API</h3>
       <div class="card-value">15 RPM · 1500 RPD</div>
-    </header>
+    </div>
     <p class="card-summary">Google AI Studio 提供 Gemini 2.5 Flash 免费层，每分钟 15 次请求、每日 1500 次。</p>
     <ul class="terms">
-      <li class="term term-friction">限速</li><li class="term term-note">区域受限</li><li class="term term-friction">数据用于训练</li>
+      <li class="term term-friction"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li><li class="term term-note"><span class="lang-en">Region locked</span><span class="lang-zh hidden">区域受限</span></li><li class="term term-friction"><span class="lang-en">Data used for training</span><span class="lang-zh hidden">数据用于训练</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-easy" aria-label="上手 · 易">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-easy" aria-label="Difficulty · Easy">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 易</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Easy</span><span class="lang-zh hidden">上手 · 易</span></span>
       </span>
-      <span class="region">除 CU/IR/KP/SY 外</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">Except CU/IR/KP/SY</span><span class="lang-zh hidden">除 CU/IR/KP/SY 外</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-26
-      · <a href="#" data-report="google-ai-studio-free-tier" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-26</span><span class="lang-zh hidden">数据核实于 2026-09-26</span>
+      · <a href="#" data-report="google-ai-studio-free-tier" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="groq-free-tier" data-provider="groq" data-difficulty="easy" data-region-availability="global" data-needs-card="0" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">Groq</span>
         <span class="provider-country">US</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">Groq 免费层：Llama 3.1 8B / 70B 高吞吐推理</h3>
       <div class="card-value">Llama 3.1 70B · 14400 RPD（free）</div>
-    </header>
+    </div>
     <p class="card-summary">免费 API 接入 Llama 3.1 / Mixtral 等开源模型，号称业内最快 token/s。</p>
     <ul class="terms">
-      <li class="term term-friction">限速</li><li class="term term-note">额度受限</li>
+      <li class="term term-friction"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li><li class="term term-note"><span class="lang-en">Capped quota</span><span class="lang-zh hidden">额度受限</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-easy" aria-label="上手 · 易">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-easy" aria-label="Difficulty · Easy">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 易</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Easy</span><span class="lang-zh hidden">上手 · 易</span></span>
       </span>
-      <span class="region">全球</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://console.groq.com/" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">Global</span><span class="lang-zh hidden">全球</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://console.groq.com/" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-20
-      · <a href="#" data-report="groq-free-tier" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-20</span><span class="lang-zh hidden">数据核实于 2026-09-20</span>
+      · <a href="#" data-report="groq-free-tier" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="hugging-face-inference-providers" data-provider="hugging-face" data-difficulty="medium" data-region-availability="global" data-needs-card="1" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">Hugging Face</span>
         <span class="provider-country">FR</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">Hugging Face Inference Providers 月度 $0.10 免费额度</h3>
       <div class="card-value">$0.10/月免费额度</div>
-    </header>
+    </div>
     <p class="card-summary">新 HF 账号含 $0.10/月（约 2000 次小模型推理）免费 Inference Providers 额度。</p>
     <ul class="terms">
-      <li class="term term-friction">限速</li><li class="term term-friction">需信用卡</li><li class="term term-note">额度受限</li>
+      <li class="term term-friction"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li><li class="term term-friction"><span class="lang-en">Credit card required</span><span class="lang-zh hidden">需信用卡</span></li><li class="term term-note"><span class="lang-en">Capped quota</span><span class="lang-zh hidden">额度受限</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-medium" aria-label="上手 · 中">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-medium" aria-label="Difficulty · Medium">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 中</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Medium</span><span class="lang-zh hidden">上手 · 中</span></span>
       </span>
-      <span class="region">全球</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://huggingface.co/settings/billing" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">Global</span><span class="lang-zh hidden">全球</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://huggingface.co/settings/billing" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-25
-      · <a href="#" data-report="hugging-face-inference-providers" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-25</span><span class="lang-zh hidden">数据核实于 2026-09-25</span>
+      · <a href="#" data-report="hugging-face-inference-providers" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="kimi-moonshot-free" data-provider="kimi" data-difficulty="easy" data-region-availability="include" data-needs-card="0" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">月之暗面 Kimi</span>
         <span class="provider-country">CN</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">Moonshot Kimi 开放平台免费额度</h3>
       <div class="card-value">免费体验额度</div>
-    </header>
+    </div>
     <p class="card-summary">Moonshot 开放平台新用户获 ¥5 等值 tokens 体验额度；kimi-k2 系列可在 Cloudflare Workers AI 免费接入。</p>
     <ul class="terms">
-      <li class="term term-friction">需手机验证</li><li class="term term-note">限速</li>
+      <li class="term term-friction"><span class="lang-en">Phone verification</span><span class="lang-zh hidden">需手机验证</span></li><li class="term term-note"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-easy" aria-label="上手 · 易">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-easy" aria-label="Difficulty · Easy">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 易</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Easy</span><span class="lang-zh hidden">上手 · 易</span></span>
       </span>
-      <span class="region">仅 CN</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://platform.moonshot.cn/" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">CN only</span><span class="lang-zh hidden">仅 CN</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://platform.moonshot.cn/" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-26
-      · <a href="#" data-report="kimi-moonshot-free" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-26</span><span class="lang-zh hidden">数据核实于 2026-09-26</span>
+      · <a href="#" data-report="kimi-moonshot-free" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="mistral-la-plateforme" data-provider="mistral" data-difficulty="easy" data-region-availability="global" data-needs-card="0" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">Mistral AI</span>
         <span class="provider-country">FR</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">Mistral La Plateforme 实验层免费 API</h3>
       <div class="card-value">实验模型免费层（1 RPM / 月度限制）</div>
-    </header>
+    </div>
     <p class="card-summary">Mistral 提供实验模型的免费 API 层，含 Codestral、Mistral-Nemo 等。</p>
     <ul class="terms">
-      <li class="term term-blocker">限速</li><li class="term term-note">额度受限</li>
+      <li class="term term-blocker"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li><li class="term term-note"><span class="lang-en">Capped quota</span><span class="lang-zh hidden">额度受限</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-easy" aria-label="上手 · 易">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-easy" aria-label="Difficulty · Easy">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 易</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Easy</span><span class="lang-zh hidden">上手 · 易</span></span>
       </span>
-      <span class="region">全球</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://console.mistral.ai/" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">Global</span><span class="lang-zh hidden">全球</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://console.mistral.ai/" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-22
-      · <a href="#" data-report="mistral-la-plateforme" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-22</span><span class="lang-zh hidden">数据核实于 2026-09-22</span>
+      · <a href="#" data-report="mistral-la-plateforme" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="nvidia-build-nim-free" data-provider="nvidia" data-difficulty="easy" data-region-availability="global" data-needs-card="1" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">NVIDIA NIM</span>
         <span class="provider-country">US</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">NVIDIA NIM 免费层：1000 次 API 调用 / 90 天</h3>
       <div class="card-value">1000 calls / 模型 / 90 天</div>
-    </header>
+    </div>
     <p class="card-summary">build.nvidia.com 提供 Llama / Mistral / DeepSeek 等开源模型的免费 API 调用额度（每模型独立配额）。</p>
     <ul class="terms">
-      <li class="term term-blocker">限速</li><li class="term term-note">额度受限</li><li class="term term-friction">需信用卡</li>
+      <li class="term term-blocker"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li><li class="term term-note"><span class="lang-en">Capped quota</span><span class="lang-zh hidden">额度受限</span></li><li class="term term-friction"><span class="lang-en">Credit card required</span><span class="lang-zh hidden">需信用卡</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-easy" aria-label="上手 · 易">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-easy" aria-label="Difficulty · Easy">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 易</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Easy</span><span class="lang-zh hidden">上手 · 易</span></span>
       </span>
-      <span class="region">全球</span>
-      <span class="expiry">Infinity 天内到期</span>
-      <a class="cta" href="https://build.nvidia.com/" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">Global</span><span class="lang-zh hidden">全球</span></span>
+      <span class="expiry"><span class="lang-en">Expires in Infinity days</span><span class="lang-zh hidden">Infinity 天内到期</span></span>
+      <a class="btn primary sm" href="https://build.nvidia.com/" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-23
-      · <a href="#" data-report="nvidia-build-nim-free" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-23</span><span class="lang-zh hidden">数据核实于 2026-09-23</span>
+      · <a href="#" data-report="nvidia-build-nim-free" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="openai-chatgpt-free" data-provider="openai" data-difficulty="easy" data-region-availability="global" data-needs-card="0" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">OpenAI</span>
         <span class="provider-country">US</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">ChatGPT 免费层（GPT-4o mini，无限消息）</h3>
       <div class="card-value">GPT-4o mini 无限</div>
-    </header>
+    </div>
     <p class="card-summary">网页与 iOS/Android 客户端可用 GPT-4o mini 无限对话，无需 API key。</p>
     <ul class="terms">
       
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-easy" aria-label="上手 · 易">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-easy" aria-label="Difficulty · Easy">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 易</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Easy</span><span class="lang-zh hidden">上手 · 易</span></span>
       </span>
-      <span class="region">全球</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://chatgpt.com/" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">Global</span><span class="lang-zh hidden">全球</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://chatgpt.com/" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-25
-      · <a href="#" data-report="openai-chatgpt-free" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-25</span><span class="lang-zh hidden">数据核实于 2026-09-25</span>
+      · <a href="#" data-report="openai-chatgpt-free" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="openrouter-free-models" data-provider="openrouter" data-difficulty="easy" data-region-availability="global" data-needs-card="0" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">OpenRouter</span>
         <span class="provider-country">US</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">OpenRouter 免费模型每日轮换阵容（Llama/Qwen/DeepSeek 等）</h3>
       <div class="card-value">免费模型阵容（每日 50 次）</div>
-    </header>
+    </div>
     <p class="card-summary">OpenRouter 提供 :free 后缀模型免费调用，每天有请求上限，阵容每日调整。</p>
     <ul class="terms">
-      <li class="term term-blocker">限速</li><li class="term term-friction">额度受限</li>
+      <li class="term term-blocker"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li><li class="term term-friction"><span class="lang-en">Capped quota</span><span class="lang-zh hidden">额度受限</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-easy" aria-label="上手 · 易">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-easy" aria-label="Difficulty · Easy">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 易</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Easy</span><span class="lang-zh hidden">上手 · 易</span></span>
       </span>
-      <span class="region">全球</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://openrouter.ai/" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">Global</span><span class="lang-zh hidden">全球</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://openrouter.ai/" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-27
-      · <a href="#" data-report="openrouter-free-models" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-27</span><span class="lang-zh hidden">数据核实于 2026-09-27</span>
+      · <a href="#" data-report="openrouter-free-models" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="tencent-hunyuan-free" data-provider="tencent-hunyuan" data-difficulty="medium" data-region-availability="include" data-needs-card="1" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">腾讯混元</span>
         <span class="provider-country">CN</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">腾讯混元大模型免费层（hunyuan-pro / standard）</h3>
       <div class="card-value">免费 token 额度（按模型配置）</div>
-    </header>
+    </div>
     <p class="card-summary">腾讯云混元大模型新用户免费 token 额度，含 hunyuan-pro 与 hunyuan-standard。</p>
     <ul class="terms">
-      <li class="term term-blocker">需实名认证</li><li class="term term-friction">需信用卡</li><li class="term term-friction">试用后自动续费</li>
+      <li class="term term-blocker"><span class="lang-en">Identity verification</span><span class="lang-zh hidden">需实名认证</span></li><li class="term term-friction"><span class="lang-en">Credit card required</span><span class="lang-zh hidden">需信用卡</span></li><li class="term term-friction"><span class="lang-en">Auto-renew after trial</span><span class="lang-zh hidden">试用后自动续费</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-medium" aria-label="上手 · 中">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-medium" aria-label="Difficulty · Medium">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 中</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Medium</span><span class="lang-zh hidden">上手 · 中</span></span>
       </span>
-      <span class="region">仅 CN</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://console.cloud.tencent.com/hunyuan" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">CN only</span><span class="lang-zh hidden">仅 CN</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://console.cloud.tencent.com/hunyuan" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-26
-      · <a href="#" data-report="tencent-hunyuan-free" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-26</span><span class="lang-zh hidden">数据核实于 2026-09-26</span>
+      · <a href="#" data-report="tencent-hunyuan-free" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="together-ai-free-credit" data-provider="together-ai" data-difficulty="medium" data-region-availability="global" data-needs-card="1" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">Together AI</span>
         <span class="provider-country">US</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">Together AI 开源模型免费层（Llama / Qwen / DeepSeek 等）</h3>
       <div class="card-value">免费 token 额度（按模型不同）</div>
-    </header>
+    </div>
     <p class="card-summary">Together AI 提供 200+ 开源模型的推理，新账号含小额免费额度。</p>
     <ul class="terms">
-      <li class="term term-friction">限速</li><li class="term term-note">额度受限</li><li class="term term-friction">需信用卡</li>
+      <li class="term term-friction"><span class="lang-en">Rate limited</span><span class="lang-zh hidden">限速</span></li><li class="term term-note"><span class="lang-en">Capped quota</span><span class="lang-zh hidden">额度受限</span></li><li class="term term-friction"><span class="lang-en">Credit card required</span><span class="lang-zh hidden">需信用卡</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-medium" aria-label="上手 · 中">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-medium" aria-label="Difficulty · Medium">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 中</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Medium</span><span class="lang-zh hidden">上手 · 中</span></span>
       </span>
-      <span class="region">全球</span>
-      <span class="expiry">长期有效</span>
-      <a class="cta" href="https://api.together.xyz/" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">Global</span><span class="lang-zh hidden">全球</span></span>
+      <span class="expiry"><span class="lang-en">No fixed expiry</span><span class="lang-zh hidden">长期有效</span></span>
+      <a class="btn primary sm" href="https://api.together.xyz/" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-24
-      · <a href="#" data-report="together-ai-free-credit" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-24</span><span class="lang-zh hidden">数据核实于 2026-09-24</span>
+      · <a href="#" data-report="together-ai-free-credit" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
 
   <article class="card" data-id="zhipu-bigmodel-invitation" data-provider="zhipu" data-difficulty="medium" data-region-availability="include" data-needs-card="0" data-exp-days="Infinity">
-    <header class="card-head">
+    <div class="card-top">
       <div class="provider-row">
         <span class="provider-name">智谱 BigModel</span>
         <span class="provider-country">CN</span>
-        <span class="pill pill-success">已核验</span>
+        <span class="pill pill-success"><span class="lang-en">Verified</span><span class="lang-zh hidden">已核验</span></span>
       </div>
       <h3 class="card-title">智谱 BigModel 邀请奖励：邀友实名双方各得 2000 万 tokens</h3>
       <div class="card-value">2000 万 tokens / 邀友（双方各得）</div>
-    </header>
+    </div>
     <p class="card-summary">智谱开放平台个人邀请机制：邀友完成实名注册，双方各得 2000 万 tokens；每月可邀 10 人上限 2 亿 tokens。</p>
     <ul class="terms">
-      <li class="term term-blocker">需实名认证</li><li class="term term-note">每账号限一次</li><li class="term term-friction">可叠加</li>
+      <li class="term term-blocker"><span class="lang-en">Identity verification</span><span class="lang-zh hidden">需实名认证</span></li><li class="term term-note"><span class="lang-en">One per account</span><span class="lang-zh hidden">每账号限一次</span></li><li class="term term-friction"><span class="lang-en">Stackable</span><span class="lang-zh hidden">可叠加</span></li>
     </ul>
-    <footer class="card-head-foot">
-      <span class="difficulty-meter difficulty-medium" aria-label="上手 · 中">
+    <div class="card-foot">
+      <span class="difficulty-meter difficulty-medium" aria-label="Difficulty · Medium">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        <span class="difficulty-text">上手 · 中</span>
+        <span class="difficulty-text"><span class="lang-en">Difficulty · Medium</span><span class="lang-zh hidden">上手 · 中</span></span>
       </span>
-      <span class="region">仅 CN</span>
-      <span class="expiry">Infinity 天内到期</span>
-      <a class="cta" href="https://bigmodel.cn/invitation" target="_blank" rel="noopener">去官方页</a>
-    </footer>
+      <span class="region"><span class="lang-en">CN only</span><span class="lang-zh hidden">仅 CN</span></span>
+      <span class="expiry"><span class="lang-en">Expires in Infinity days</span><span class="lang-zh hidden">Infinity 天内到期</span></span>
+      <a class="btn primary sm" href="https://bigmodel.cn/invitation" target="_blank" rel="noopener"><span class="lang-en">Visit vendor</span><span class="lang-zh hidden">去官方页</span></a>
+    </div>
     <div class="card-meta">
-      数据核实于 2026-09-25
-      · <a href="#" data-report="zhipu-bigmodel-invitation" class="report-link">数据有误？</a>
+      <span class="lang-en">Verified 2026-09-25</span><span class="lang-zh hidden">数据核实于 2026-09-25</span>
+      · <a href="#" data-report="zhipu-bigmodel-invitation" class="report-link"><span class="lang-en">Report data issue?</span><span class="lang-zh hidden">数据有误？</span></a>
     </div>
   </article>
-</main>
+    </div>
+    <p class="empty-state hidden" id="empty-state"><span class="lang-en">No promo matches these filters — try widening them.</span><span class="lang-zh hidden">没有符合条件的 promo，试试放宽筛选。</span></p>
+  </div>
+</section>
 
-<footer class="page-foot">
-  <p class="transparency"><strong>项目透明度</strong> · 开源协议 MIT · 不接硬广 · 不挂联盟 · 每条数据每日人工核实。</p>
-  <p class="transparency">本站为策展型工具，<strong>不参与</strong>任何 promo 的注册、申领、代理、托管或转发；所有点击直达厂商官方页面。</p>
-  <p class="transparency">托管服务（Apify Actor / WorkBuddy Skill）为付费便利层，源码完全免费可自托管。收录标准 / 排序规则 / 纠错流程见 GitHub 仓库 README。</p>
-  <p class="meta-line">
-    catalog sha256: <code>c2e73cce71a34042…</code> · generated_at: <code>2026-09-28T16:19:35.638Z</code>
-  </p>
+<section id="pricing">
+  <div class="wrap">
+    <h2><span class="lang-en">Pricing</span><span class="lang-zh hidden">定价</span></h2>
+    <p class="sub"><span class="lang-en">Handshake (initialize / tools/list) and issue reports are always free. You only pay when data is actually returned.</span><span class="lang-zh hidden">握手（initialize / tools/list）与纠错上报永远免费；只有真正取数据的调用才计费。</span></p>
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>What it does</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>mcp-search</code></td>
+        <td><span class="lang-en">Keyword search across promos</span><span class="lang-zh hidden">关键词搜索 promo</span></td>
+        <td><span class="pill">$0.005</span></td>
+      </tr>
+      <tr>
+        <td><code>mcp-filter / mcp-recent-updates / mcp-expiring-soon</code></td>
+        <td><span class="lang-en">Filter / latest / expiring</span><span class="lang-zh hidden">按条件筛选 / 最新 / 即将到期</span></td>
+        <td><span class="pill">$0.005</span></td>
+      </tr>
+      <tr>
+        <td><code>mcp-get-promo / mcp-list-providers</code></td>
+        <td><span class="lang-en">Single promo / provider list</span><span class="lang-zh hidden">取单条详情 / 厂商列表</span></td>
+        <td><span class="pill">$0.002</span></td>
+      </tr>
+      <tr>
+        <td><code>mcp-what-can-i-get</code></td>
+        <td><span class="lang-en">Reason about what you can claim</span><span class="lang-zh hidden">按你的条件推理「我能薅到什么」</span></td>
+        <td><span class="pill">$0.01</span></td>
+      </tr>
+      <tr>
+        <td><code>mcp-initialize / mcp-list-tools / mcp-report-issue</code></td>
+        <td><span class="lang-en">Handshake and issue reports</span><span class="lang-zh hidden">握手与纠错</span></td>
+        <td><span class="pill free">Free</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="connect">
+  <div class="wrap">
+    <h2><span class="lang-en">Connect</span><span class="lang-zh hidden">接入</span></h2>
+    <p class="sub"><span class="lang-en">The hosted endpoint needs no setup; the local stdio server is free and self-hostable (MIT).</span><span class="lang-zh hidden">远程端点免部署；本地 stdio 完全免费自托管（MIT）。</span></p>
+    <div class="tabs">
+      <button class="tab active" type="button" data-panel="remote"><span class="lang-en">Remote (recommended)</span><span class="lang-zh hidden">远程（推荐）</span></button>
+      <button class="tab" type="button" data-panel="local"><span class="lang-en">Local stdio</span><span class="lang-zh hidden">本地 stdio</span></button>
+    </div>
+    <div class="code panel active" id="panel-remote">
+      <button class="copy" type="button" data-copy="panel-remote">Copy</button>
+      <pre>npx mcp-remote https://neeenja--free-and-cheap-tokens.apify.actor/mcp \
+  --header "Authorization: Bearer $APIFY_TOKEN"</pre>
+    </div>
+    <div class="code panel" id="panel-local">
+      <button class="copy" type="button" data-copy="panel-local">Copy</button>
+      <pre>git clone https://github.com/PanStories/free-and-cheap-tokens.git
+cd free-and-cheap-tokens
+npm ci && npm run build
+node dist/index.js          # stdio transport, free forever (MIT)</pre>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <p class="transparency"><span class="lang-en">&lt;strong&gt;Project transparency&lt;/strong&gt; · MIT license · No paid placements · No affiliate links · Every entry is human-verified daily.</span><span class="lang-zh hidden">&lt;strong&gt;项目透明度&lt;/strong&gt; · 开源协议 MIT · 不接硬广 · 不挂联盟 · 每条数据每日人工核实。</span></p>
+      <p class="transparency"><span class="lang-en">This site is a curation tool — it &lt;strong&gt;does not&lt;/strong&gt; register, claim, proxy, host, or relay any promo. Every click goes straight to the vendor's official page.</span><span class="lang-zh hidden">本站为策展型工具，&lt;strong&gt;不参与&lt;/strong&gt;任何 promo 的注册、申领、代理、托管或转发；所有点击直达厂商官方页面。</span></p>
+      <p class="transparency"><span class="lang-en">Hosted services (Apify Actor / WorkBuddy Skill) are paid convenience layers; the source code is fully free and self-hostable. Inclusion criteria / sort rules / correction flow live in the GitHub repo README.</span><span class="lang-zh hidden">托管服务（Apify Actor / WorkBuddy Skill）为付费便利层，源码完全免费可自托管。收录标准 / 排序规则 / 纠错流程见 GitHub 仓库 README。</span></p>
+      <p class="meta-line">catalog sha256: &lt;code&gt;c2e73cce71a34042…&lt;/code&gt; · generated_at: &lt;code&gt;2026-09-28T16:19:35.638Z&lt;/code&gt;</p>
+    </div>
+    <div class="fcols links">
+      <a href="https://apify.com/neeenja/free-and-cheap-tokens" target="_blank" rel="noopener">Apify Store</a>
+      <a href="https://github.com/PanStories/free-and-cheap-tokens" target="_blank" rel="noopener">GitHub</a>
+      <a href="feed.xml">RSS</a>
+      <a href="promos.ics">ICS</a>
+      <span class="updated"><span class="lang-en">Last generated 2026-09-28</span><span class="lang-zh hidden">数据核实于 2026-09-28</span></span>
+    </div>
+  </div>
 </footer>
 
 <script src="app.js" defer></script>
