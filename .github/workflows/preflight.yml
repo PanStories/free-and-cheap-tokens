@@ -37,11 +37,13 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      # catalog.test.ts reads build/catalog.json, which is git-ignored and therefore
+      # absent on a fresh runner — it must be generated before the tests run.
+      - name: Build catalog
+        run: npm run build:catalog
+
       - name: Schema tests
         run: npm test
 
       - name: P0 红线自查（emoji / 紫粉渐变 / 回弹缓动 / 空洞占位）
         run: node scripts/check-p0.mjs
-
-      - name: Build catalog (sanity)
-        run: npm run build:catalog
