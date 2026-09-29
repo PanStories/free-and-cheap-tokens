@@ -1,4 +1,4 @@
-// Free & Cheap Tokens — 客户端脚本
+// Free and Cheap Tokens — 客户端脚本
 // 零外部依赖；渐进增强；离线可用
 // Bilingual: 文案由生成器决定，client 仅做筛选 / 分享 / 错误上报
 (function () {
@@ -66,7 +66,7 @@
 
       try {
         if (navigator.share) {
-          await navigator.share({ title: 'Free & Cheap Tokens', text: text + shareUrl, url: location.href });
+          await navigator.share({ title: 'Free and Cheap Tokens', text: text + shareUrl, url: location.href });
         } else {
           await navigator.clipboard.writeText(text + shareUrl);
           shareBtn.textContent = isEn ? 'Share text copied' : '已复制分享文案';
