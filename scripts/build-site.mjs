@@ -38,7 +38,7 @@ const LOCALES = {
     lang: 'zh-CN',
     alternatePath: 'en.html',
     alternateLabel: '🇬🇧 English',
-    siteTitle: 'Free & Cheap Tokens · 每日 AI 羊毛清单',
+    siteTitle: 'Free and Cheap Tokens · 每日 AI 羊毛清单',
     siteDescription:
       '策展团队每日核实、机器可读的 AI 模型/服务免费与低价 token 促销清单。每条直达厂商官方页。',
     ogDescriptionTpl: (c, d) =>
@@ -137,7 +137,7 @@ const LOCALES = {
     lang: 'en',
     alternatePath: 'index.html',
     alternateLabel: '🇨🇳 中文',
-    siteTitle: 'Free & Cheap Tokens · Daily AI Deal List',
+    siteTitle: 'Free and Cheap Tokens · Daily AI Deal List',
     siteDescription:
       'Curated, daily-verified, machine-readable catalog of free tiers and cheap token promos for AI models and inference services. Every entry links to the vendor\'s official page.',
     ogDescriptionTpl: (c, d) =>
@@ -397,7 +397,7 @@ function indexHtml(cat, lang = 'zh-CN') {
 </header>
 
 <header class="page-head">
-  <div class="brand">Free &amp; Cheap Tokens</div>
+  <div class="brand">Free and Cheap Tokens</div>
   <div class="meta">
     <span class="updated">${esc(L.updatedTpl(generatedDate))}</span>
     <a class="lang-toggle" href="/${esc(L.alternatePath)}" hreflang="${L.lang === 'zh-CN' ? 'en' : 'zh-CN'}">${esc(L.alternateLabel)}</a>
@@ -453,7 +453,7 @@ function indexHtml(cat, lang = 'zh-CN') {
 // ────────────────────────────────────────────────────────────────────────────
 // styles.css (zero external dependency)
 
-const SITE_CSS = `/* Free & Cheap Tokens — 站点样式（零外部依赖） */
+const SITE_CSS = `/* Free and Cheap Tokens — 站点样式（零外部依赖） */
 :root {
   --bg: #F5F6F8;
   --surface: #FFFFFF;
@@ -622,7 +622,7 @@ a:hover { text-decoration: underline; }
 // app.js (locale-aware: text comes from data attributes that the page builder
 // emits in the right language; behavior is identical)
 
-const APP_JS = `// Free & Cheap Tokens — 客户端脚本
+const APP_JS = `// Free and Cheap Tokens — 客户端脚本
 // 零外部依赖；渐进增强；离线可用
 // Bilingual: 文案由生成器决定，client 仅做筛选 / 分享 / 错误上报
 (function () {
@@ -690,7 +690,7 @@ const APP_JS = `// Free & Cheap Tokens — 客户端脚本
 
       try {
         if (navigator.share) {
-          await navigator.share({ title: 'Free & Cheap Tokens', text: text + shareUrl, url: location.href });
+          await navigator.share({ title: 'Free and Cheap Tokens', text: text + shareUrl, url: location.href });
         } else {
           await navigator.clipboard.writeText(text + shareUrl);
           shareBtn.textContent = isEn ? 'Share text copied' : '已复制分享文案';
@@ -740,7 +740,7 @@ function rssXml(cat) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Free &amp; Cheap Tokens</title>
+    <title>Free and Cheap Tokens</title>
     <link>https://freeandcheaptokens.dev/</link>
     <atom:link href="https://freeandcheaptokens.dev/feed.xml" rel="self" type="application/rss+xml" />
     <description>每日核实的 AI 模型/服务免费额度与低价 token 促销清单。开源 · 不接硬广 · 不挂联盟 · MIT</description>
@@ -783,7 +783,7 @@ function icsText(cat) {
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Free & Cheap Tokens//Daily AI Promos//ZH',
+    'PRODID:-//Free and Cheap Tokens//Daily AI Promos//ZH',
     'CALSCALE:GREGORIAN',
     events,
     'END:VCALENDAR',
