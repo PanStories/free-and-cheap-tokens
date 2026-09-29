@@ -1,5 +1,5 @@
 /**
- * Apify webServer request handler for Free & Cheap Tokens.
+ * Apify webServer request handler for Free and Cheap Tokens.
  *
  * Architecture (v1.1.0):
  *   - Hosted as Apify Pay-Per-Event Actor (no Standby)
