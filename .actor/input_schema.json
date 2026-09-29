@@ -1,6 +1,6 @@
 {
-  "title": "Free & Cheap Tokens — MCP Server",
-  "description": "Run the Free & Cheap Tokens MCP server. Connect any MCP client to the Actor's /mcp endpoint. Tool calls are metered pay-per-event; no monthly fee.",
+  "title": "Free and Cheap Tokens — MCP Server",
+  "description": "Run the Free and Cheap Tokens MCP server. Connect any MCP client to the Actor's /mcp endpoint. Tool calls are metered pay-per-event; no monthly fee.",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
