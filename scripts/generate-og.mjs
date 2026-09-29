@@ -49,11 +49,11 @@ const expiringSoon = cat.promos.filter((p) => {
 }).length;
 const noCard = cat.counts.no_credit_card;
 
-// 厂商证据行（前 4 家）
+// 厂商证据行（前 4 家）—— 用英文名：GitHub runner 没有 CJK 字体，中文名会渲染成方框
 const evidence = cat.promos
   .filter((p) => p.status === 'active' || p.status === 'expiring_soon')
   .slice(0, 4)
-  .map((p) => (p.provider.country === 'CN' && p.provider.name_zh ? p.provider.name_zh : p.provider.name_en))
+  .map((p) => p.provider.name_en)
   .join(' · ');
 
 // 用 SVG 生成 PNG（sharp 直接吃 SVG buffer）
