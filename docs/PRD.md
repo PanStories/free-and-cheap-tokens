@@ -1,8 +1,8 @@
-# Free & Cheap Tokens — 产品需求文档（PRD v1.0）
+# Free and Cheap Tokens — 产品需求文档（PRD v1.0）
 
 | 项 | 内容 |
 |---|---|
-| 产品名 | Free & Cheap Tokens |
+| 产品名 | Free and Cheap Tokens |
 | 文档版本 | v1.0 |
 | 作者 | 许清楚（产品经理） |
 | 状态 | 待架构师 / 设计师签收 |
@@ -325,7 +325,7 @@ Reach 1-10（每季度受影响用户数）｜Impact 0.25/0.5/1/2/3｜Confidence
 
 **T1. 分享卡片（人 → 人）**
 - 每条 promo 生成一张静态 OG 卡片（1200×630），卡片上只有四行：`provider_name` / `value_display` / `difficulty` 徽章 / 「免信用卡 · 国内直连」这类 2 个最高价值条款标签。
-- 卡片右下角固定一行小字：「via Free & Cheap Tokens · 数据核实于 {last_verified_at}」——**provenance 本身就是信任状，也是我们的品牌曝光**。
+- 卡片右下角固定一行小字：「via Free and Cheap Tokens · 数据核实于 {last_verified_at}」——**provenance 本身就是信任状，也是我们的品牌曝光**。
 - **卡片上必须有可识别的披露**：若该条 `is_affiliate=true`，1200×630 卡片**版面内**必须带披露标识（中文面显著标明「广告」，英文面标「Ad」）。**不能只在网页正文里披露**——卡片会被截图、转发到群里和社交平台，脱离页面上下文后正文披露就失效了。这是《互联网广告管理办法》第九条「具有可识别性」与 FTC「clear and conspicuous」在脱离页面场景下的必然推论。
 - 分享按钮输出：卡片图 + 短链 + 一段可直接粘贴的文案（见 T4）；**若该条含返佣，可复制文案内也必须自带披露**（理由同上：文案会被粘贴到任何地方）。
 
@@ -335,7 +335,7 @@ Reach 1-10（每季度受影响用户数）｜Impact 0.25/0.5/1/2/3｜Confidence
 
 **T3. Agent 可复述的推荐话术（`agent_pitch` 字段）**
 - 每条 promo 自带 `agent_pitch`（≤120 字）。Agent 在推荐时**不需要自己组织语言**，直接复述即可，且话术内容由我们策展（保证准确、保证带披露）。
-- 例：「智谱 GLM-4-Flash 永久免费层，新用户注册再送 2000 万 Tokens。免信用卡、国内直连、OpenAI 格式兼容，约 10 分钟可跑通。需要实名，但可自助完成。— Free & Cheap Tokens，数据核实于 2026-09-20（含推广链接）」
+- 例：「智谱 GLM-4-Flash 永久免费层，新用户注册再送 2000 万 Tokens。免信用卡、国内直连、OpenAI 格式兼容，约 10 分钟可跑通。需要实名，但可自助完成。— Free and Cheap Tokens，数据核实于 2026-09-20（含推广链接）」
 - **关键**：`agent_pitch` 末尾必须带披露（因为 Agent 复述时不会自己加）。这是 FTC 与《互联网广告管理办法》的双重要求。
 
 **T4. 邀请 / 返佣闭环（推荐者 → 我们）**
