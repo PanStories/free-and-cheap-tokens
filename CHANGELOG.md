@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented here. Format: [Keep a Changelog](https://keepachangelog.com/) · SemVer.
 
+## [Unreleased]
+
+### Changed
+
+- **Static site redesign (2026-09-29)** — `site/` now follows the same design language as
+  `mcp-stock-analyst`: navy sticky header, `#f5f7fa` page background, white cards with soft
+  navy shadow, blue primary buttons, and an `EN / 中文` switch in the top navigation.
+- **Single bilingual page, English by default** — `site/index.html` carries both languages
+  inline (`.lang-en` / `.lang-zh` spans) and toggles client-side; `<html lang="en">` is the
+  default, the choice persists in `localStorage`. `site/en.html` is kept as a relative
+  redirect stub so existing links do not 404.
+- **Own brand mark** — a price tag holding a token coin (`#f0b429`, inline SVG, also used as
+  the favicon), deliberately different from the stock-analyst line-chart mark.
+- New sections: promo directory (stats + filters), pricing table, and a Connect block with
+  remote / local stdio tabs and copy buttons.
+- Emoji removed from the language toggle and the promo-data note (P0 red line).
+
 ## [1.1.1] - 2026-09-28
 
 ### Added
