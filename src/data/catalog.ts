@@ -219,7 +219,7 @@ export function searchPromos(filter: SearchFilter): Promo[] {
   const now = Date.now();
   const limit = Math.min(Math.max(filter.limit ?? DEFAULT_LIMIT, 1), MAX_LIMIT);
 
-  let results: Array<{ p: Promo; score: number }> = [];
+  const results: Array<{ p: Promo; score: number }> = [];
 
   for (const p of cat.promos) {
     // 默认排除 expired / unverified
