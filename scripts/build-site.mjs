@@ -760,9 +760,7 @@ function icsText(cat) {
     .filter((p) => !p.offer.no_fixed_expiry && p.offer.expires_at)
     .map((p) => {
       const exp = new Date(p.offer.expires_at);
-      const alarmDate = new Date(exp.getTime() - 7 * 86_400_000);
       const dtStart = exp.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
-      const dtAlarm = alarmDate.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
       return [
         'BEGIN:VEVENT',
         `UID:${p.id}@freeandcheaptokens.dev`,
