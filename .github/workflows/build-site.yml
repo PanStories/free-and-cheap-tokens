@@ -10,8 +10,12 @@ on:
       - '.github/workflows/build-site.yml'
   workflow_dispatch:
 
+# actions/deploy-pages@v4 authenticates via OIDC, so it needs id-token: write;
+# without it the deploy step fails with "Unable to get the ACTIONS_ID_TOKEN_REQUEST_URL".
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
