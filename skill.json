@@ -2,7 +2,7 @@
   "name": "free-and-cheap-tokens",
   "version": "1.1.1",
   "description": "Find free and cheap AI model token promotions. Curated, machine-readable, daily verified. Bilingual (中文 / English).",
-  "author": "Free & Cheap Tokens Contributors",
+  "author": "Free and Cheap Tokens Contributors",
   "license": "MIT",
   "transports": [
     {
