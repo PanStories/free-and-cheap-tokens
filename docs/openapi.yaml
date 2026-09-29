@@ -1,9 +1,9 @@
 openapi: 3.0.3
 info:
-  title: Free & Cheap Tokens Actor Web Server
+  title: Free and Cheap Tokens Actor Web Server
   version: 1.0.0
   description: >
-    Free & Cheap Tokens 的非 MCP HTTP 端点。MCP 协议端点为 POST/GET/DELETE /mcp，
+    Free and Cheap Tokens 的非 MCP HTTP 端点。MCP 协议端点为 POST/GET/DELETE /mcp，
     使用 MCP Streamable HTTP 传输（无状态模式），其契约不在本文件中描述——
     MCP 的 tools / resources / prompts 清单见 docs/ARCHITECTURE.md 第 7 节。
     本文件供 Apify Console 的 Endpoints 标签页渲染，通过 .actor/actor.json 的
