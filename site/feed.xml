@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Free and Cheap Tokens</title>
-    <link>https://freeandcheaptokens.dev/</link>
-    <atom:link href="https://freeandcheaptokens.dev/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://panstories.github.io/free-and-cheap-tokens/</link>
+    <atom:link href="https://panstories.github.io/free-and-cheap-tokens/feed.xml" rel="self" type="application/rss+xml" />
     <description>每日核实的 AI 模型/服务免费额度与低价 token 促销清单。开源 · 不接硬广 · 不挂联盟 · MIT</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 29 Sep 2026 01:21:27 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 13:30:30 GMT</lastBuildDate>
     <generator>fct build-site.mjs</generator>
     <item>
       <title>火山方舟体验额度：豆包 1.5 Pro 500 万 tokens · 火山方舟 / 豆包</title>
