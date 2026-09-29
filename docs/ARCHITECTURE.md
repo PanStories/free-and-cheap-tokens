@@ -1,4 +1,4 @@
-# Free & Cheap Tokens 架构文档
+# Free and Cheap Tokens 架构文档
 
 版本 1.0 — 2026-09-28 — 高见远（首席架构师）
 
@@ -8,7 +8,7 @@
 
 ## 1. 目标与背景
 
-一个名为 **Free & Cheap Tokens** 的 MCP server，让 AI Agent 与非技术用户检索 AI 模型/推理服务的免费额度与低价 token 促销（下称 promo）。每条 promo 是结构化记录：提供方、优惠内容、**归类后的条款**、**上手难度 easy/medium/hard**、**适用区域**。
+一个名为 **Free and Cheap Tokens** 的 MCP server，让 AI Agent 与非技术用户检索 AI 模型/推理服务的免费额度与低价 token 促销（下称 promo）。每条 promo 是结构化记录：提供方、优惠内容、**归类后的条款**、**上手难度 easy/medium/hard**、**适用区域**。
 
 数据来自策展库（Git 版本化）+ 定时联网刷新的混合模式。交付三件套：MCP server + 同名 Skill + 零依赖静态每日清单页（带分享卡片），通过 OSS + Hosted Convenience 变现（Apify 付费 Actor + WorkBuddy 付费 Skill，源码 MIT 开源免费）。
 
