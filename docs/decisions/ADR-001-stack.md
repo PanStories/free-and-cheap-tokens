@@ -26,7 +26,7 @@
 
 ## 2. 背景
 
-Free & Cheap Tokens 需要同时交付三件套：一个可被 AI Agent 调用的 MCP server、一个同名 Skill、一个零依赖静态每日清单页。分发形态由用户确认为 **Apify**，但具体定价模型由 2026-09-28 用户追加裁决改为 **Pay-Per-Event**（不付月费）。
+Free and Cheap Tokens 需要同时交付三件套：一个可被 AI Agent 调用的 MCP server、一个同名 Skill、一个零依赖静态每日清单页。分发形态由用户确认为 **Apify**，但具体定价模型由 2026-09-28 用户追加裁决改为 **Pay-Per-Event**（不付月费）。
 
 约束条件：
 
