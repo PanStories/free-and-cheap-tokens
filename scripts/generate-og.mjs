@@ -33,7 +33,7 @@ if (!existsSync(SITE_DIR)) mkdirSync(SITE_DIR, { recursive: true });
 let sharp;
 try {
   sharp = (await import('sharp')).default;
-} catch (e) {
+} catch {
   console.error('✗ sharp not installed. Install devDependencies: npm install');
   process.exit(1);
 }
