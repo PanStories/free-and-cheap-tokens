@@ -1,22 +1,42 @@
-# Free & Cheap Tokens
+# Free and Cheap Tokens (FaCT)
 
-> [🇬🇧 English version →](README.en.md) · 策展团队每日核实、机器可读的 **AI 模型/服务免费额度与低价 token 促销** 清单。
-> 一个 MCP server + 一个零依赖静态站 + 一份 RSS / ICS + 一个同名 Skill。
+> **FaCT** = **F**ree **a**nd **C**heap **T**okens. That is where the short name comes from.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/Node-24.21.0_LTS-339933)](https://nodejs.org)
 [![MCP](https://img.shields.io/badge/MCP-1.30.1-purple)](https://modelcontextprotocol.io)
 [![Apify PPE](https://img.shields.io/badge/Apify-Pay--Per--Event-0099FF)](https://apify.com)
 
+🌐 **[English](#english)** · **[简体中文](#简体中文)** · **[繁體中文](#繁體中文)**
+
+| Where it lives | Link |
+|---|---|
+| MCP endpoint (Apify Standby) | `https://neeenja--free-and-cheap-tokens.apify.actor/mcp` |
+| Apify Store | https://apify.com/neeenja/free-and-cheap-tokens |
+| Source code (MIT) | https://github.com/PanStories/free-and-cheap-tokens |
+| Directory listing | https://sartbot.com/mcp/free-and-cheap-tokens/ |
+| Daily listing page | https://freeandcheaptokens.dev/ |
+
 ---
 
-## 🚀 线上 MCP 端点（Apify）
+<a id="english"></a>
 
-```
-https://neeenja--free-and-cheap-tokens.apify.actor/mcp
-```
+# English
 
-任何 MCP 客户端都能连，用 Bearer token 鉴权（Apify API token）：
+A curated, **daily human-verified**, machine-readable catalog of **free tiers and cheap token promos** for AI models and inference services — served as one MCP server over Streamable HTTP.
+
+## What you get
+
+- **8 tools** — `search_promos`, `filter_promos`, `get_promo`, `list_providers`, `get_recent_updates`, `get_expiring_soon`, `what_can_i_get`, `report_promo_issue`
+- **4 resources** — `catalog://snapshot`, `catalog://daily/{date}`, `schema://promo`, `providers://index`
+- **3 prompts** — `daily-deal-brief`, `pick-for-me`, `explain-terms`
+- **17 curated promos** covering OpenAI / Anthropic / Google / Zhipu / SiliconFlow / Aliyun Bailian / Cloudflare Workers AI / Groq …
+
+Every promo record carries normalized terms (22 controlled tags), an onboarding difficulty rating (**easy / medium / hard**) with an Agent fallback path, region disclosure (global / include / exclude), an expiry timestamp (including `no_fixed_expiry`), a "how to claim" step list, and a **human-verified timestamp** — the last one is our core differentiator.
+
+## Connect
+
+Any MCP client can connect. Authentication is a Bearer token (your Apify API token).
 
 ```bash
 curl -X POST https://neeenja--free-and-cheap-tokens.apify.actor/mcp \
@@ -26,57 +46,26 @@ curl -X POST https://neeenja--free-and-cheap-tokens.apify.actor/mcp \
   -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"my-client","version":"1.0"}}}'
 ```
 
-Apify Store 页：https://apify.com/neeenja/free-and-cheap-tokens
+Remote (`mcp-remote` bridge, because the Apify gateway needs a Bearer token per request):
 
----
+```json
+{
+  "mcpServers": {
+    "free-and-cheap-tokens": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://neeenja--free-and-cheap-tokens.apify.actor/mcp", "--header", "Authorization: Bearer YOUR-APIFY-TOKEN"]
+    }
+  }
+}
+```
 
-## 这项目是什么
-
-`free-and-cheap-tokens` 把全球 AI 模型/推理服务（OpenAI / Anthropic / Google / 智谱 / 硅基流动 / 阿里云百炼 / Cloudflare Workers AI / Groq …）的**免费额度与低价 token 促销**整理成**结构化数据**，对外提供三种使用方式：
-
-1. **MCP server**（机器消费）—— AI Agent 直接调 8 个 tools / 4 个 resources / 3 个 prompts
-2. **静态每日清单页**（人消费）—— 零依赖 HTML/CSS/JS，已部署到 GitHub Pages
-3. **同名 Skill**（Agent 编排）—— 每日简报 + 实时查询的 WorkBuddy / Claude Skill
-
-每条 promo 都有：
-
-- 归类后的条款（22 项受控标签）
-- 上手难度分级（easy / medium / hard）+ Agent 降级路径
-- 区域披露（global / include / exclude 三态）
-- 到期时间（含 `no_fixed_expiry`）
-- 「如何薅」步骤（hard 项必填）
-- **人工核验时间** —— 我们的核心差异化
-
----
-
-## 项目立场（替代原返佣披露）
-
-> 开源 · 不接硬广 · 不挂联盟 · 数据每日核实 · MIT
-
-四处置顶一致：
-
-- 站点顶部 sticky 条
-- 每张卡片底部
-- 分享卡片版面内
-- 复制分享文案内
-
-**为什么这样**：原 v2 计划走联盟返佣路线，但合规负担（FTC 16 CFR 255、中国《互联网广告管理办法》第九/十八条）太重。改为「策展即服务」路线后，可信度壁垒从相对优势升级成**结构性优势**。详见 [`docs/PRD.md`](docs/PRD.md) §8.5 与 [`SPEC.md`](SPEC.md) §13 D9。
-
----
-
-## 快速开始
-
-### 1. 本地跑 MCP server（stdio）
+Local (stdio):
 
 ```bash
 git clone https://github.com/PanStories/free-and-cheap-tokens.git
 cd free-and-cheap-tokens
-npm ci
-npm run build:catalog
-npm run dev
+npm ci && npm run build:catalog && npm run dev
 ```
-
-stdio transport 启动后，按 `mcp.json` 配你的 client：
 
 ```json
 {
@@ -89,133 +78,118 @@ stdio transport 启动后，按 `mcp.json` 配你的 client：
 }
 ```
 
-### 2. 远程 MCP server（Apify Pay-Per-Event + Streamable HTTP）
+## Pricing (Pay-Per-Event, no monthly fee)
 
-部署到 Apify 后，客户端用 `npx mcp-remote` 桥接（因为 Apify 网关要求每请求带 Bearer token）：
+| Event | Price |
+|---|---|
+| `mcp-search` (search / filter / recent / expiring) | $0.005 / call |
+| `mcp-what-can-i-get` (reasoned recommendation) | $0.01 / call |
+| `mcp-get-promo`, `mcp-list-providers` | $0.002 / call |
+| `mcp-initialize`, `mcp-list-tools`, `mcp-report-issue` | **free** |
+
+Nothing is charged while idle. Note: Apify **Agentic Payments (x402 / Skyfire) is not available** for this Actor — that program requires Standby mode to be disabled, and an MCP endpoint needs Standby. Billing runs through your own Apify token.
+
+## Project stance
+
+> Open source · No paid placements · No affiliate links · Daily verified data · MIT
+
+Shown consistently in four places: the site's sticky top bar, the bottom of each card, inside the share card, and inside the copy-share text. The original v2 plan was an affiliate model, but the compliance burden (FTC 16 CFR 255, China 《互联网广告管理办法》 Art. 9 & 18) was too heavy. "Curation-as-a-service" turns trust from a relative advantage into a structural one.
+
+## Development
+
+```bash
+npm ci                  # Install (incl. devDeps)
+npm run typecheck       # tsc --noEmit
+npm run lint            # eslint
+npm test                # vitest (schema validation + business logic)
+npm run check:p0        # P0 redlines (emoji / purple-pink gradient / bounce easing / placeholder text)
+npm run build:catalog   # Build build/catalog.json
+npm run build:site      # Generate site/ outputs
+npm run preflight       # One-shot run all of the above
+```
+
+## Submission & error reporting
+
+- Submit a new promo: see [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- Error or expired promo: call `report_promo_issue`, or open a GitHub Issue (template auto-generated)
+
+---
+
+<a id="简体中文"></a>
+
+# 简体中文
+
+一份**每日人工核实**、机器可读的 **AI 模型 / 推理服务免费额度与低价 token 促销**策展清单，以一个 MCP server 的形式通过 Streamable HTTP 对外提供。
+
+## 你能拿到什么
+
+- **8 个 tools** — `search_promos`、`filter_promos`、`get_promo`、`list_providers`、`get_recent_updates`、`get_expiring_soon`、`what_can_i_get`、`report_promo_issue`
+- **4 个 resources** — `catalog://snapshot`、`catalog://daily/{date}`、`schema://promo`、`providers://index`
+- **3 个 prompts** — `daily-deal-brief`、`pick-for-me`、`explain-terms`
+- **17 条策展 promo**，覆盖 OpenAI / Anthropic / Google / 智谱 / 硅基流动 / 阿里云百炼 / Cloudflare Workers AI / Groq …
+
+每条 promo 都带：归类后的条款（22 项受控标签）、上手难度分级（**easy / medium / hard**）+ Agent 降级路径、区域披露（global / include / exclude）、到期时间（含 `no_fixed_expiry`）、「如何薅」步骤（hard 项必填），以及**人工核验时间** —— 最后这项是我们的核心差异化。
+
+## 怎么连
+
+任何 MCP 客户端都能连，用 Bearer token 鉴权（Apify API token）：
+
+```bash
+curl -X POST https://neeenja--free-and-cheap-tokens.apify.actor/mcp \
+  -H "Authorization: Bearer $APIFY_TOKEN" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"my-client","version":"1.0"}}}'
+```
+
+远程（`mcp-remote` 桥接，因为 Apify 网关要求每请求带 Bearer token）：
 
 ```json
 {
   "mcpServers": {
     "free-and-cheap-tokens": {
       "command": "npx",
-      "args": ["-y", "mcp-remote", "https://YOUR-APIFY-HOSTNAME/mcp", "--header", "Authorization: Bearer YOUR-APIFY-TOKEN"]
+      "args": ["-y", "mcp-remote", "https://neeenja--free-and-cheap-tokens.apify.actor/mcp", "--header", "Authorization: Bearer YOUR-APIFY-TOKEN"]
     }
   }
 }
 ```
 
-**计费**：每个 MCP tool call = 1 个事件（查询类 $0.005 / 次，单条读取 $0.002 / 次，推理推荐 $0.01 / 次，握手与工具发现免费）。**无月费** —— 没有调用时 Apify 不产生任何费用。这是 v1.1.0（2026-09-28）的关键切换：从 Standby 常驻容器改为 Pay-Per-Event 按事件计费，详见 [`docs/decisions/ADR-001-stack.md`](docs/decisions/ADR-001-stack.md) §1 与 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) §2。
+本地（stdio）：
 
-**Agentic Payments**：本 Actor 满足 Apify Agentic Payments 资格（Pay-per-event + 无 Standby + 有限权限 + KYC）。AI Agent 可用 x402 / Skyfire 协议直接按调用付费，无需 Apify 账号。
-
-### 3. 用每日清单页 + RSS / ICS
-
-- 清单页：https://freeandcheaptokens.dev/
-- RSS：https://freeandcheaptokens.dev/feed.xml
-- ICS：https://freeandcheaptokens.dev/promos.ics
-
-### 4. 订阅 Skill
-
-- WorkBuddy 技能市场（微信支付）：`free-and-cheap-tokens` Pro 订阅
-- Apify Store 付费 Actor（按事件计费，**无月费**）：`free-and-cheap-tokens`
-
----
-
-## MCP 原语
-
-### Tools（8）
-
-| Tool | 用途 |
-|------|------|
-| `search_promos` | 语义 + 条件混合检索 |
-| `filter_promos` | 纯结构化过滤 + 确定性排序 |
-| `get_promo` | 单条详情（含 terms[]、actionability） |
-| `list_providers` | 厂商列表（按国家过滤） |
-| `get_recent_updates` | 自指定时间以来的变更 |
-| `get_expiring_soon` | 14 天内到期（默认窗口） |
-| `what_can_i_get` | 给出 eligible + blocked_by + how_to_clear |
-| `report_promo_issue` | 一键生成 GitHub Issue 模板 |
-
-### Resources（4）
-
-| URI | 内容 |
-|-----|------|
-| `catalog://snapshot` | Catalog 元数据 |
-| `catalog://daily/{date}` | 当日清单 Markdown |
-| `schema://promo` | JSON Schema 本身 |
-| `providers://index` | 厂商索引 |
-
-### Prompts（3）
-
-| Name | 用途 |
-|------|------|
-| `daily-deal-brief` | 每日羊毛简报（≤200 字） |
-| `pick-for-me` | 给我挑 ≤3 条最合适的 |
-| `explain-terms` | 把 terms[] 翻成人话 |
-
----
-
-## Tier / 配额
-
-| 维度 | 免费版 | 付费版 |
-|------|--------|--------|
-| 调用次数 | 100 次 / 24h / IP+UA 哈希 | 不限 |
-| 返回条数 | ≤ 10 条 | 不限 |
-| 提前到期告警 | 7 天前 | **30 天前** |
-| 新发现可见 | 与清单同步 | **早 24 小时** |
-| `verification.confidence` | 不暴露 | 暴露 |
-| 鉴权 | 无（仅 IP+UA） | Apify token / WorkBuddy Pro |
-
----
-
-## 架构
-
-```
-┌────────────────────────────────────────────────────────┐
-│ GitHub Pages (零依赖静态)                              │
-│  · index.html · styles.css · app.js · feed.xml · ics │
-│  · og.png (CI 期 sharp 生成)                          │
-└────────────────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────────────────┐
-│ Apify Standby Actor (Streamable HTTP · stateless)    │
-│  · Node 24.21.0 + Express 5 + MCP SDK 1.30.1          │
-│  · Task hostname 256MB (不是 Actor 级 1024MB!)        │
-│  · 每请求 Bearer token (mcp-remote 桥接)              │
-└────────────────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────────────────┐
-│ 同名 Skill (WorkBuddy / Claude)                       │
-│  · 每日简报 + 实时查询                                │
-│  · 走 MCP 原语                                        │
-└────────────────────────────────────────────────────────┘
+```bash
+git clone https://github.com/PanStories/free-and-cheap-tokens.git
+cd free-and-cheap-tokens
+npm ci && npm run build:catalog && npm run dev
 ```
 
-详细见 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) 与 [`SPEC.md`](SPEC.md)。
-
----
-
-## 项目结构
-
-```
-free-and-cheap-tokens/
-├── .actor/                     Apify Actor 配置
-├── .github/workflows/          CI: preflight / build-site / refresh
-├── data/promos/                策展数据（每文件一条 promo）
-├── docs/                       PRD / ARCHITECTURE / UIUX / 决策记录
-├── design/                     Design Tokens（json + css）
-├── schemas/                    promo.schema.json（Draft 2020-12，机器校验唯一源）
-├── scripts/                      build-catalog / build-site / refresh / generate-og
-├── site/                       构建产物（gitignored 除必要）
-├── src/                        TypeScript 源码（MCP server / tools / tier）
-├── tests/                      vitest 测试
-├── SPEC.md                     规格即契约（zh-CN · [English →](SPEC.en.md)）
-├── README.md                   ← 你在这（zh-CN · [English →](README.en.md)）
-├── LICENSE                     MIT
-└── CONTRIBUTING.md             收录流程（zh-CN · [English →](CONTRIBUTING.en.md)）
+```json
+{
+  "mcpServers": {
+    "free-and-cheap-tokens": {
+      "command": "node",
+      "args": ["dist/index.js"]
+    }
+  }
+}
 ```
 
----
+## 计费（Pay-Per-Event，无月费）
+
+| 事件 | 价格 |
+|---|---|
+| `mcp-search`（搜索 / 过滤 / 近期更新 / 即将到期） | $0.005 / 次 |
+| `mcp-what-can-i-get`（推理推荐） | $0.01 / 次 |
+| `mcp-get-promo`、`mcp-list-providers` | $0.002 / 次 |
+| `mcp-initialize`、`mcp-list-tools`、`mcp-report-issue` | **免费** |
+
+空闲时不产生任何费用。注意：本 Actor **不支持 Apify Agentic Payments（x402 / Skyfire）** —— 该计划要求关闭 Standby，而 MCP 端点必须开 Standby。计费走你自己的 Apify token。
+
+## 项目立场
+
+> 开源 · 不接硬广 · 不挂联盟 · 数据每日核实 · MIT
+
+四处置顶一致：站点顶部 sticky 条、每张卡片底部、分享卡片版面内、复制分享文案内。原 v2 计划走联盟返佣，但合规负担（FTC 16 CFR 255、中国《互联网广告管理办法》第九 / 十八条）太重。改为「策展即服务」后，可信度壁垒从相对优势升级成结构性优势。
 
 ## 开发
 
@@ -227,41 +201,117 @@ npm test                # vitest（schema 校验 + 业务逻辑）
 npm run check:p0        # P0 红线（emoji / 紫粉渐变 / 回弹缓动 / 空洞占位）
 npm run build:catalog   # 构建 build/catalog.json
 npm run build:site      # 生成 site/ 全套
-node scripts/generate-og.mjs  # 生成 site/og.png（需 sharp）
 npm run preflight       # 一键跑完上面所有
 ```
 
----
-
 ## 收录与纠错
 
-- 想收录新 promo？见 [`CONTRIBUTING.md`](CONTRIBUTING.md)（[English →](CONTRIBUTING.en.md)）
-- 看到错误 / 过期的 promo？点页面右下角「数据有误？」或直接开 Issue（模板自动生成）
+- 想收录新 promo？见 [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- 看到错误 / 过期的 promo？调 `report_promo_issue`，或直接开 Issue（模板自动生成）
 
 ---
 
-## 路线图（按 SPEC §2）
+<a id="繁體中文"></a>
 
-| 状态 | 项 |
-|------|------|
-| ✅ MVP v1.0 | 14 条策展 + MCP server + 静态站 + RSS/ICS |
-| 🚧 Skill | WorkBuddy / Claude 同名 Skill（待上架） |
-| 🚧 Apify 付费 | Store 付费 Actor（待配置 Task hostname） |
-| 📋 Phase 2 F15 | refresh 自动入库（Phase 1 discovery feed 已上线；auto-publish 待人工评估） |
+# 繁體中文
+
+一份**每日人工核實**、機器可讀的 **AI 模型 / 推論服務免費額度與低價 token 促銷**策展清單，以單一 MCP server 的形式透過 Streamable HTTP 對外提供。
+
+## 你能拿到什麼
+
+- **8 個 tools** — `search_promos`、`filter_promos`、`get_promo`、`list_providers`、`get_recent_updates`、`get_expiring_soon`、`what_can_i_get`、`report_promo_issue`
+- **4 個 resources** — `catalog://snapshot`、`catalog://daily/{date}`、`schema://promo`、`providers://index`
+- **3 個 prompts** — `daily-deal-brief`、`pick-for-me`、`explain-terms`
+- **17 筆策展 promo**，涵蓋 OpenAI / Anthropic / Google / 智譜 / 矽基流動 / 阿里雲百鍊 / Cloudflare Workers AI / Groq …
+
+每筆 promo 都帶有：歸類後的條款（22 項受控標籤）、上手難度分級（**easy / medium / hard**）+ Agent 降級路徑、區域揭露（global / include / exclude）、到期時間（含 `no_fixed_expiry`）、「如何領」步驟（hard 項目必填），以及**人工核驗時間** —— 最後這項是我們的核心差異化。
+
+## 怎麼連
+
+任何 MCP 用戶端都能連，使用 Bearer token 驗證（你的 Apify API token）：
+
+```bash
+curl -X POST https://neeenja--free-and-cheap-tokens.apify.actor/mcp \
+  -H "Authorization: Bearer $APIFY_TOKEN" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"my-client","version":"1.0"}}}'
+```
+
+遠端（`mcp-remote` 橋接，因為 Apify 閘道要求每個請求都帶 Bearer token）：
+
+```json
+{
+  "mcpServers": {
+    "free-and-cheap-tokens": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://neeenja--free-and-cheap-tokens.apify.actor/mcp", "--header", "Authorization: Bearer YOUR-APIFY-TOKEN"]
+    }
+  }
+}
+```
+
+本機（stdio）：
+
+```bash
+git clone https://github.com/PanStories/free-and-cheap-tokens.git
+cd free-and-cheap-tokens
+npm ci && npm run build:catalog && npm run dev
+```
+
+```json
+{
+  "mcpServers": {
+    "free-and-cheap-tokens": {
+      "command": "node",
+      "args": ["dist/index.js"]
+    }
+  }
+}
+```
+
+## 計費（Pay-Per-Event，無月費）
+
+| 事件 | 價格 |
+|---|---|
+| `mcp-search`（搜尋 / 篩選 / 近期更新 / 即將到期） | $0.005 / 次 |
+| `mcp-what-can-i-get`（推理推薦） | $0.01 / 次 |
+| `mcp-get-promo`、`mcp-list-providers` | $0.002 / 次 |
+| `mcp-initialize`、`mcp-list-tools`、`mcp-report-issue` | **免費** |
+
+閒置時不會產生任何費用。注意：本 Actor **不支援 Apify Agentic Payments（x402 / Skyfire）** —— 該計畫要求關閉 Standby，而 MCP 端點必須開啟 Standby。計費走你自己的 Apify token。
+
+## 專案立場
+
+> 開源 · 不接硬廣 · 不掛聯盟 · 資料每日核實 · MIT
+
+四處一致標示：站台頂部 sticky 條、每張卡片底部、分享卡片版面內、複製分享文案內。原本 v2 計畫走聯盟返傭路線，但合規負擔（FTC 16 CFR 255、中國《互聯網廣告管理辦法》第九／十八條）太重。改為「策展即服務」後，可信度壁壘從相對優勢升級為結構性優勢。
+
+## 開發
+
+```bash
+npm ci                  # 安裝（含 devDeps）
+npm run typecheck       # tsc --noEmit
+npm run lint            # eslint
+npm test                # vitest（schema 校驗 + 業務邏輯）
+npm run check:p0        # P0 紅線（emoji / 紫粉漸層 / 回彈緩動 / 空洞佔位）
+npm run build:catalog   # 建置 build/catalog.json
+npm run build:site      # 產生 site/ 全套
+npm run preflight       # 一鍵跑完上面所有
+```
+
+## 收錄與糾錯
+
+- 想收錄新的 promo？見 [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- 發現錯誤或過期的 promo？呼叫 `report_promo_issue`，或直接開 Issue（範本自動產生）
 
 ---
 
-## License
+## 致谢 / Acknowledgments
 
-MIT — 见 [`LICENSE`](LICENSE)。
-任何人都可以 fork、自部署、自托管、自修改。
-
----
-
-## 致谢
-
-- 灵感来源：[cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)（社区维护的免费 LLM 列表）
+- 灵感来源：[cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources)
 - 数据交叉验证：[benchlm.ai](https://benchlm.ai)、[aiforker](https://aiforker.com)
 - 协议：[Model Context Protocol](https://modelcontextprotocol.io)
 
-数据核实：每天由策展团队人工维护。最后一次生成时间见页面顶部的「数据生成于」。
+License: MIT — anyone can fork, self-deploy, self-host and modify.
+数据核实：每天由策展团队人工维护。
