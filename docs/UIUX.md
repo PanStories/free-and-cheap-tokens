@@ -1,4 +1,4 @@
-# Free & Cheap Tokens — UI/UX 设计规范
+# Free and Cheap Tokens — UI/UX 设计规范
 
 > 生成日期：2026-09-28 ｜ 设计师：颜好看 ｜ 基于：项目需求 v1 + 用户确立的硬约束
 > 三轴刻度：**Variance = 3 / Motion = 2 / Density = 7**
@@ -624,7 +624,7 @@ Open source · No paid placements · No affiliate links · Daily verified · MIT
 
 ```html
 <meta property="og:type"        content="website">
-<meta property="og:title"       content="Free & Cheap Tokens · 2026-09-28 每日清单">
+<meta property="og:title"       content="Free and Cheap Tokens · 2026-09-28 每日清单">
 <meta property="og:description" content="今日新增 7 条，7 天内到期 3 条，免信用卡 12 条。">
 <meta property="og:image"       content="https://<domain>/og/2026-09-28.png">
 <meta property="og:image:width"  content="1200">
