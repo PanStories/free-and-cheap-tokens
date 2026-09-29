@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "NVIDIA NIM 免费层：1000 次 API 调用 / 90 天",
+    "headline_en": "NVIDIA NIM free tier: 1,000 API calls / 90 days",
+    "summary_en": "build.nvidia.com offers free API call allowances for open models like Llama, Mistral, and DeepSeek (per-model independent quotas).",
+    "value_display_en": "1,000 calls / model / 90 days",
+
     "summary": "build.nvidia.com 提供 Llama / Mistral / DeepSeek 等开源模型的免费 API 调用额度（每模型独立配额）。",
     "value_display": "1000 calls / 模型 / 90 天",
     "no_fixed_expiry": false,

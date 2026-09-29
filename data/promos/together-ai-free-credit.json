@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "Together AI 开源模型免费层（Llama / Qwen / DeepSeek 等）",
+    "headline_en": "Together AI open-model free tier (Llama / Qwen / DeepSeek, etc.)",
+    "summary_en": "Together AI serves 200+ open models and grants new accounts a small free allowance.",
+    "value_display_en": "Free token allowance (varies by model)",
+
     "summary": "Together AI 提供 200+ 开源模型的推理，新账号含小额免费额度。",
     "value_display": "免费 token 额度（按模型不同）",
     "no_fixed_expiry": true,

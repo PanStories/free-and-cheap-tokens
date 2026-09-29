@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "Mistral La Plateforme 实验层免费 API",
+    "headline_en": "Mistral La Plateforme experimental-tier free API",
+    "summary_en": "Mistral offers a free API tier for experimental models, including Codestral and Mistral-Nemo.",
+    "value_display_en": "Experimental models free tier (1 RPM / monthly cap)",
+
     "summary": "Mistral 提供实验模型的免费 API 层，含 Codestral、Mistral-Nemo 等。",
     "value_display": "实验模型免费层（1 RPM / 月度限制）",
     "no_fixed_expiry": true,

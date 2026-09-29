@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "ChatGPT 免费层（GPT-4o mini，无限消息）",
+    "headline_en": "ChatGPT free tier (GPT-4o mini, unlimited messages)",
+    "summary_en": "The web and iOS/Android apps let you chat with GPT-4o mini without limit, no API key required.",
+    "value_display_en": "GPT-4o mini unlimited",
+
     "summary": "网页与 iOS/Android 客户端可用 GPT-4o mini 无限对话，无需 API key。",
     "value_display": "GPT-4o mini 无限",
     "no_fixed_expiry": true,

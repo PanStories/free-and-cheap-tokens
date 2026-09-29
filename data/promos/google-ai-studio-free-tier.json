@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "Gemini 2.5 Flash 免费 API",
+    "headline_en": "Gemini 2.5 Flash free API",
+    "summary_en": "Google AI Studio offers a Gemini 2.5 Flash free tier: 15 requests per minute and 1,500 per day.",
+    "value_display_en": "15 RPM · 1,500 RPD",
+
     "summary": "Google AI Studio 提供 Gemini 2.5 Flash 免费层，每分钟 15 次请求、每日 1500 次。",
     "value_display": "15 RPM · 1500 RPD",
     "no_fixed_expiry": true,

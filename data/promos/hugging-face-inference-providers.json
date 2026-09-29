@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "Hugging Face Inference Providers 月度 $0.10 免费额度",
+    "headline_en": "Hugging Face Inference Providers $0.10 monthly free credit",
+    "summary_en": "New HF accounts include $0.10/month free Inference Providers credit (roughly 2,000 small-model inferences).",
+    "value_display_en": "$0.10/month free credit",
+
     "summary": "新 HF 账号含 $0.10/月（约 2000 次小模型推理）免费 Inference Providers 额度。",
     "value_display": "$0.10/月免费额度",
     "no_fixed_expiry": true,

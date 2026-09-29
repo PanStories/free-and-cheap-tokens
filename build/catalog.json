@@ -1,0 +1,1690 @@
+{
+  "generated_at": "2026-09-29T15:07:38.096Z",
+  "sha256": "b54f80af179fbcf01e7927fcdfabce88c3996cecc318f1c0978cbd790575624e",
+  "providers": [
+    {
+      "id": "aliyun-bailian",
+      "name_en": "Aliyun Bailian",
+      "name_zh": "阿里云百炼",
+      "country": "CN",
+      "homepage": "https://bailian.console.aliyun.com/"
+    },
+    {
+      "id": "siliconflow",
+      "name_en": "SiliconFlow",
+      "name_zh": "硅基流动",
+      "country": "CN",
+      "homepage": "https://siliconflow.cn/"
+    },
+    {
+      "id": "doubao",
+      "name_en": "Volcengine Ark (Doubao)",
+      "name_zh": "火山方舟 / 豆包",
+      "country": "CN",
+      "homepage": "https://www.volcengine.com/product/ark"
+    },
+    {
+      "id": "tencent-hunyuan",
+      "name_en": "Tencent Hunyuan",
+      "name_zh": "腾讯混元",
+      "country": "CN",
+      "homepage": "https://cloud.tencent.com/product/hunyuan"
+    },
+    {
+      "id": "kimi",
+      "name_en": "Moonshot Kimi",
+      "name_zh": "月之暗面 Kimi",
+      "country": "CN",
+      "homepage": "https://platform.moonshot.cn/"
+    },
+    {
+      "id": "zhipu",
+      "name_en": "Zhipu BigModel",
+      "name_zh": "智谱 BigModel",
+      "country": "CN",
+      "homepage": "https://bigmodel.cn/"
+    },
+    {
+      "id": "cloudflare",
+      "name_en": "Cloudflare",
+      "name_zh": null,
+      "country": "US",
+      "homepage": "https://developers.cloudflare.com/workers-ai/"
+    },
+    {
+      "id": "cohere",
+      "name_en": "Cohere",
+      "name_zh": null,
+      "country": "CA",
+      "homepage": "https://cohere.com/"
+    },
+    {
+      "id": "github",
+      "name_en": "GitHub Models",
+      "name_zh": null,
+      "country": "US",
+      "homepage": "https://github.com/marketplace/models"
+    },
+    {
+      "id": "google-ai-studio",
+      "name_en": "Google AI Studio",
+      "name_zh": null,
+      "country": "US",
+      "homepage": "https://aistudio.google.com/"
+    },
+    {
+      "id": "groq",
+      "name_en": "Groq",
+      "name_zh": null,
+      "country": "US",
+      "homepage": "https://groq.com/"
+    },
+    {
+      "id": "hugging-face",
+      "name_en": "Hugging Face",
+      "name_zh": null,
+      "country": "FR",
+      "homepage": "https://huggingface.co/"
+    },
+    {
+      "id": "mistral",
+      "name_en": "Mistral AI",
+      "name_zh": null,
+      "country": "FR",
+      "homepage": "https://mistral.ai/"
+    },
+    {
+      "id": "nvidia",
+      "name_en": "NVIDIA NIM",
+      "name_zh": null,
+      "country": "US",
+      "homepage": "https://build.nvidia.com/"
+    },
+    {
+      "id": "openai",
+      "name_en": "OpenAI",
+      "name_zh": null,
+      "country": "US",
+      "homepage": "https://openai.com/"
+    },
+    {
+      "id": "openrouter",
+      "name_en": "OpenRouter",
+      "name_zh": null,
+      "country": "US",
+      "homepage": "https://openrouter.ai/"
+    },
+    {
+      "id": "together-ai",
+      "name_en": "Together AI",
+      "name_zh": null,
+      "country": "US",
+      "homepage": "https://www.together.ai/"
+    }
+  ],
+  "promos": [
+    {
+      "id": "doubao-ark-free",
+      "provider": {
+        "id": "doubao",
+        "name_en": "Volcengine Ark (Doubao)",
+        "name_zh": "火山方舟 / 豆包",
+        "country": "CN",
+        "homepage": "https://www.volcengine.com/product/ark"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "火山方舟体验额度：豆包 1.5 Pro 500 万 tokens",
+        "headline_en": "Volcano Ark trial quota: Doubao 1.5 Pro 5M tokens",
+        "summary_en": "New Ark users receive a Doubao 1.5 Pro trial allowance covering text, image, and video models.",
+        "value_display_en": "5M tokens trial",
+        "summary": "新开通方舟 ARK 的用户获赠豆包 1.5 Pro 体验额度，含文本/图像/视频模型。",
+        "value_display": "500 万 tokens 体验",
+        "expires_at": "2026-12-31T23:59:59+08:00",
+        "expiry_type": "fixed_date",
+        "claim_url": "https://www.volcengine.com/product/ark"
+      },
+      "terms": [
+        {
+          "tag": "identity_verification",
+          "severity": "blocker",
+          "note": "火山引擎账号需实名"
+        },
+        {
+          "tag": "credit_card_required",
+          "severity": "friction",
+          "note": "需绑卡才能开通方舟 ARK"
+        },
+        {
+          "tag": "rate_limited",
+          "severity": "note",
+          "note": "体验期内有 RPM/TPM 限制"
+        },
+        {
+          "tag": "one_per_account",
+          "severity": "note",
+          "note": "每个实名账号只领一次"
+        }
+      ],
+      "difficulty": "medium",
+      "difficulty_reasons": [
+        "火山引擎账号 + 实名 + 开通方舟 + 绑卡"
+      ],
+      "estimated_setup_minutes": 18,
+      "region": {
+        "availability": "include",
+        "countries": [
+          "CN"
+        ]
+      },
+      "categories": [
+        "llm",
+        "image",
+        "video"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-26T01:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://www.volcengine.com/docs/82379"
+        ],
+        "first_seen_at": "2024-10-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 65,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "注册火山引擎账号"
+          },
+          {
+            "n": 2,
+            "text": "完成实名 + 绑卡"
+          },
+          {
+            "n": 3,
+            "text": "开通「方舟 ARK」服务"
+          },
+          {
+            "n": 4,
+            "text": "在体验中心领取 500 万 tokens 体验券"
+          },
+          {
+            "n": 5,
+            "text": "创建 API Key 调用模型（豆包 / 即梦 / 其他）"
+          }
+        ],
+        "gotchas": [
+          "券期 2026-12-31 截止"
+        ]
+      },
+      "created_at": "2024-10-01T00:00:00Z",
+      "updated_at": "2026-09-26T01:00:00Z"
+    },
+    {
+      "id": "siliconflow-free-tier",
+      "provider": {
+        "id": "siliconflow",
+        "name_en": "SiliconFlow",
+        "name_zh": "硅基流动",
+        "country": "CN",
+        "homepage": "https://siliconflow.cn/"
+      },
+      "offer": {
+        "type": "signup_bonus",
+        "headline": "硅基流动新用户 ¥16 通用代金券",
+        "headline_en": "SiliconFlow new-user ¥16 universal voucher",
+        "summary_en": "After real-name signup you get a ¥16 universal voucher (on the order of 20M tokens), usable across all SiliconCloud models.",
+        "value_display_en": "¥16 voucher (~20M tokens)",
+        "summary": "实名注册后获 ¥16 通用代金券（2000 万 tokens 量级），可用于 SiliconCloud 全模型。",
+        "value_display": "¥16 代金券（约 2000 万 tokens）",
+        "expires_at": "2026-12-31T23:59:59+08:00",
+        "expiry_type": "fixed_date",
+        "claim_window": {
+          "end": "2026-12-31T23:59:59+08:00"
+        },
+        "claim_url": "https://cloud.siliconflow.cn/"
+      },
+      "terms": [
+        {
+          "tag": "identity_verification",
+          "severity": "blocker",
+          "note": "需大陆手机号 + 实名认证"
+        },
+        {
+          "tag": "one_per_account",
+          "severity": "blocker",
+          "note": "每个身份证只能领一次"
+        },
+        {
+          "tag": "rate_limited",
+          "severity": "note",
+          "note": "免费档 RPM 限制"
+        },
+        {
+          "tag": "stackable",
+          "severity": "friction",
+          "note": "可与「推荐官」邀请券叠加，但合计有上限"
+        }
+      ],
+      "difficulty": "medium",
+      "difficulty_reasons": [
+        "需实名认证（手机号 + 身份证）"
+      ],
+      "estimated_setup_minutes": 10,
+      "region": {
+        "availability": "include",
+        "countries": [
+          "CN"
+        ]
+      },
+      "categories": [
+        "llm",
+        "embedding",
+        "image"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-26T01:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://siliconflow.cn/"
+        ],
+        "first_seen_at": "2024-01-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 78,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "打开 cloud.siliconflow.cn 注册"
+          },
+          {
+            "n": 2,
+            "text": "用大陆手机号注册并完成实名认证"
+          },
+          {
+            "n": 3,
+            "text": "在控制台「卡券中心」领取 ¥16 代金券（部分账号自动发放）"
+          },
+          {
+            "n": 4,
+            "text": "获取 API key，用于 SiliconCloud 全模型"
+          }
+        ],
+        "gotchas": [
+          "券 180 天有效；活动期 2026-12-31 截止"
+        ]
+      },
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2026-09-26T01:00:00Z"
+    },
+    {
+      "id": "aliyun-bailian-free",
+      "provider": {
+        "id": "aliyun-bailian",
+        "name_en": "Aliyun Bailian",
+        "name_zh": "阿里云百炼",
+        "country": "CN",
+        "homepage": "https://bailian.console.aliyun.com/"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "阿里云百炼免费模型额度（含 Qwen 全系）",
+        "headline_en": "Alibaba Cloud Bailian free model quota (incl. full Qwen lineup)",
+        "summary_en": "Bailian grants every onboarded user free token allowances for mainstream models like Qwen, Llama, and DeepSeek, with quotas varying by model.",
+        "value_display_en": "Qwen 1M free tokens (new users)",
+        "summary": "百炼平台为每个开通用户提供 Qwen、Llama、DeepSeek 等主流模型的免费 token 额度，按模型配额不同。",
+        "value_display": "Qwen 免费 100 万 tokens（新用户）",
+        "no_fixed_expiry": true,
+        "claim_url": "https://bailian.console.aliyun.com/"
+      },
+      "terms": [
+        {
+          "tag": "identity_verification",
+          "severity": "blocker",
+          "note": "阿里云账号需实名（个人 / 企业）"
+        },
+        {
+          "tag": "rate_limited",
+          "severity": "note",
+          "note": "按模型不同 RPM/TPM 限制"
+        },
+        {
+          "tag": "auto_renew",
+          "severity": "friction",
+          "note": "免费额度耗尽后默认按 Token 计费，可在控制台关闭"
+        }
+      ],
+      "difficulty": "medium",
+      "difficulty_reasons": [
+        "阿里云账号 + 实名 + 开通百炼"
+      ],
+      "estimated_setup_minutes": 12,
+      "region": {
+        "availability": "include",
+        "countries": [
+          "CN"
+        ]
+      },
+      "categories": [
+        "llm",
+        "embedding",
+        "image"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-24T07:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://help.aliyun.com/zh/model-studio/getting-started/models"
+        ],
+        "first_seen_at": "2024-06-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 68,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "注册阿里云账号（aliyun.com）"
+          },
+          {
+            "n": 2,
+            "text": "完成个人实名（用支付宝 / 公安身份库秒过）"
+          },
+          {
+            "n": 3,
+            "text": "开通「百炼」服务并领取免费模型额度"
+          },
+          {
+            "n": 4,
+            "text": "获取 API Key 调用 Qwen 等模型"
+          }
+        ],
+        "gotchas": [
+          "关闭「自动续费/扣费」选项，避免额度用完后扣款"
+        ]
+      },
+      "created_at": "2024-06-01T00:00:00Z",
+      "updated_at": "2026-09-24T07:00:00Z"
+    },
+    {
+      "id": "cloudflare-workers-ai-free",
+      "provider": {
+        "id": "cloudflare",
+        "name_en": "Cloudflare",
+        "name_zh": null,
+        "country": "US",
+        "homepage": "https://developers.cloudflare.com/workers-ai/"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "Cloudflare Workers AI 免费额度：每天 10,000 次神经元推理",
+        "headline_en": "Cloudflare Workers AI free quota: 10,000 neuron inferences per day",
+        "summary_en": "Workers AI covers models like Llama 3.1, Gemma, and Mistral, billed by neuron count; the free account gets 10,000 neurons per day.",
+        "value_display_en": "10,000 neurons/day",
+        "summary": "Workers AI 包含 Llama 3.1、Gemma、Mistral 等模型，按神经元数计费；免费账号每天 10,000 神经元。",
+        "value_display": "10,000 neurons/天",
+        "no_fixed_expiry": true,
+        "claim_url": "https://dash.cloudflare.com/?to=/:account/ai/workers-ai"
+      },
+      "terms": [
+        {
+          "tag": "rate_limited",
+          "severity": "friction",
+          "note": "10,000 neurons/天；按模型消耗不同神经元数"
+        },
+        {
+          "tag": "quota_capped",
+          "severity": "note",
+          "note": "模型列表由 Cloudflare 控制，不可指定任意模型"
+        }
+      ],
+      "difficulty": "medium",
+      "difficulty_reasons": [
+        "需要绑卡（即使免费层也要求，但不会扣费）"
+      ],
+      "estimated_setup_minutes": 8,
+      "region": {
+        "availability": "global"
+      },
+      "categories": [
+        "llm",
+        "embedding"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-22T03:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://developers.cloudflare.com/workers-ai/platform/pricing/"
+        ],
+        "first_seen_at": "2024-04-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 75,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "登录 dash.cloudflare.com 注册账号"
+          },
+          {
+            "n": 2,
+            "text": "绑卡（免费层不扣费，但需绑卡验证身份）"
+          },
+          {
+            "n": 3,
+            "text": "左侧 Workers & Pages → 创建 Worker"
+          },
+          {
+            "n": 4,
+            "text": "在 Worker 代码中调用 env.AI.run('@cf/meta/llama-3.1-8b-instruct', {...})"
+          }
+        ],
+        "gotchas": [
+          "需准备 $0 的卡；中国大陆用户建议用全币种信用卡"
+        ]
+      },
+      "created_at": "2024-04-01T00:00:00Z",
+      "updated_at": "2026-09-22T03:00:00Z"
+    },
+    {
+      "id": "cohere-trial-free",
+      "provider": {
+        "id": "cohere",
+        "name_en": "Cohere",
+        "name_zh": null,
+        "country": "CA",
+        "homepage": "https://cohere.com/"
+      },
+      "offer": {
+        "type": "trial_credit",
+        "headline": "Cohere Trial API：每月 1000 次免费调用",
+        "headline_en": "Cohere Trial API: 1,000 free calls per month",
+        "summary_en": "A Cohere Trial key gives 1,000 free API calls per month (includes the Command series models).",
+        "value_display_en": "1,000 calls/month",
+        "summary": "Cohere Trial key 提供每月 1000 次免费 API 调用（含 Command 系列模型）。",
+        "value_display": "1000 calls/月",
+        "no_fixed_expiry": true,
+        "claim_url": "https://dashboard.cohere.com/"
+      },
+      "terms": [
+        {
+          "tag": "rate_limited",
+          "severity": "blocker",
+          "note": "Trial 档限 1000 calls/月"
+        }
+      ],
+      "difficulty": "easy",
+      "difficulty_reasons": [
+        "邮箱注册即得 trial key"
+      ],
+      "estimated_setup_minutes": 3,
+      "region": {
+        "availability": "global"
+      },
+      "categories": [
+        "llm",
+        "embedding"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-21T07:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://docs.cohere.com/docs/going-rate-limited"
+        ],
+        "first_seen_at": "2024-05-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 70,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "登录 dashboard.cohere.com"
+          },
+          {
+            "n": 2,
+            "text": "左侧「API Keys」→「Trial Keys」创建 key"
+          },
+          {
+            "n": 3,
+            "text": "调用 cohere.command-r-plus 等模型"
+          }
+        ]
+      },
+      "created_at": "2024-05-01T00:00:00Z",
+      "updated_at": "2026-09-21T07:00:00Z"
+    },
+    {
+      "id": "github-models-free",
+      "provider": {
+        "id": "github",
+        "name_en": "GitHub Models",
+        "name_zh": null,
+        "country": "US",
+        "homepage": "https://github.com/marketplace/models"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "GitHub Models 个人 Playground 免费试用",
+        "headline_en": "GitHub Models personal Playground free trial",
+        "summary_en": "GitHub Marketplace Models offers a Playground experience for models like GPT-4o, Llama, and Phi-3; Copilot personal subscriptions include rate-limited API access.",
+        "value_display_en": "Playground free · Copilot personal monthly quota",
+        "summary": "GitHub Marketplace Models 提供 GPT-4o、Llama、Phi-3 等模型 Playground 体验，Copilot 个人订阅含限额 API 访问。",
+        "value_display": "Playground 免费 · Copilot 个人月配额",
+        "no_fixed_expiry": true,
+        "claim_url": "https://github.com/marketplace/models"
+      },
+      "terms": [
+        {
+          "tag": "rate_limited",
+          "severity": "friction",
+          "note": "按 Copilot 订阅级别配额不同"
+        },
+        {
+          "tag": "quota_capped",
+          "severity": "note",
+          "note": "模型由 GitHub 选定"
+        }
+      ],
+      "difficulty": "easy",
+      "difficulty_reasons": [
+        "GitHub 账号即可用"
+      ],
+      "estimated_setup_minutes": 2,
+      "region": {
+        "availability": "global"
+      },
+      "categories": [
+        "llm",
+        "embedding"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "medium",
+        "last_verified_at": "2026-09-25T08:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://github.com/marketplace/models"
+        ],
+        "first_seen_at": "2024-08-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 78,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "登录 GitHub 账号"
+          },
+          {
+            "n": 2,
+            "text": "打开 marketplace/models 选模型体验"
+          }
+        ]
+      },
+      "created_at": "2024-08-01T00:00:00Z",
+      "updated_at": "2026-09-25T08:00:00Z"
+    },
+    {
+      "id": "google-ai-studio-free-tier",
+      "provider": {
+        "id": "google-ai-studio",
+        "name_en": "Google AI Studio",
+        "name_zh": null,
+        "country": "US",
+        "homepage": "https://aistudio.google.com/"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "Gemini 2.5 Flash 免费 API",
+        "headline_en": "Gemini 2.5 Flash free API",
+        "summary_en": "Google AI Studio offers a Gemini 2.5 Flash free tier: 15 requests per minute and 1,500 per day.",
+        "value_display_en": "15 RPM · 1,500 RPD",
+        "summary": "Google AI Studio 提供 Gemini 2.5 Flash 免费层，每分钟 15 次请求、每日 1500 次。",
+        "value_display": "15 RPM · 1500 RPD",
+        "no_fixed_expiry": true,
+        "claim_url": "https://aistudio.google.com/apikey"
+      },
+      "terms": [
+        {
+          "tag": "rate_limited",
+          "severity": "friction",
+          "note": "15 RPM / 1500 RPD，可能撞 429"
+        },
+        {
+          "tag": "region_locked",
+          "severity": "note",
+          "note": "部分国家不可用，参考 https://ai.google.dev/available_regions"
+        },
+        {
+          "tag": "data_used_for_training",
+          "severity": "friction",
+          "note": "默认 opt-in（可在控制台 opt-out）"
+        }
+      ],
+      "difficulty": "easy",
+      "difficulty_reasons": [
+        "Google 账号 + 一键创建 API key"
+      ],
+      "estimated_setup_minutes": 3,
+      "region": {
+        "availability": "exclude",
+        "excluded_countries": [
+          "CU",
+          "IR",
+          "KP",
+          "SY"
+        ]
+      },
+      "categories": [
+        "llm"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-26T07:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://ai.google.dev/pricing"
+        ],
+        "first_seen_at": "2024-12-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 85,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "登录 aistudio.google.com（需 Google 账号）"
+          },
+          {
+            "n": 2,
+            "text": "左侧「Get API Key」→ 「Create API Key」"
+          },
+          {
+            "n": 3,
+            "text": "在控制台关闭「Improve Google products with my prompts」以避免数据被训练"
+          },
+          {
+            "n": 4,
+            "text": "把 API key 存到环境变量 GOOGLE_API_KEY"
+          }
+        ],
+        "gotchas": [
+          "超过 RPM/RPD 会 429；可在请求层加重试 backoff"
+        ]
+      },
+      "created_at": "2024-12-01T00:00:00Z",
+      "updated_at": "2026-09-26T07:00:00Z"
+    },
+    {
+      "id": "groq-free-tier",
+      "provider": {
+        "id": "groq",
+        "name_en": "Groq",
+        "name_zh": null,
+        "country": "US",
+        "homepage": "https://groq.com/"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "Groq 免费层：Llama 3.1 8B / 70B 高吞吐推理",
+        "headline_en": "Groq free tier: high-throughput Llama 3.1 8B / 70B inference",
+        "summary_en": "Free API access to open models like Llama 3.1 and Mixtral, claimed to be the fastest token/s in the industry.",
+        "value_display_en": "Llama 3.1 70B · 14,400 RPD (free)",
+        "summary": "免费 API 接入 Llama 3.1 / Mixtral 等开源模型，号称业内最快 token/s。",
+        "value_display": "Llama 3.1 70B · 14400 RPD（free）",
+        "no_fixed_expiry": true,
+        "claim_url": "https://console.groq.com/"
+      },
+      "terms": [
+        {
+          "tag": "rate_limited",
+          "severity": "friction",
+          "note": "14400 RPD / 30 RPM（实际配额以控制台为准）"
+        },
+        {
+          "tag": "quota_capped",
+          "severity": "note",
+          "note": "仅开源模型，无 GPT/Claude 同款闭源模型"
+        }
+      ],
+      "difficulty": "easy",
+      "difficulty_reasons": [
+        "Google/GitHub 账号注册即得 key"
+      ],
+      "estimated_setup_minutes": 3,
+      "region": {
+        "availability": "global"
+      },
+      "categories": [
+        "llm"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-20T05:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://console.groq.com/docs/rate-limits"
+        ],
+        "first_seen_at": "2024-03-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 82,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "登录 console.groq.com（Google/GitHub/Email 均可）"
+          },
+          {
+            "n": 2,
+            "text": "左侧「API Keys」→「Create API Key」"
+          },
+          {
+            "n": 3,
+            "text": "选择模型（推荐 llama-3.1-70b-versatile）"
+          },
+          {
+            "n": 4,
+            "text": "用 OpenAI 兼容接口接入 base_url=https://api.groq.com/openai/v1"
+          }
+        ]
+      },
+      "created_at": "2024-03-01T00:00:00Z",
+      "updated_at": "2026-09-20T05:00:00Z"
+    },
+    {
+      "id": "hugging-face-inference-providers",
+      "provider": {
+        "id": "hugging-face",
+        "name_en": "Hugging Face",
+        "name_zh": null,
+        "country": "FR",
+        "homepage": "https://huggingface.co/"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "Hugging Face Inference Providers 月度 $0.10 免费额度",
+        "headline_en": "Hugging Face Inference Providers $0.10 monthly free credit",
+        "summary_en": "New HF accounts include $0.10/month free Inference Providers credit (roughly 2,000 small-model inferences).",
+        "value_display_en": "$0.10/month free credit",
+        "summary": "新 HF 账号含 $0.10/月（约 2000 次小模型推理）免费 Inference Providers 额度。",
+        "value_display": "$0.10/月免费额度",
+        "no_fixed_expiry": true,
+        "claim_url": "https://huggingface.co/settings/billing"
+      },
+      "terms": [
+        {
+          "tag": "rate_limited",
+          "severity": "friction",
+          "note": "$0.10 月度上限；超额按 Inference Providers 费率"
+        },
+        {
+          "tag": "credit_card_required",
+          "severity": "friction",
+          "note": "2025 起强制绑卡才能用付费 inference"
+        },
+        {
+          "tag": "quota_capped",
+          "severity": "note",
+          "note": "支持模型取决于 Inference Providers 接入列表"
+        }
+      ],
+      "difficulty": "medium",
+      "difficulty_reasons": [
+        "需 HF 账号 + 绑卡（即使免费层也要求）"
+      ],
+      "estimated_setup_minutes": 6,
+      "region": {
+        "availability": "global"
+      },
+      "categories": [
+        "llm",
+        "embedding",
+        "image"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-25T05:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://huggingface.co/docs/inference-providers"
+        ],
+        "first_seen_at": "2024-09-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 65,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "注册 huggingface.co 账号"
+          },
+          {
+            "n": 2,
+            "text": "进入 Settings → Billing 绑卡（即使免费层也要求）"
+          },
+          {
+            "n": 3,
+            "text": "创建 Access Token（Settings → Access Tokens）"
+          },
+          {
+            "n": 4,
+            "text": "通过 inferenceClient 调用模型"
+          }
+        ]
+      },
+      "created_at": "2024-09-01T00:00:00Z",
+      "updated_at": "2026-09-25T05:00:00Z"
+    },
+    {
+      "id": "kimi-moonshot-free",
+      "provider": {
+        "id": "kimi",
+        "name_en": "Moonshot Kimi",
+        "name_zh": "月之暗面 Kimi",
+        "country": "CN",
+        "homepage": "https://platform.moonshot.cn/"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "Moonshot Kimi 开放平台免费额度",
+        "headline_en": "Moonshot Kimi open-platform free quota",
+        "summary_en": "New Moonshot Open Platform users get a ¥5-equivalent token trial allowance; the kimi-k2 series is also available free via Cloudflare Workers AI.",
+        "value_display_en": "Free trial credit",
+        "summary": "Moonshot 开放平台新用户获 ¥5 等值 tokens 体验额度；kimi-k2 系列可在 Cloudflare Workers AI 免费接入。",
+        "value_display": "免费体验额度",
+        "no_fixed_expiry": true,
+        "claim_url": "https://platform.moonshot.cn/"
+      },
+      "terms": [
+        {
+          "tag": "phone_verification",
+          "severity": "friction",
+          "note": "需大陆手机号"
+        },
+        {
+          "tag": "rate_limited",
+          "severity": "note"
+        }
+      ],
+      "difficulty": "easy",
+      "difficulty_reasons": [
+        "手机号注册即得 key"
+      ],
+      "estimated_setup_minutes": 5,
+      "region": {
+        "availability": "include",
+        "countries": [
+          "CN"
+        ]
+      },
+      "categories": [
+        "llm"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-26T05:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://platform.moonshot.cn/docs/pricing/chat"
+        ],
+        "first_seen_at": "2024-01-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 75,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "打开 platform.moonshot.cn"
+          },
+          {
+            "n": 2,
+            "text": "用大陆手机号注册"
+          },
+          {
+            "n": 3,
+            "text": "在「账户总览」→「体验额度」查看并领取"
+          },
+          {
+            "n": 4,
+            "text": "获取 API key 调用 moonshot-v1-128k 等模型"
+          }
+        ]
+      },
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2026-09-26T05:00:00Z"
+    },
+    {
+      "id": "mistral-la-plateforme",
+      "provider": {
+        "id": "mistral",
+        "name_en": "Mistral AI",
+        "name_zh": null,
+        "country": "FR",
+        "homepage": "https://mistral.ai/"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "Mistral La Plateforme 实验层免费 API",
+        "headline_en": "Mistral La Plateforme experimental-tier free API",
+        "summary_en": "Mistral offers a free API tier for experimental models, including Codestral and Mistral-Nemo.",
+        "value_display_en": "Experimental models free tier (1 RPM / monthly cap)",
+        "summary": "Mistral 提供实验模型的免费 API 层，含 Codestral、Mistral-Nemo 等。",
+        "value_display": "实验模型免费层（1 RPM / 月度限制）",
+        "no_fixed_expiry": true,
+        "claim_url": "https://console.mistral.ai/"
+      },
+      "terms": [
+        {
+          "tag": "rate_limited",
+          "severity": "blocker",
+          "note": "实验层限制严格（1 RPM 级），生产环境请走 Tier 1"
+        },
+        {
+          "tag": "quota_capped",
+          "severity": "note",
+          "note": "仅实验模型"
+        }
+      ],
+      "difficulty": "easy",
+      "difficulty_reasons": [
+        "邮箱注册即得 key"
+      ],
+      "estimated_setup_minutes": 3,
+      "region": {
+        "availability": "global"
+      },
+      "categories": [
+        "llm"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-22T07:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://docs.mistral.ai/getting-started/quickstart/"
+        ],
+        "first_seen_at": "2024-09-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 72,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "登录 console.mistral.ai"
+          },
+          {
+            "n": 2,
+            "text": "左侧「API Keys」创建 key"
+          },
+          {
+            "n": 3,
+            "text": "实验模型列表见 https://docs.mistral.ai/getting-started/models/models_overview/"
+          }
+        ]
+      },
+      "created_at": "2024-09-01T00:00:00Z",
+      "updated_at": "2026-09-22T07:00:00Z"
+    },
+    {
+      "id": "nvidia-build-nim-free",
+      "provider": {
+        "id": "nvidia",
+        "name_en": "NVIDIA NIM",
+        "name_zh": null,
+        "country": "US",
+        "homepage": "https://build.nvidia.com/"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "NVIDIA NIM 免费层：1000 次 API 调用 / 90 天",
+        "headline_en": "NVIDIA NIM free tier: 1,000 API calls / 90 days",
+        "summary_en": "build.nvidia.com offers free API call allowances for open models like Llama, Mistral, and DeepSeek (per-model independent quotas).",
+        "value_display_en": "1,000 calls / model / 90 days",
+        "summary": "build.nvidia.com 提供 Llama / Mistral / DeepSeek 等开源模型的免费 API 调用额度（每模型独立配额）。",
+        "value_display": "1000 calls / 模型 / 90 天",
+        "no_fixed_expiry": false,
+        "expiry_type": "rolling_window",
+        "claim_url": "https://build.nvidia.com/"
+      },
+      "terms": [
+        {
+          "tag": "rate_limited",
+          "severity": "blocker",
+          "note": "1000 calls / 模型 / 90 天（按模型滚动）"
+        },
+        {
+          "tag": "quota_capped",
+          "severity": "note",
+          "note": "仅 NVIDIA NIM 支持的模型"
+        },
+        {
+          "tag": "credit_card_required",
+          "severity": "friction",
+          "note": "需 NVIDIA 开发者账号（绑卡可选）"
+        }
+      ],
+      "difficulty": "easy",
+      "difficulty_reasons": [
+        "NVIDIA 开发者账号 + 一键获取 key"
+      ],
+      "estimated_setup_minutes": 4,
+      "region": {
+        "availability": "global"
+      },
+      "categories": [
+        "llm",
+        "embedding"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-23T03:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://docs.nvidia.com/nim/"
+        ],
+        "first_seen_at": "2024-11-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 75,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "注册 build.nvidia.com 账号"
+          },
+          {
+            "n": 2,
+            "text": "选择模型（如 meta/llama-3.1-70b-instruct）→「Get API Key」"
+          },
+          {
+            "n": 3,
+            "text": "用 OpenAI 兼容接口调用 base_url=https://integrate.api.nvidia.com/v1"
+          }
+        ]
+      },
+      "created_at": "2024-11-01T00:00:00Z",
+      "updated_at": "2026-09-23T03:00:00Z"
+    },
+    {
+      "id": "openai-chatgpt-free",
+      "provider": {
+        "id": "openai",
+        "name_en": "OpenAI",
+        "name_zh": null,
+        "country": "US",
+        "homepage": "https://openai.com/"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "ChatGPT 免费层（GPT-4o mini，无限消息）",
+        "headline_en": "ChatGPT free tier (GPT-4o mini, unlimited messages)",
+        "summary_en": "The web and iOS/Android apps let you chat with GPT-4o mini without limit, no API key required.",
+        "value_display_en": "GPT-4o mini unlimited",
+        "summary": "网页与 iOS/Android 客户端可用 GPT-4o mini 无限对话，无需 API key。",
+        "value_display": "GPT-4o mini 无限",
+        "no_fixed_expiry": true,
+        "claim_url": "https://chatgpt.com/"
+      },
+      "terms": [],
+      "difficulty": "easy",
+      "difficulty_reasons": [
+        "无账号即可用网页版，注册只需邮箱"
+      ],
+      "estimated_setup_minutes": 2,
+      "region": {
+        "availability": "global"
+      },
+      "categories": [
+        "llm"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-25T08:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://chatgpt.com/"
+        ],
+        "first_seen_at": "2024-05-13T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 70,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "打开 chatgpt.com 或下载 ChatGPT App"
+          },
+          {
+            "n": 2,
+            "text": "用邮箱注册 / 登录（如已有 OpenAI 账号可直接登录）"
+          },
+          {
+            "n": 3,
+            "text": "在模型选择器里确认选的是 GPT-4o mini（默认）"
+          }
+        ]
+      },
+      "created_at": "2024-05-13T00:00:00Z",
+      "updated_at": "2026-09-25T08:00:00Z"
+    },
+    {
+      "id": "openrouter-free-models",
+      "provider": {
+        "id": "openrouter",
+        "name_en": "OpenRouter",
+        "name_zh": null,
+        "country": "US",
+        "homepage": "https://openrouter.ai/"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "OpenRouter 免费模型每日轮换阵容（Llama/Qwen/DeepSeek 等）",
+        "headline_en": "OpenRouter daily rotating free-model lineup (Llama / Qwen / DeepSeek, etc.)",
+        "summary_en": "OpenRouter offers free access to :free-suffixed models with a daily request cap; the lineup rotates every day.",
+        "value_display_en": "Free model lineup (50 requests/day)",
+        "summary": "OpenRouter 提供 :free 后缀模型免费调用，每天有请求上限，阵容每日调整。",
+        "value_display": "免费模型阵容（每日 50 次）",
+        "no_fixed_expiry": true,
+        "claim_url": "https://openrouter.ai/"
+      },
+      "terms": [
+        {
+          "tag": "rate_limited",
+          "severity": "blocker",
+          "note": "免费档 20+ RPM 上限，每天总次数受限"
+        },
+        {
+          "tag": "quota_capped",
+          "severity": "friction",
+          "note": "仅 :free 后缀模型；闭源模型需付费"
+        }
+      ],
+      "difficulty": "easy",
+      "difficulty_reasons": [
+        "邮箱注册即得 key"
+      ],
+      "estimated_setup_minutes": 2,
+      "region": {
+        "availability": "global"
+      },
+      "categories": [
+        "llm"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-27T09:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://openrouter.ai/models"
+        ],
+        "first_seen_at": "2024-01-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 88,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "登录 openrouter.ai"
+          },
+          {
+            "n": 2,
+            "text": "左侧「Keys」创建 API key（绑定信用卡才能调用非免费模型，免费模型可裸跑）"
+          },
+          {
+            "n": 3,
+            "text": "筛选带 :free 后缀的模型（如 meta-llama/llama-3.1-8b-instruct:free）"
+          },
+          {
+            "n": 4,
+            "text": "OpenAI 兼容接入 base_url=https://openrouter.ai/api/v1"
+          }
+        ]
+      },
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2026-09-27T09:00:00Z"
+    },
+    {
+      "id": "tencent-hunyuan-free",
+      "provider": {
+        "id": "tencent-hunyuan",
+        "name_en": "Tencent Hunyuan",
+        "name_zh": "腾讯混元",
+        "country": "CN",
+        "homepage": "https://cloud.tencent.com/product/hunyuan"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "腾讯混元大模型免费层（hunyuan-pro / standard）",
+        "headline_en": "Tencent Hunyuan large-model free tier (hunyuan-pro / standard)",
+        "summary_en": "Tencent Cloud Hunyuan gives new users a free token allowance covering hunyuan-pro and hunyuan-standard.",
+        "value_display_en": "Free token allowance (varies by model)",
+        "summary": "腾讯云混元大模型新用户免费 token 额度，含 hunyuan-pro 与 hunyuan-standard。",
+        "value_display": "免费 token 额度（按模型配置）",
+        "no_fixed_expiry": true,
+        "claim_url": "https://console.cloud.tencent.com/hunyuan"
+      },
+      "terms": [
+        {
+          "tag": "identity_verification",
+          "severity": "blocker",
+          "note": "腾讯云账号需实名"
+        },
+        {
+          "tag": "credit_card_required",
+          "severity": "friction",
+          "note": "开通大模型服务需绑卡验证（不会扣费）"
+        },
+        {
+          "tag": "auto_renew",
+          "severity": "friction",
+          "note": "免费额度耗尽按 token 计费"
+        }
+      ],
+      "difficulty": "medium",
+      "difficulty_reasons": [
+        "腾讯云账号 + 实名 + 开通混元 + 绑卡"
+      ],
+      "estimated_setup_minutes": 15,
+      "region": {
+        "availability": "include",
+        "countries": [
+          "CN"
+        ]
+      },
+      "categories": [
+        "llm",
+        "embedding"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-26T05:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://cloud.tencent.com/document/product/1729"
+        ],
+        "first_seen_at": "2024-09-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 60,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "注册腾讯云账号"
+          },
+          {
+            "n": 2,
+            "text": "完成实名（个人 / 企业）"
+          },
+          {
+            "n": 3,
+            "text": "开通「混元大模型」服务"
+          },
+          {
+            "n": 4,
+            "text": "在控制台获取 API key（建议创建子账号 AccessKey）"
+          }
+        ]
+      },
+      "created_at": "2024-09-01T00:00:00Z",
+      "updated_at": "2026-09-26T05:00:00Z"
+    },
+    {
+      "id": "together-ai-free-credit",
+      "provider": {
+        "id": "together-ai",
+        "name_en": "Together AI",
+        "name_zh": null,
+        "country": "US",
+        "homepage": "https://www.together.ai/"
+      },
+      "offer": {
+        "type": "free_tier",
+        "headline": "Together AI 开源模型免费层（Llama / Qwen / DeepSeek 等）",
+        "headline_en": "Together AI open-model free tier (Llama / Qwen / DeepSeek, etc.)",
+        "summary_en": "Together AI serves 200+ open models and grants new accounts a small free allowance.",
+        "value_display_en": "Free token allowance (varies by model)",
+        "summary": "Together AI 提供 200+ 开源模型的推理，新账号含小额免费额度。",
+        "value_display": "免费 token 额度（按模型不同）",
+        "no_fixed_expiry": true,
+        "claim_url": "https://api.together.xyz/"
+      },
+      "terms": [
+        {
+          "tag": "rate_limited",
+          "severity": "friction",
+          "note": "60 RPM / 60000 TPM 级（以控制台为准）"
+        },
+        {
+          "tag": "quota_capped",
+          "severity": "note",
+          "note": "仅开源模型"
+        },
+        {
+          "tag": "credit_card_required",
+          "severity": "friction",
+          "note": "需绑卡（即使免费层）"
+        }
+      ],
+      "difficulty": "medium",
+      "difficulty_reasons": [
+        "需绑卡"
+      ],
+      "estimated_setup_minutes": 6,
+      "region": {
+        "availability": "global"
+      },
+      "categories": [
+        "llm",
+        "embedding",
+        "image"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-24T03:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://docs.together.ai/docs/free-models"
+        ],
+        "first_seen_at": "2024-04-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 70,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "登录 api.together.xyz"
+          },
+          {
+            "n": 2,
+            "text": "绑卡（验证用，不扣费）"
+          },
+          {
+            "n": 3,
+            "text": "获取 API key"
+          },
+          {
+            "n": 4,
+            "text": "选择模型（如 meta-llama/Llama-3.1-70B-Instruct-Turbo）"
+          }
+        ]
+      },
+      "created_at": "2024-04-01T00:00:00Z",
+      "updated_at": "2026-09-24T03:00:00Z"
+    },
+    {
+      "id": "zhipu-bigmodel-invitation",
+      "provider": {
+        "id": "zhipu",
+        "name_en": "Zhipu BigModel",
+        "name_zh": "智谱 BigModel",
+        "country": "CN",
+        "homepage": "https://bigmodel.cn/"
+      },
+      "offer": {
+        "type": "referral_bonus",
+        "headline": "智谱 BigModel 邀请奖励：邀友实名双方各得 2000 万 tokens",
+        "headline_en": "Zhipu BigModel referral reward: invite a verified friend, both get 20M tokens",
+        "summary_en": "Zhipu Open Platform's personal referral program: when your friend completes real-name registration, both of you get 20M tokens; up to 10 invites/month, capped at 200M tokens total.",
+        "value_display_en": "20M tokens / referral (both sides get it)",
+        "summary": "智谱开放平台个人邀请机制：邀友完成实名注册，双方各得 2000 万 tokens；每月可邀 10 人上限 2 亿 tokens。",
+        "value_display": "2000 万 tokens / 邀友（双方各得）",
+        "expires_at": null,
+        "no_fixed_expiry": false,
+        "expiry_type": "rolling_window",
+        "claim_url": "https://bigmodel.cn/invitation"
+      },
+      "terms": [
+        {
+          "tag": "identity_verification",
+          "severity": "blocker",
+          "note": "被邀请方必须完成实名认证"
+        },
+        {
+          "tag": "one_per_account",
+          "severity": "note",
+          "note": "每人每月最多被邀请 10 次 / 上限 2 亿 tokens"
+        },
+        {
+          "tag": "stackable",
+          "severity": "friction",
+          "note": "可与平台其他促销叠加（以官方公告为准）"
+        }
+      ],
+      "difficulty": "medium",
+      "difficulty_reasons": [
+        "需实名认证 + 持有邀请链接"
+      ],
+      "estimated_setup_minutes": 8,
+      "region": {
+        "availability": "include",
+        "countries": [
+          "CN"
+        ]
+      },
+      "categories": [
+        "llm",
+        "embedding"
+      ],
+      "status": "active",
+      "verification": {
+        "status": "verified",
+        "method": "human",
+        "confidence": "high",
+        "last_verified_at": "2026-09-25T03:00:00Z"
+      },
+      "disclosure": {
+        "affiliate": false,
+        "affiliate_url": null,
+        "disclosure_text": null,
+        "relationship_note": null
+      },
+      "provenance": {
+        "source_urls": [
+          "https://bigmodel.cn/invitation"
+        ],
+        "first_seen_at": "2025-08-01T00:00:00Z",
+        "review_required": false
+      },
+      "actionability": {
+        "score": 70,
+        "next_steps": [
+          {
+            "n": 1,
+            "text": "在 bigmodel.cn 完成实名注册（拿你的邀请链接）"
+          },
+          {
+            "n": 2,
+            "text": "复制邀请链接给朋友"
+          },
+          {
+            "n": 3,
+            "text": "朋友完成实名后，双方自动到账 2000 万 tokens"
+          }
+        ]
+      },
+      "created_at": "2025-08-01T00:00:00Z",
+      "updated_at": "2026-09-25T03:00:00Z"
+    }
+  ],
+  "counts": {
+    "total": 17,
+    "active": 17,
+    "expiring_soon": 0,
+    "no_credit_card": 17,
+    "verified": 17
+  }
+}

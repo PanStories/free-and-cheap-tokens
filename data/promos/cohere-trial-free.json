@@ -10,6 +10,10 @@
   "offer": {
     "type": "trial_credit",
     "headline": "Cohere Trial API：每月 1000 次免费调用",
+    "headline_en": "Cohere Trial API: 1,000 free calls per month",
+    "summary_en": "A Cohere Trial key gives 1,000 free API calls per month (includes the Command series models).",
+    "value_display_en": "1,000 calls/month",
+
     "summary": "Cohere Trial key 提供每月 1000 次免费 API 调用（含 Command 系列模型）。",
     "value_display": "1000 calls/月",
     "no_fixed_expiry": true,

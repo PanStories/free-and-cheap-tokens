@@ -21,7 +21,7 @@
   "languages": ["zh-CN", "en"],
   "language_notes": {
     "zh-CN": "默认文档与站点。所有 promo headline/summary 为中文（策展数据原文）。",
-    "en": "Sibling docs; the static site is a single bilingual page that defaults to English (top-right EN / 中文 switch). UI fully translated; promo body remains Chinese until v1.2 adds headline_en / summary_en fields."
+    "en": "Sibling docs; the static site is a single bilingual page that defaults to English (top-right EN / 中文 switch). UI fully translated; promo body is bilingual — English headline/summary/value shown in the English UI, Chinese in the 中文 UI."
   },
   "triggers": [
     "推荐免费 AI 接口",

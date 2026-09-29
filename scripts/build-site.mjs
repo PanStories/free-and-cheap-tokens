@@ -165,7 +165,7 @@ const LOCALES = {
     metaLineTpl: (sha, gen) =>
       `catalog sha256: <code>${sha}…</code> · generated_at: <code>${gen}</code>`,
     promoDataNote:
-      '<strong>说明</strong>：promo 标题与摘要目前由策展团队以中文原文录入，界面已全量翻译；<code>headline_en</code> / <code>summary_en</code> 双语字段计划在 v1.2 提供。',
+      '<strong>说明</strong>：promo 标题与摘要以中文为源文录入，每条约附英文翻译；切换英文界面时显示英文（headline_en / summary_en / value_display_en）。',
   },
 
   en: {
@@ -299,7 +299,7 @@ const LOCALES = {
     metaLineTpl: (sha, gen) =>
       `catalog sha256: <code>${sha}…</code> · generated_at: <code>${gen}</code>`,
     promoDataNote:
-      '<strong>Note</strong>: promo headlines and summaries are currently curated in Chinese (the original source). The UI is fully translated; bilingual <code>headline_en</code> / <code>summary_en</code> fields are planned for v1.2.',
+      '<strong>Note</strong>: promo headlines and summaries are curated in Chinese at the source, and each entry also carries an English translation. The English UI shows the English text (<code>headline_en</code> / <code>summary_en</code> / <code>value_display_en</code>).',
   },
 };
 
@@ -390,14 +390,14 @@ function promoCard(p) {
   <article class="card" data-id="${esc(p.id)}" data-provider="${esc(p.provider.id)}" data-difficulty="${esc(p.difficulty)}" data-region-availability="${esc(p.region.availability)}" data-needs-card="${requiresCard(p) ? '1' : '0'}" data-exp-days="${expDays}">
     <div class="card-top">
       <div class="provider-row">
-        <span class="provider-name">${esc(localeName(p))}</span>
+        <span class="provider-name">${bi(p.provider.name_en, p.provider.name_zh || p.provider.name_en)}</span>
         <span class="provider-country">${esc(p.provider.country)}</span>
         ${statusPill(p)}
       </div>
-      <h3 class="card-title">${esc(p.offer.headline)}</h3>
-      ${p.offer.value_display ? `<div class="card-value">${esc(p.offer.value_display)}</div>` : ''}
+      <h3 class="card-title">${bi(p.offer.headline_en ?? p.offer.headline, p.offer.headline)}</h3>
+      ${p.offer.value_display ? `<div class="card-value">${bi(p.offer.value_display_en ?? p.offer.value_display, p.offer.value_display)}</div>` : ''}
     </div>
-    ${p.offer.summary ? `<p class="card-summary">${esc(p.offer.summary)}</p>` : ''}
+    ${p.offer.summary ? `<p class="card-summary">${bi(p.offer.summary_en ?? p.offer.summary, p.offer.summary)}</p>` : ''}
     <ul class="terms">
       ${p.terms
         .slice(0, 4)

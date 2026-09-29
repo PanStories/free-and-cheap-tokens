@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "GitHub Models 个人 Playground 免费试用",
+    "headline_en": "GitHub Models personal Playground free trial",
+    "summary_en": "GitHub Marketplace Models offers a Playground experience for models like GPT-4o, Llama, and Phi-3; Copilot personal subscriptions include rate-limited API access.",
+    "value_display_en": "Playground free · Copilot personal monthly quota",
+
     "summary": "GitHub Marketplace Models 提供 GPT-4o、Llama、Phi-3 等模型 Playground 体验，Copilot 个人订阅含限额 API 访问。",
     "value_display": "Playground 免费 · Copilot 个人月配额",
     "no_fixed_expiry": true,

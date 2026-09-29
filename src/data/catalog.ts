@@ -89,8 +89,11 @@ export function toSummary(p: Promo): PromoSummary {
     offer: {
       type: p.offer.type,
       headline: p.offer.headline,
+      headline_en: p.offer.headline_en ?? null,
       summary: p.offer.summary ?? null,
+      summary_en: p.offer.summary_en ?? null,
       value_display: p.offer.value_display ?? null,
+      value_display_en: p.offer.value_display_en ?? null,
       expires_at: p.offer.expires_at ?? null,
       no_fixed_expiry: p.offer.no_fixed_expiry ?? false,
       claim_url: p.offer.claim_url,

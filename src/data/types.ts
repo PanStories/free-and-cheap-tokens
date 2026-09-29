@@ -193,11 +193,17 @@ export interface Promo {
     type: OfferType;
     /** 人类可读标题，必须具体到数字，如 "免费 200 万 tokens/月" */
     headline: string;
+    /** 英文标题（可选），镜像 headline */
+    headline_en?: string;
     /** 一句话摘要 */
     summary?: string;
+    /** 英文摘要（可选），镜像 summary */
+    summary_en?: string;
     amount?: OfferAmount;
     /** amount 的展示形态，如 "200万 tokens" / "$5 / 200万 tokens" */
     value_display?: string;
+    /** 英文额度展示（可选），镜像 value_display */
+    value_display_en?: string;
     /** 与 expires_at 互斥 */
     expires_at?: string | null;
     no_fixed_expiry?: boolean;
@@ -244,15 +250,18 @@ export interface Catalog {
 export interface PromoSummary {
   id: string;
   provider: { id: string; name_en: string; name_zh: string | null; country: string };
-  offer: {
-    type: OfferType;
-    headline: string;
-    summary?: string | null;
-    value_display?: string | null;
-    expires_at: string | null;
-    no_fixed_expiry: boolean;
-    claim_url: string;
-  };
+    offer: {
+      type: OfferType;
+      headline: string;
+      headline_en?: string | null;
+      summary?: string | null;
+      summary_en?: string | null;
+      value_display?: string | null;
+      value_display_en?: string | null;
+      expires_at: string | null;
+      no_fixed_expiry: boolean;
+      claim_url: string;
+    };
   difficulty: Difficulty;
   region: PromoRegion;
   categories: Category[];

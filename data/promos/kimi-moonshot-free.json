@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "Moonshot Kimi 开放平台免费额度",
+    "headline_en": "Moonshot Kimi open-platform free quota",
+    "summary_en": "New Moonshot Open Platform users get a ¥5-equivalent token trial allowance; the kimi-k2 series is also available free via Cloudflare Workers AI.",
+    "value_display_en": "Free trial credit",
+
     "summary": "Moonshot 开放平台新用户获 ¥5 等值 tokens 体验额度；kimi-k2 系列可在 Cloudflare Workers AI 免费接入。",
     "value_display": "免费体验额度",
     "no_fixed_expiry": true,

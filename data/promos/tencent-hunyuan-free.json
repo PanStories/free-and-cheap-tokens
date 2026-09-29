@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "腾讯混元大模型免费层（hunyuan-pro / standard）",
+    "headline_en": "Tencent Hunyuan large-model free tier (hunyuan-pro / standard)",
+    "summary_en": "Tencent Cloud Hunyuan gives new users a free token allowance covering hunyuan-pro and hunyuan-standard.",
+    "value_display_en": "Free token allowance (varies by model)",
+
     "summary": "腾讯云混元大模型新用户免费 token 额度，含 hunyuan-pro 与 hunyuan-standard。",
     "value_display": "免费 token 额度（按模型配置）",
     "no_fixed_expiry": true,

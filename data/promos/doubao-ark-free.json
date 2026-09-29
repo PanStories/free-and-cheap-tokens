@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "火山方舟体验额度：豆包 1.5 Pro 500 万 tokens",
+    "headline_en": "Volcano Ark trial quota: Doubao 1.5 Pro 5M tokens",
+    "summary_en": "New Ark users receive a Doubao 1.5 Pro trial allowance covering text, image, and video models.",
+    "value_display_en": "5M tokens trial",
+
     "summary": "新开通方舟 ARK 的用户获赠豆包 1.5 Pro 体验额度，含文本/图像/视频模型。",
     "value_display": "500 万 tokens 体验",
     "expires_at": "2026-12-31T23:59:59+08:00",

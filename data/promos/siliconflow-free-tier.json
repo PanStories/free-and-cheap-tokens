@@ -10,6 +10,10 @@
   "offer": {
     "type": "signup_bonus",
     "headline": "硅基流动新用户 ¥16 通用代金券",
+    "headline_en": "SiliconFlow new-user ¥16 universal voucher",
+    "summary_en": "After real-name signup you get a ¥16 universal voucher (on the order of 20M tokens), usable across all SiliconCloud models.",
+    "value_display_en": "¥16 voucher (~20M tokens)",
+
     "summary": "实名注册后获 ¥16 通用代金券（2000 万 tokens 量级），可用于 SiliconCloud 全模型。",
     "value_display": "¥16 代金券（约 2000 万 tokens）",
     "expires_at": "2026-12-31T23:59:59+08:00",

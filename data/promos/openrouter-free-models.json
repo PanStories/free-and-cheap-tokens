@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "OpenRouter 免费模型每日轮换阵容（Llama/Qwen/DeepSeek 等）",
+    "headline_en": "OpenRouter daily rotating free-model lineup (Llama / Qwen / DeepSeek, etc.)",
+    "summary_en": "OpenRouter offers free access to :free-suffixed models with a daily request cap; the lineup rotates every day.",
+    "value_display_en": "Free model lineup (50 requests/day)",
+
     "summary": "OpenRouter 提供 :free 后缀模型免费调用，每天有请求上限，阵容每日调整。",
     "value_display": "免费模型阵容（每日 50 次）",
     "no_fixed_expiry": true,

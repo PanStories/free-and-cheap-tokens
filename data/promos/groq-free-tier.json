@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "Groq 免费层：Llama 3.1 8B / 70B 高吞吐推理",
+    "headline_en": "Groq free tier: high-throughput Llama 3.1 8B / 70B inference",
+    "summary_en": "Free API access to open models like Llama 3.1 and Mixtral, claimed to be the fastest token/s in the industry.",
+    "value_display_en": "Llama 3.1 70B · 14,400 RPD (free)",
+
     "summary": "免费 API 接入 Llama 3.1 / Mixtral 等开源模型，号称业内最快 token/s。",
     "value_display": "Llama 3.1 70B · 14400 RPD（free）",
     "no_fixed_expiry": true,

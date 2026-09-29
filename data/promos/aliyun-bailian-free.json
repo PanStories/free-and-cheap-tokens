@@ -10,6 +10,10 @@
   "offer": {
     "type": "free_tier",
     "headline": "阿里云百炼免费模型额度（含 Qwen 全系）",
+    "headline_en": "Alibaba Cloud Bailian free model quota (incl. full Qwen lineup)",
+    "summary_en": "Bailian grants every onboarded user free token allowances for mainstream models like Qwen, Llama, and DeepSeek, with quotas varying by model.",
+    "value_display_en": "Qwen 1M free tokens (new users)",
+
     "summary": "百炼平台为每个开通用户提供 Qwen、Llama、DeepSeek 等主流模型的免费 token 额度，按模型配额不同。",
     "value_display": "Qwen 免费 100 万 tokens（新用户）",
     "no_fixed_expiry": true,
