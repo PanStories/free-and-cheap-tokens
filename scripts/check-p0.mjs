@@ -31,6 +31,7 @@ const TARGETS = [
  * 规则 1（P0-1）：禁止 emoji 作为功能图标
  * 正则由 team-lead 提供，覆盖 emoji 各区段 + 变体选择符 + ZWJ
  * ------------------------------------------------------------------ */
+/* eslint-disable no-misleading-character-class -- 故意匹配组合字符/ZWJ/变体选择符序列，它们是 emoji 的组成部分 */
 const EMOJI_RE = /[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE00}-\u{FE0F}\u{1F000}-\u{1F02F}\u{1F0A0}-\u{1F0FF}\u{1F100}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{200D}\u{20E3}]/gu;
 
 /**
@@ -52,7 +53,6 @@ const GRADIENT_RE = /linear-gradient|radial-gradient/gi;
  * 规则 3：禁止回弹 / overshoot 缓动
  * ------------------------------------------------------------------ */
 const BOUNCE_RE = /cubic-bezier\(\s*-?0?\.68|cubic-bezier\([^)]*-\s*0\.55/g;
-const BOUNCE_WORDS = /overshoot|回弹型缓动[^。]*禁止|bounce/gi; // 命中仅为 INFO（可能是禁令原文）
 
 /* ------------------------------------------------------------------ *
  * 规则 4：禁止空洞占位文案
