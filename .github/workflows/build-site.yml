@@ -32,6 +32,11 @@ jobs:
       - name: Install dependencies (including sharp for OG)
         run: npm ci
 
+      # sharp/librsvg on ubuntu runners has no CJK fonts by default; install Noto
+      # so any Chinese text rendered into the OG image does not become tofu boxes
+      - name: Install CJK fonts
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+
       - name: Validate schema (no remote data deps)
         run: node scripts/build-catalog.mjs --check
 
