@@ -1,4 +1,4 @@
-# Spec — Free & Cheap Tokens v1.1.0
+# Spec — Free and Cheap Tokens v1.1.0
 
 > [🇬🇧 English version →](SPEC.en.md) · 生成日期：2026-09-28
 > 基于：PRD v3 + ARCHITECTURE v3 + UIUX v3 + promo.schema.json v1
