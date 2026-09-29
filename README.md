@@ -15,6 +15,7 @@
 | Apify Store | https://apify.com/neeenja/free-and-cheap-tokens |
 | Source code (MIT) | https://github.com/PanStories/free-and-cheap-tokens |
 | Directory listing | https://sartbot.com/mcp/free-and-cheap-tokens/ |
+| Featured on | [Sartbot Featured](https://sartbot.com/mcp/free-and-cheap-tokens/) |
 | Daily listing page | https://freeandcheaptokens.dev/ |
 
 ---
