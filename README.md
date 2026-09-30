@@ -323,8 +323,7 @@ License: MIT — anyone can fork, self-deploy, self-host and modify.
 **EN** — **Free and Cheap Tokens (FaCT)** is open source (MIT), ad-free, and its
 catalog is verified by a human every day. It is funded by the community, not by ads
 or affiliate links. If it saves you money or time, please support it:
-- ❤️ GitHub Sponsors: click **Sponsor** on this repo (routes to PanStories / MistifyTea)
-- ☕ Ko-fi: https://ko-fi.com/panstories
+- ☕ Ko-fi (the **Sponsor** ❤️ button on this repo routes here): https://ko-fi.com/panstories
 
 **简体中文** — **Free and Cheap Tokens (FaCT)** 开源（MIT）、无广告，目录每日由人工核实，
 由社区资助而非广告或联盟返佣。若它帮你省了钱或时间，欢迎赞助：GitHub Sponsors 点本仓库的
