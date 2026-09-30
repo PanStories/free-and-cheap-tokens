@@ -316,3 +316,22 @@ npm run preflight       # 一鍵跑完上面所有
 
 License: MIT — anyone can fork, self-deploy, self-host and modify.
 数据核实：每天由策展团队人工维护。
+---
+
+## Support · 赞助 · 贊助
+
+**EN** — **Free and Cheap Tokens (FaCT)** is open source (MIT), ad-free, and its
+catalog is verified by a human every day. It is funded by the community, not by ads
+or affiliate links. If it saves you money or time, please support it:
+- ❤️ GitHub Sponsors: click **Sponsor** on this repo (routes to PanStories / MistifyTea)
+- ☕ Ko-fi: https://ko-fi.com/panstories
+
+**简体中文** — **Free and Cheap Tokens (FaCT)** 开源（MIT）、无广告，目录每日由人工核实，
+由社区资助而非广告或联盟返佣。若它帮你省了钱或时间，欢迎赞助：GitHub Sponsors 点本仓库的
+**Sponsor** 按钮，或前往 Ko-fi: https://ko-fi.com/panstories
+
+**繁體中文** — **Free and Cheap Tokens (FaCT)** 開源（MIT）、無廣告，目錄每日由人工核實，
+由社群資助而非廣告或聯盟返佣。若它幫你省了錢或時間，歡迎贊助：GitHub Sponsors 點本倉庫的
+**Sponsor** 按鈕，或前往 Ko-fi: https://ko-fi.com/panstories
+
+Thank you! · 谢谢 · 謝謝 💙
