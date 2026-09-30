@@ -326,11 +326,11 @@ or affiliate links. If it saves you money or time, please support it:
 - ☕ Ko-fi (the **Sponsor** ❤️ button on this repo routes here): https://ko-fi.com/panstories
 
 **简体中文** — **Free and Cheap Tokens (FaCT)** 开源（MIT）、无广告，目录每日由人工核实，
-由社区资助而非广告或联盟返佣。若它帮你省了钱或时间，欢迎赞助：GitHub Sponsors 点本仓库的
+由社区资助而非广告或联盟返佣。若它帮你省了钱或时间，欢迎赞助：点本仓库的
 **Sponsor** 按钮，或前往 Ko-fi: https://ko-fi.com/panstories
 
 **繁體中文** — **Free and Cheap Tokens (FaCT)** 開源（MIT）、無廣告，目錄每日由人工核實，
-由社群資助而非廣告或聯盟返佣。若它幫你省了錢或時間，歡迎贊助：GitHub Sponsors 點本倉庫的
+由社群資助而非廣告或聯盟返佣。若它幫你省了錢或時間，歡迎贊助：點本倉庫的
 **Sponsor** 按鈕，或前往 Ko-fi: https://ko-fi.com/panstories
 
 Thank you! · 谢谢 · 謝謝 💙
