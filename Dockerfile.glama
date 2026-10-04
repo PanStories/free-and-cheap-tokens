@@ -1,0 +1,45 @@
+# Dockerfile.glama — stdio image used for Glama container releases.
+#
+# ⚠️ Do NOT confuse this with ./.actor/Dockerfile (Apify Pay-Per-Event HTTP Actor).
+#    Glama speaks MCP over **stdin/stdout (stdio)**, so the entrypoint must be the
+#    stdio server, not the HTTP one.
+#
+#    Glama Admin → Dockerfile admin page → set Dockerfile path to `Dockerfile.glama`.
+#
+# ⚠️ CRITICAL: never set APIFY_CONTAINER_PORT in this image. src/index.ts picks the
+#    transport from that env var — set → HTTP mode, unset → stdio mode.
+#
+# Node 24 is required: package.json engines = ">=24.21.0".
+#
+# build/catalog.json is gitignored (regenerated), so it MUST be produced inside the
+# image by scripts/build-catalog.mjs from data/promos/*.json + schemas/.
+# src/data/catalog.ts resolves it at <root>/build/catalog.json.
+
+FROM node:24-alpine AS build
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund
+COPY tsconfig.json ./
+COPY src ./src
+RUN npm run build
+
+# Generate the catalog that dist/data/catalog.js reads at runtime.
+COPY schemas ./schemas
+COPY data ./data
+COPY scripts ./scripts
+RUN node scripts/build-catalog.mjs
+
+FROM node:24-alpine
+WORKDIR /app
+ENV NODE_ENV=production
+
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev --no-audit --no-fund && npm cache clean --force
+
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/build ./build
+COPY --from=build /app/data ./data
+COPY --from=build /app/schemas ./schemas
+
+# stdio transport: MCP JSON-RPC on stdin/stdout. No port is exposed.
+CMD ["node", "dist/index.js"]
