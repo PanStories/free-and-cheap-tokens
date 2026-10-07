@@ -66,7 +66,7 @@
   <h2>1 · Status Table</h2>
   <table>
     <tr><th>Dimension</th><th>Current</th><th>Target</th><th>Status</th><th>Basis</th></tr>
-    <tr><td>Product / tools</td><td>8 tools, 17 promos, daily-verified</td><td>Keep + add persistent free tiers</td><td><span class="badge b-ok">✅</span></td><td>local repo inspect</td></tr>
+    <tr><td>Product / tools</td><td>8 tools, 17 offers (14 free_tier), daily-verified</td><td>Keep + make free tiers first-class</td><td><span class="badge b-ok">✅</span></td><td>local repo inspect · A3 shipped</td></tr>
     <tr><td>Pricing</td><td>PPE, 8 events, verified charging</td><td>Hold — no change yet</td><td><span class="badge b-ok">✅</span></td><td><code>apify actors info</code></td></tr>
     <tr><td>README trilingual</td><td>EN→简→繁, now has version line</td><td>Keep</td><td><span class="badge b-ok">✅</span></td><td>preflight ✅</td></tr>
     <tr><td>llms.txt (B2A)</td><td>Created (root + site)</td><td>Deployed &amp; live (GitHub Pages)</td><td><span class="badge b-ok">✅</span></td><td>live HTTP 200 · 2026-10-07</td></tr>
@@ -111,7 +111,7 @@
     <tr><th>Pain</th><th>Frequency</th><th>Severity</th><th>Root cause</th><th>Maps to</th></tr>
     <tr><td>No one can find FaCT</td><td>structural (1 user)</td><td>🔴 Critical</td><td>Only 2 directories; no SEO/llms.txt live</td><td>C1, C2, A2</td></tr>
     <tr><td>English-first devs see Chinese tool output</td><td>every call</td><td>🔴 High</td><td>Server human-readable output is zh-only</td><td>A1</td></tr>
-    <tr><td>Catalog = time-limited "promos", but market wants persistent free tiers</td><td>market-wide</td><td>🟡 Strategic</td><td>Positioning narrower than demand</td><td>A3</td></tr>
+    <tr><td>Catalog = time-limited "promos", but market wants persistent free tiers</td><td>market-wide</td><td>🟡 Strategic</td><td>Positioning narrower than demand — <b>resolved via <code>offer_type</code> filter + free-tier label (A3 ✅)</b></td><td>A3 ✅</td></tr>
     <tr><td>No social proof (0 reviews / 0 stars / 0 issues)</td><td>—</td><td>🟡 Medium</td><td>No launch / no ask</td><td>C3, B1</td></tr>
     <tr><td>GitHub issues / Apify reviews</td><td>0 signals</td><td>—</td><td>Run volume too low to derive tool-level popularity</td><td>(insufficient — not yet decision-grade)</td></tr>
   </table>
@@ -124,7 +124,7 @@
     <tr><th>ID</th><th>Action</th><th>R</th><th>I</th><th>C</th><th>E</th><th>RICE</th><th>Status</th></tr>
     <tr class="top"><td>A1</td><td>Add <code>lang</code> param + English-first server output</td><td>9</td><td>3</td><td>0.9</td><td>3</td><td class="rice">8.1</td><td><span class="badge b-acc">TOP-4</span></td></tr>
     <tr><td>A5</td><td>Audit & sharpen agent-facing tool descriptions (disclosures, schemas)</td><td>6</td><td>2</td><td>0.8</td><td>2</td><td class="rice">4.8</td><td></td></tr>
-    <tr><td>A3</td><td>Expand scope: add persistent free tiers (Gemini/DeepSeek/Groq/…/CN) section</td><td>9</td><td>3</td><td>0.6</td><td>6</td><td class="rice">2.7</td><td><span class="badge b-warn">decision</span></td></tr>
+    <tr><td>A3</td><td>Expand scope: add persistent free tiers (Gemini/DeepSeek/Groq/…/CN) section</td><td>9</td><td>3</td><td>0.6</td><td>6</td><td class="rice">2.7</td><td><span class="badge b-ok">done</span></td></tr>
     <tr><td>A4</td><td>README version line + tagline consistency</td><td>3</td><td>1</td><td>1.0</td><td>0.5</td><td class="rice">6.0</td><td><span class="badge b-ok">done(local)</span></td></tr>
   </table>
 
@@ -160,7 +160,7 @@
     <span class="pill">① C1 — submit to 2 remaining free directories: Smithery (smithery.yaml) + PulseMCP (server.json). Glama/LobeHub/mcpservers.org already live; mcp.so $39 paid-form avoided</span>
     <span class="pill">② A1 — add lang param + English-first output (code change → rebuild → Apify push) <b>✅ DONE 2026-10-07 (build 1.2.5)</b></span>
     <span class="pill">③ A2/C2 — deploy llms.txt + site to live (Cloudflare Pages / GitHub Pages) <b>✅ DONE 2026-10-07 (GitHub Pages HTTP 200)</b></span>
-    <span class="pill">④ A3 — strategic scope pivot to persistent free tiers (changes positioning) · <b>awaiting boss direction</b></span>
+    <span class="pill">④ A3 — strategic scope pivot to persistent free tiers (changes positioning) <b>✅ DONE 2026-10-07 (offer_type filter + free-tier label, build 1.3.x)</b></span>
     <span class="pill">⑤ C3 — publish launch post (Reddit/HN/dev.to/掘金) · <b>awaiting boss direction</b></span>
     <span class="pill">⑥ D2 — if lowering search_promos price (rule 4: boss approval) · <b>awaiting boss direction</b></span>
     <span class="pill">⑦ Apify push + Sartbot deploy to publish all README/llms.txt edits <b>✅ DONE 2026-10-07</b></span>
