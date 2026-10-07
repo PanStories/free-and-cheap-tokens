@@ -24,7 +24,7 @@
 
 # English
 
-**Current version: 1.1.0**
+**Current version: 1.1.1**
 
 A curated, **daily human-verified**, machine-readable catalog of **free tiers and cheap token promos** for AI models and inference services — served as one MCP server over Streamable HTTP.
 
@@ -122,7 +122,7 @@ npm run preflight       # One-shot run all of the above
 
 # 简体中文
 
-**当前版本：1.1.0**
+**当前版本：1.1.1**
 
 一份**每日人工核实**、机器可读的 **AI 模型 / 推理服务免费额度与低价 token 促销**策展清单，以一个 MCP server 的形式通过 Streamable HTTP 对外提供。
 
@@ -220,7 +220,7 @@ npm run preflight       # 一键跑完上面所有
 
 # 繁體中文
 
-**目前版本：1.1.0**
+**目前版本：1.1.1**
 
 一份**每日人工核實**、機器可讀的 **AI 模型 / 推論服務免費額度與低價 token 促銷**策展清單，以單一 MCP server 的形式透過 Streamable HTTP 對外提供。
 
