@@ -7,6 +7,8 @@ on:
       - 'data/**'
       - 'schemas/**'
       - 'scripts/**'
+      - 'site/**'
+      - 'llms.txt'
       - '.github/workflows/build-site.yml'
   workflow_dispatch:
 

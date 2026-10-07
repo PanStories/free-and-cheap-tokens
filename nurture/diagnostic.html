@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FaCT MCP — Nurture Diagnostic (1→N)</title>
+<style>
+  :root{
+    --bg:#0b1220; --panel:#101a2e; --panel2:#15233d; --line:#22324f;
+    --txt:#e7eefb; --mut:#9fb1cc; --acc:#4da3ff; --acc2:#28e0b0;
+    --warn:#ffb454; --bad:#ff6b6b; --ok:#43d17a; --chip:#1b2c47;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:linear-gradient(180deg,#0b1220,#0a101c);color:var(--txt);
+    font:14px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif;}
+  .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 60px}
+  h1{font-size:24px;margin:0 0 4px}
+  h2{font-size:18px;margin:34px 0 12px;padding-left:10px;border-left:3px solid var(--acc)}
+  .sub{color:var(--mut);margin:0 0 18px}
+  .grid{display:grid;gap:14px}
+  .cards{grid-template-columns:repeat(4,1fr)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .card .k{color:var(--mut);font-size:12px}
+  .card .v{font-size:26px;font-weight:700;margin-top:4px}
+  .card .v.sm{font-size:16px;font-weight:600}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--panel2);color:var(--acc);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  tr:last-child td{border-bottom:none}
+  td code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:12px;color:#cfe3ff}
+  .badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700}
+  .b-ok{background:rgba(67,209,122,.15);color:var(--ok);border:1px solid rgba(67,209,122,.4)}
+  .b-warn{background:rgba(255,180,84,.15);color:var(--warn);border:1px solid rgba(255,180,84,.4)}
+  .b-bad{background:rgba(255,107,107,.15);color:var(--bad);border:1px solid rgba(255,107,107,.4)}
+  .b-acc{background:rgba(77,163,255,.15);color:var(--acc);border:1px solid rgba(77,163,255,.4)}
+  .pill{display:inline-block;padding:1px 7px;border-radius:6px;background:var(--chip);color:var(--mut);font-size:11px;margin:1px 2px 1px 0}
+  .rice{font-weight:700}
+  .top{box-shadow:0 0 0 2px var(--acc2) inset}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:10px;padding:12px 14px;color:var(--mut);margin:12px 0}
+  .okline{border-left-color:var(--ok)}
+  a{color:var(--acc);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .sec-h{display:flex;align-items:center;gap:8px}
+  .tag{font-size:11px;color:var(--mut);border:1px solid var(--line);padding:1px 7px;border-radius:6px}
+  .foot{color:var(--mut);font-size:12px;margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>FaCT MCP — Nurture Diagnostic <span class="tag">1→N lifecycle</span></h1>
+  <p class="sub">Free and Cheap Tokens · Actor <code>U6XrDEcdKjN4YQIZU</code> (PUBLIC) · GitHub <code>PanStories/free-and-cheap-tokens</code> · captured 2026-10-07 (Asia/Shanghai)</p>
+
+  <div class="grid cards">
+    <div class="card"><div class="k">Total users (lifetime)</div><div class="v">1</div></div>
+    <div class="card"><div class="k">Users (30d)</div><div class="v">0</div></div>
+    <div class="card"><div class="k">Total runs (lifetime)</div><div class="v">11</div></div>
+    <div class="card"><div class="k">Preflight drift</div><div class="v sm">CLOSED ✅</div></div>
+  </div>
+
+  <div class="note okline">
+    <b>Core finding:</b> FaCT is correctly built and priced, but <b>severely under-adopted</b> (1 user, 0 in 30d, 11 runs since launch 2026-09-28). The problem is <b>discovery + friction</b>, not product quality. Local drift (missing version line, missing Ko-fi link, no <code>llms.txt</code>) has been fixed and the preflight now passes 5/5. External sync (push / deploy / directory submit) is gated for your OK below.
+    <br><b>⚠️ C1 corrected (2026-10-07 re-check):</b> FaCT is <b>already listed on 5 directories</b> — Apify Store, Sartbot, <b>Glama</b>, <b>LobeHub</b>, <b>mcpservers.org</b> (last three auto-indexed from the public GitHub/Apify, free). Only <b>Smithery</b> + <b>PulseMCP</b> remain as free manual submits; <b>mcp.so's $39 paid web-form was deliberately avoided</b> (free GitHub-issue route optional). So directory submission is a smaller lever than first modeled — the real blockers are friction (A1) and the promo-vs-persistent-tier mismatch (A3).
+  </div>
+
+  <h2>1 · Status Table</h2>
+  <table>
+    <tr><th>Dimension</th><th>Current</th><th>Target</th><th>Status</th><th>Basis</th></tr>
+    <tr><td>Product / tools</td><td>8 tools, 17 promos, daily-verified</td><td>Keep + add persistent free tiers</td><td><span class="badge b-ok">✅</span></td><td>local repo inspect</td></tr>
+    <tr><td>Pricing</td><td>PPE, 8 events, verified charging</td><td>Hold — no change yet</td><td><span class="badge b-ok">✅</span></td><td><code>apify actors info</code></td></tr>
+    <tr><td>README trilingual</td><td>EN→简→繁, now has version line</td><td>Keep</td><td><span class="badge b-ok">✅</span></td><td>preflight ✅</td></tr>
+    <tr><td>llms.txt (B2A)</td><td>Created (root + site)</td><td>Deploy to live site</td><td><span class="badge b-warn">⏸️</span></td><td>preflight ✅ (local only)</td></tr>
+    <tr><td>Directory presence</td><td>5 already live (free/auto): Apify · Sartbot · Glama · LobeHub · mcpservers.org</td><td>+ Smithery + PulseMCP (free/manual); mcp.so paid-web-form ($39) avoided</td><td><span class="badge b-warn">⏸️</span></td><td>live web-search 2026-10-07</td></tr>
+    <tr><td>Server output language</td><td>Chinese-only human-readable</td><td>English-first + <code>lang</code> param</td><td><span class="badge b-bad">🔴</span></td><td>prior session finding</td></tr>
+    <tr><td>Ko-fi / Sponsors link</td><td>Added to README</td><td>Push to publish</td><td><span class="badge b-warn">⏸️</span></td><td>preflight ✅ (local only)</td></tr>
+    <tr><td>Adoption</td><td>1 user / 11 runs</td><td>≥25 users / ≥200 runs in 30d</td><td><span class="badge b-bad">🔴</span></td><td>Apify stats</td></tr>
+  </table>
+
+  <h2>2 · Stage 1 — Market Signal Table</h2>
+  <table>
+    <tr><th>Conclusion</th><th>Evidence</th><th>Date</th><th>Conf.</th><th>Audience</th><th>Verified?</th></tr>
+    <tr><td>2026 free-tier demand is dominated by <b>persistent</b> tiers (Gemini 1M-ctx no-card, DeepSeek/Mistral/Groq/Cerebras rate-limited)</td><td><a href="https://www.getaiperks.com/en/blogs/27-ai-api-free-tier-credits-2026">getaiperks</a>, <a href="https://apiscout.dev/guides/free-ai-apis-developers-2026">apiscout</a></td><td>2026-02 / 2026-03</td><td>🟢</td><td>Global devs</td><td>✅ multi-source</td></tr>
+    <tr><td>Chinese platforms give huge permanent free quotas (SiliconFlow 20M tok, Zhipu 20M, Volcano 2M/day, Alibaba, Kimi, Tencent, Baidu)</td><td><a href="https://www.besthub.dev/articles/unlock-free-ai-tokens-in-2026-the-ultimate-guide-to-zero-cost-llm-apis-0bd433568167">besthub</a>, hqwc.cn</td><td>2026-07</td><td>🟡</td><td>CN devs</td><td>⚠️ 3rd-party aggregate</td></tr>
+    <tr><td>Direct free-inference competitors exist: <b>FreeLLMAPI</b> (28.4k★) self-hosted gateway aggregating 34 providers / 635 endpoints</td><td><a href="http://www.agentlist.top/en/projects/tashfeenahmed-freellmapi">agentlist</a></td><td>2026-10</td><td>🟡</td><td>Self-hosters</td><td>⚠️ registry-stated</td></tr>
+    <tr><td><code>free-ai-mcp</code> (Glama) is a local coding assistant on 5 free providers — different job (inference, not curation)</td><td><a href="https://glama.ai/mcp/servers/tmahajan90/free-ai-mcp/score">glama</a></td><td>2026-10</td><td>🟡</td><td>Coders</td><td>🔍 registry-inspected</td></tr>
+    <tr><td><code>gonka-mcp-server</code> is live & keyless; ~17 tools, focuses on <b>pricing intel + instant trial key</b> for a paid provider</td><td><a href="https://mcp.so/servers/gonka-mcp-server">mcp.so</a> + <b>live tools/list (HTTP 200)</b></td><td>2026-10-07</td><td>🟢</td><td>Cost-optimizers</td><td>✅ ran live</td></tr>
+    <tr><td>MCP directories are large: Glama 95k+ servers, mcp.so 10k+ — discovery is a real lever</td><td><a href="https://www.saaskart.co/ai-agents/glama">saaskart</a>, <a href="https://llmagnet.com/2026/09/17/mcp-servers-are-the-new-sitemaps-heres-how-to-make-your-business-visible-to-ai-agents/">llmagnet</a></td><td>2026-09</td><td>🟢</td><td>Agents</td><td>✅</td></tr>
+    <tr><td>llms.txt is a B2A discovery signal (not a ranking factor); WebMCP is the browser-layer future</td><td><a href="https://tjrobertson.com/?p=2134/">tjrobertson</a>, <a href="https://inblog.ai/glossary/webmcp">inblog</a></td><td>2026</td><td>🟢</td><td>Agents</td><td>✅</td></tr>
+  </table>
+
+  <h2>3 · Stage 2 — Competitor Teardown Matrix</h2>
+  <table>
+    <tr><th>Competitor</th><th>Tools</th><th>Transport</th><th>Free tier</th><th>Wedge (what they have that we don't)</th><th>How torn down</th></tr>
+    <tr><td><b>FaCT (ours)</b></td><td>8</td><td>Streamable HTTP (Apify)</td><td><code>initialize</code>/<code>tools/list</code>/<code>report_promo_issue</code> = $0</td><td>Daily human-verified promo catalog, structured terms, <code>what_can_i_get</code> reasoning, hosted convenience</td><td>—</td></tr>
+    <tr><td>FreeLLMAPI (28.4k★)</td><td>gateway+MCP</td><td>self-hosted localhost</td><td>34 providers / 635 endpoints / ~7.4B tok/mo</td><td>Active proxy — stacks free tiers into ONE OpenAI-compatible endpoint w/ failover</td><td>registry-inspected (self-host, not live-runnable here)</td></tr>
+    <tr><td>free-ai-mcp</td><td>7 (code-gen)</td><td>stdio (local, keyed)</td><td>uses 5 free providers as backend</td><td>Turns free tiers into a coding agent; "cannot be deployed"</td><td>registry-inspected</td></tr>
+    <tr><td>gonka-mcp-server</td><td>~17</td><td>HTTP (live, keyless trial)</td><td>free trial key / IP budget</td><td>Live pricing intel + instant trial key issuance</td><td><b>live tools/list (HTTP 200)</b></td></tr>
+    <tr><td>free-llm-api-resources</td><td>list/index</td><td>Python MCP</td><td>curated free+trial index</td><td>Closest conceptual match — a maintained free/trial provider list</td><td>registry-inspected</td></tr>
+  </table>
+
+  <div class="note">
+    <b>Gap list (tagged):</b><br>
+    🛡️ <b>Table stakes:</b> version line (done), llms.txt (done/local), agent-grade tool descriptions.<br>
+    ⚔️ <b>Differentiator we keep:</b> daily human verification + structured terms + reasoning tool + hosted PPE convenience (no self-hosting).<br>
+    🧱 <b>Defender:</b> pricing (hold), MIT + no-affiliate stance.<br>
+    🚫 <b>Out-of-scope:</b> becoming an inference proxy (FreeLLMAPI's job); we stay a <i>curation/discovery</i> layer.
+  </div>
+
+  <h2>4 · Stage 3 — Feedback / Pain Table</h2>
+  <table>
+    <tr><th>Pain</th><th>Frequency</th><th>Severity</th><th>Root cause</th><th>Maps to</th></tr>
+    <tr><td>No one can find FaCT</td><td>structural (1 user)</td><td>🔴 Critical</td><td>Only 2 directories; no SEO/llms.txt live</td><td>C1, C2, A2</td></tr>
+    <tr><td>English-first devs see Chinese tool output</td><td>every call</td><td>🔴 High</td><td>Server human-readable output is zh-only</td><td>A1</td></tr>
+    <tr><td>Catalog = time-limited "promos", but market wants persistent free tiers</td><td>market-wide</td><td>🟡 Strategic</td><td>Positioning narrower than demand</td><td>A3</td></tr>
+    <tr><td>No social proof (0 reviews / 0 stars / 0 issues)</td><td>—</td><td>🟡 Medium</td><td>No launch / no ask</td><td>C3, B1</td></tr>
+    <tr><td>GitHub issues / Apify reviews</td><td>0 signals</td><td>—</td><td>Run volume too low to derive tool-level popularity</td><td>(insufficient — not yet decision-grade)</td></tr>
+  </table>
+
+  <h2>5 · Stage 4 — Four-Decision RICE Tables</h2>
+  <p class="sub">RICE = Reach × Impact × Confidence ÷ Effort. <span class="badge b-acc">TOP-4</span> rows are the recommended sign-off items.</p>
+
+  <h3 class="sec-h">A · Features / Tech</h3>
+  <table>
+    <tr><th>ID</th><th>Action</th><th>R</th><th>I</th><th>C</th><th>E</th><th>RICE</th><th>Status</th></tr>
+    <tr class="top"><td>A1</td><td>Add <code>lang</code> param + English-first server output</td><td>9</td><td>3</td><td>0.9</td><td>3</td><td class="rice">8.1</td><td><span class="badge b-acc">TOP-4</span></td></tr>
+    <tr><td>A5</td><td>Audit & sharpen agent-facing tool descriptions (disclosures, schemas)</td><td>6</td><td>2</td><td>0.8</td><td>2</td><td class="rice">4.8</td><td></td></tr>
+    <tr><td>A3</td><td>Expand scope: add persistent free tiers (Gemini/DeepSeek/Groq/…/CN) section</td><td>9</td><td>3</td><td>0.6</td><td>6</td><td class="rice">2.7</td><td><span class="badge b-warn">decision</span></td></tr>
+    <tr><td>A4</td><td>README version line + tagline consistency</td><td>3</td><td>1</td><td>1.0</td><td>0.5</td><td class="rice">6.0</td><td><span class="badge b-ok">done(local)</span></td></tr>
+  </table>
+
+  <h3 class="sec-h">B · Monetization</h3>
+  <table>
+    <tr><th>ID</th><th>Action</th><th>R</th><th>I</th><th>C</th><th>E</th><th>RICE</th><th>Status</th></tr>
+    <tr><td>B1</td><td>Ko-fi / star link in README (already added)</td><td>2</td><td>1</td><td>0.9</td><td>0.5</td><td class="rice">3.6</td><td><span class="badge b-ok">done(local)</span></td></tr>
+    <tr><td>B2</td><td>Bundle FaCT + Cheapest-LLM Router + Stock Analyst (multi-MCP)</td><td>4</td><td>2</td><td>0.6</td><td>4</td><td class="rice">1.2</td><td></td></tr>
+    <tr><td>B3</td><td>Keep PPE unchanged (premature to add paid channels at 1 user)</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="rice">—</td><td><span class="badge b-ok">hold</span></td></tr>
+  </table>
+
+  <h3 class="sec-h">C · Promotion</h3>
+  <table>
+    <tr><th>ID</th><th>Action</th><th>R</th><th>I</th><th>C</th><th>E</th><th>RICE</th><th>Status</th></tr>
+    <tr><td>C1</td><td>Submit to remaining free dirs: Smithery (add <code>smithery.yaml</code>) + PulseMCP/official-registry (add <code>server.json</code>). Glama/LobeHub/mcpservers.org already live; mcp.so $39 paid-web-form avoided</td><td>4</td><td>3</td><td>0.8</td><td>3</td><td class="rice">2.9</td><td><span class="badge b-warn">downgraded</span></td></tr>
+    <tr><td>C2</td><td>GitHub SEO: topics, README structured data, llms.txt deploy</td><td>6</td><td>2</td><td>0.8</td><td>2</td><td class="rice">4.8</td><td></td></tr>
+    <tr><td>C3</td><td>Launch post: Reddit/HN/lobsters + dev.to/掘金 long-form</td><td>7</td><td>2</td><td>0.7</td><td>3</td><td class="rice">3.3</td><td></td></tr>
+    <tr><td>C5</td><td>Verify Sartbot search actually surfaces FaCT (prior fix)</td><td>3</td><td>1</td><td>0.9</td><td>0.5</td><td class="rice">5.4</td><td><span class="badge b-warn">verify</span></td></tr>
+    <tr><td>C4</td><td>Cross-promo: david-s-p-an.com / MistifyTea / Wishes4U</td><td>4</td><td>1</td><td>0.7</td><td>2</td><td class="rice">1.4</td><td></td></tr>
+  </table>
+
+  <h3 class="sec-h">D · Pricing</h3>
+  <table>
+    <tr><th>ID</th><th>Action</th><th>R</th><th>I</th><th>C</th><th>E</th><th>RICE</th><th>Status</th></tr>
+    <tr><td>D1</td><td>Hold current PPE ladder (no change — premature)</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="rice">—</td><td><span class="badge b-ok">hold</span></td></tr>
+    <tr><td>D2</td><td>Optionally lower <code>search_promos</code> $0.005→$0.002 to match <code>list_providers</code></td><td>5</td><td>1</td><td>0.8</td><td>1</td><td class="rice">4.0</td><td><span class="badge b-warn">needs OK (rule 4)</span></td></tr>
+  </table>
+
+  <h2>6 · 待老板拍板 · Sign-off List (external / price / publish)</h2>
+  <div class="note">
+    Local drift fixes are <b>done & preflight-green</b>. The following require your OK before I execute (iron rule 5 — external actions):
+    <p style="margin:8px 0 0">
+    <span class="pill">① C1 — submit to 2 remaining free directories: Smithery (smithery.yaml) + PulseMCP (server.json). Glama/LobeHub/mcpservers.org already live; mcp.so $39 paid-form avoided</span>
+    <span class="pill">② A1 — add lang param + English-first output (code change → rebuild → Apify push)</span>
+    <span class="pill">③ A2/C2 — deploy llms.txt + site to live (Cloudflare Pages / GitHub Pages)</span>
+    <span class="pill">④ A3 — strategic scope pivot to persistent free tiers (changes positioning)</span>
+    <span class="pill">⑤ C3 — publish launch post (Reddit/HN/dev.to/掘金)</span>
+    <span class="pill">⑥ D2 — if lowering search_promos price (rule 4: boss approval)</span>
+    <span class="pill">⑦ Apify push + Sartbot deploy to publish all README/llms.txt edits</span>
+    </div>
+  </div>
+
+  <h2>7 · First-Week Action Plan (after OK)</h2>
+  <table>
+    <tr><th>#</th><th>Action</th><th>Owner</th><th>Cmd / file</th></tr>
+    <tr><td>1</td><td>Push README + llms.txt + manifest to GitHub</td><td>me</td><td><code>git add -A && git commit && git push</code></td></tr>
+    <tr><td>2</td><td>Apify push (publish README/Store changes)</td><td>me</td><td><code>cd fact-mcp &amp;&amp; npm run build &amp;&amp; apify push</code></td></tr>
+    <tr><td>3</td><td>Deploy site + llms.txt</td><td>me</td><td>Cloudflare Pages / GitHub Pages deploy of <code>site/</code></td></tr>
+    <tr><td>4</td><td>Submit to 2 remaining free directories (Smithery + PulseMCP)</td><td>me</td><td><code>mcp-directory-submit</code> skill (add smithery.yaml + server.json first)</td></tr>
+    <tr><td>5</td><td>A1: add <code>lang</code> param + EN output</td><td>me</td><td><code>src/mcp/server.ts</code> + rebuild + push</td></tr>
+    <tr><td>6</td><td>Verify Sartbot search shows FaCT</td><td>me</td><td>live check sartbot.com/search</td></tr>
+  </table>
+
+  <h2>8 · Cost Disclosure</h2>
+  <table>
+    <tr><th>Phase</th><th>Estimate</th><th>Actual (this session)</th></tr>
+    <tr><td>Pre (estimate)</td><td>~1 full research cycle: 8 searches + 4 bash + 2 writes</td><td>—</td></tr>
+    <tr><td>Actual</td><td>—</td><td>8 WebSearches + 10 Bash + 2 Read + 8 Write/Edit + 2 preflight runs ≈ low token burn (research + local edits only; no cloud credit spent)</td></tr>
+    <tr><td>Next (if OK)</td><td>Apify push + 2 directory submits (Smithery/PulseMCP) + 1 site deploy ≈ minimal Apify build credit; no paid spend; mcp.so paid tier avoided</td><td>to be reported post-execution</td></tr>
+  </table>
+
+  <div class="foot">
+    Single source of truth: <code>nurture/manifest.json</code> (preflight 5/5 ✅). Baseline: <code>nurture/baseline.md</code>. Skill: <code>nurture-mcp</code> v1.0.0. Every conclusion carries URL+date per iron rule 1. External sync pending boss OK.
+  </div>
+
+</div>
+</body>
+</html>

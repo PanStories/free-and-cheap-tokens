@@ -1,0 +1,24 @@
+# Free and Cheap Tokens (FaCT)
+
+> A curated, **daily human-verified**, machine-readable catalog of **free tiers and cheap token promos** for AI models and inference services — served as one MCP server over Streamable HTTP.
+
+An open, daily-verified catalog of free AI model API credits & token promotions. 8 MCP tools, MIT, no paid placements.
+
+MCP endpoint: https://neeenja--free-and-cheap-tokens.apify.actor/mcp
+Apify Store: https://apify.com/neeenja/free-and-cheap-tokens
+Source (MIT): https://github.com/PanStories/free-and-cheap-tokens
+Sartbot listing: https://sartbot.com/mcp/free-and-cheap-tokens/
+Daily listing page: https://freeandcheaptokens.dev/
+
+## Tools
+- search_promos — find promos by provider / region / tag
+- filter_promos — narrow the catalog by structured criteria
+- get_promo — full terms for one promo
+- list_providers — all providers in the catalog
+- get_recent_updates — newly added / changed promos
+- get_expiring_soon — promos expiring within N days
+- what_can_i_get — reasoned recommendation (premium reasoning)
+- report_promo_issue — flag stale / expired data
+
+## Stance
+Open source · No paid placements · No affiliate links · Daily verified data · MIT
