@@ -1,8 +1,17 @@
 {
   "slug": "free-and-cheap-tokens",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "repo_root": "C:\\Users\\USER\\WorkBuddy\\MCP\\fact-mcp",
   "endpoint": "https://neeenja--free-and-cheap-tokens.apify.actor/mcp",
+  "deployment": {
+    "apify_build": "1.2.5",
+    "apify_actor_version": "1.2",
+    "apify_status": "PUBLIC · Standby live (MCP endpoint returns HTTP 401 unauthenticated = alive)",
+    "github_pages": "LIVE · https://panstories.github.io/free-and-cheap-tokens/ (index.html + llms.txt HTTP 200)",
+    "verified_at": "2026-10-07"
+  },
+  "completed_actions": ["A1", "A2", "C2"],
+  "pending_actions": ["C1 (remaining free dirs Smithery/PulseMCP)", "A3 (persistent-tier scope pivot)", "C3 (launch post)", "D2 (price tweak — needs boss OK)"],
   "directory_state": {
     "live_free_auto": ["apify-store", "sartbot-featured", "glama", "lobehub", "mcpservers.org"],
     "remaining_free_manual": ["smithery (needs smithery.yaml)", "pulsemcp/official-registry (needs server.json)"],
