@@ -18,13 +18,18 @@ FROM apify/actor-node:24-slim
 
 WORKDIR /usr/src/app
 
-# Cache npm install layer
+# Cache npm install layer (production deps only — keeps image lean, avoids
+# pulling native devDeps like sharp into the runtime image)
 COPY package.json package-lock.json* ./
 RUN npm ci --omit=dev --no-audit --no-fund
 
+# Compile TypeScript in-image. `dist/` is gitignored so apify push never
+# uploads it; instead we build it here from the uploaded `src/`.
+COPY src ./src
+RUN npm install --no-save typescript@5.9.3 && npm run build
+
 # Runtime artifacts (catalog is generated in-image from curated data —
 # apify push upload skips .gitignore'd build/, so we never COPY it)
-COPY dist ./dist
 COPY schemas ./schemas
 COPY data ./data
 COPY scripts/build-catalog.mjs ./scripts/build-catalog.mjs
