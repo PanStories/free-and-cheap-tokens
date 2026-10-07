@@ -18,13 +18,18 @@ FROM apify/actor-node:24-slim
 
 WORKDIR /usr/src/app
 
-# Cache npm install layer. Full install (no --omit=dev) so the TypeScript
-# compiler (devDependency) is present and `tsc` is linked into node_modules/.bin.
+# Cache npm install layer. The apify/actor-node base image sets
+# NODE_ENV=production, which makes `npm ci` behave like `--omit=dev` and skip
+# devDependencies (typescript => `tsc: not found`). Force dev deps in with
+# --include=dev so the TypeScript compiler is installed and `tsc` is linked.
 COPY package.json package-lock.json* ./
-RUN npm ci --no-audit --no-fund
+RUN npm ci --include=dev --no-audit --no-fund
 
 # Compile TypeScript in-image. `dist/` is gitignored so apify push never
 # uploads it; instead we build it here from the uploaded `src/`.
+# tsconfig.json lives at repo root and MUST be copied too — without it `tsc`
+# finds no config, prints its option help, and exits 1.
+COPY tsconfig.json ./tsconfig.json
 COPY src ./src
 RUN npm run build
 
