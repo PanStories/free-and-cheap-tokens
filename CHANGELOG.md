@@ -19,6 +19,19 @@ All notable changes to this project will be documented here. Format: [Keep a Cha
   remote / local stdio tabs and copy buttons.
 - Emoji removed from the language toggle and the promo-data note (P0 red line).
 
+## [1.2.0] - 2026-10-07
+
+### Added
+- **Persistent free tiers are now first-class.** `search_promos` / `filter_promos` accept a new
+  `offer_type` filter (enum incl. `free_tier`) so agents can isolate permanent free tiers from
+  limited-time promos. 14 of 17 catalog entries are `free_tier`.
+- **Free-tier label in human output.** List and detail views now tag `free_tier` offers with
+  "Permanent free tier" (永久免费额度 / 永久免費額度).
+
+### Changed
+- **Positioning copy leads with free tiers.** README + llms.txt now frame FaCT as persistent free
+  tiers + limited-time promos (was promo-centric).
+
 ## [1.1.1] - 2026-09-28
 
 ### Added

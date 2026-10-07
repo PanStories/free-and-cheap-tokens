@@ -45,6 +45,7 @@ import type {
   VerificationStatus,
   PromoSummary,
   PromoFull,
+  OfferType,
 } from '../data/types.js';
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -77,6 +78,22 @@ const searchInput = z.object({
       z.enum(['active', 'expiring_soon', 'expired', 'unverified', 'rumored']),
     )
     .max(5)
+    .optional(),
+  offer_type: z
+    .array(
+      z.enum([
+        'free_tier',
+        'trial_credit',
+        'signup_bonus',
+        'referral_bonus',
+        'promo_code',
+        'daily_allowance',
+        'startup_program',
+        'academic_program',
+        'limited_event',
+      ]),
+    )
+    .max(9)
     .optional(),
   lang: z.enum(['en', 'zh', 'zh_hant']).default('en'),
   limit: z.number().int().min(1).max(50).default(10),
@@ -172,7 +189,7 @@ export function createMcpServer() {
       {
         name: 'search_promos',
         description:
-          'Search and filter promo offerings. Returns structured matches with human summary.',
+          'Search and filter token offerings — persistent free tiers and limited-time promos. Returns structured matches with a human-readable summary. Use offer_type to isolate free tiers.',
         inputSchema: {
           type: 'object',
           properties: {
@@ -211,13 +228,30 @@ export function createMcpServer() {
                 enum: ['active', 'expiring_soon', 'expired', 'unverified', 'rumored'],
               },
             },
+            offer_type: {
+              type: 'array',
+              items: {
+                enum: [
+                  'free_tier',
+                  'trial_credit',
+                  'signup_bonus',
+                  'referral_bonus',
+                  'promo_code',
+                  'daily_allowance',
+                  'startup_program',
+                  'academic_program',
+                  'limited_event',
+                ],
+              },
+              description: 'Restrict to offer types. Use ["free_tier"] to isolate persistent free tiers.',
+            },
             limit: { type: 'integer', minimum: 1, maximum: 50, default: 10 },
           },
         },
       },
       {
         name: 'filter_promos',
-        description: 'Pure structural filter with deterministic sort (no semantic query).',
+        description: 'Pure structural filter with deterministic sort (no semantic query). Supports offer_type to isolate persistent free tiers.',
         inputSchema: {
           type: 'object',
           properties: {
@@ -226,6 +260,23 @@ export function createMcpServer() {
             difficulty: { type: 'array', items: { enum: ['easy', 'medium', 'hard'] } },
             requires_credit_card: { type: 'boolean' },
             expires_within_days: { type: 'integer', minimum: 1, maximum: 365 },
+            offer_type: {
+              type: 'array',
+              items: {
+                enum: [
+                  'free_tier',
+                  'trial_credit',
+                  'signup_bonus',
+                  'referral_bonus',
+                  'promo_code',
+                  'daily_allowance',
+                  'startup_program',
+                  'academic_program',
+                  'limited_event',
+                ],
+              },
+              description: 'Restrict to offer types. Use ["free_tier"] to isolate persistent free tiers.',
+            },
             sort: {
               enum: ['expires_soonest', 'newest', 'provider_alpha', 'difficulty_easiest'],
               default: 'expires_soonest',
@@ -500,6 +551,7 @@ function handleSearch(args: z.infer<typeof searchInput>) {
     expires_within_days: args.expires_within_days,
     categories: args.categories as Category[] | undefined,
     include_status: args.include_status as any,
+    offer_type: args.offer_type as OfferType[] | undefined,
     limit: args.limit,
   };
   const results = searchPromos(filter);
@@ -527,6 +579,7 @@ function handleFilter(args: z.infer<typeof filterInput>) {
     requires_credit_card: args.requires_credit_card,
     expires_within_days: args.expires_within_days,
     categories: undefined,
+    offer_type: args.offer_type as OfferType[] | undefined,
     limit: args.limit,
   });
 
@@ -677,7 +730,8 @@ function renderHumanList(items: PromoSummary[], title: string | null, lang: Lang
   const lines = items.map((p, i) => {
     const status = statusLabel(lang, p.verification.status);
     const headline = pickLang(lang, p.offer.headline_en, p.offer.headline) ?? p.offer.headline;
-    return `${i + 1}. ${headline} (${t(lang, 'label_difficulty')}${sep}${p.difficulty} · ${status}) — id: ${p.id}`;
+    const typeMarker = p.offer.type === 'free_tier' ? ` · ${t(lang, 'free_tier')}` : '';
+    return `${i + 1}. ${headline} (${t(lang, 'label_difficulty')}${sep}${p.difficulty} · ${status}${typeMarker}) — id: ${p.id}`;
   });
   return `${head}\n${lines.join('\n')}`;
 }
@@ -695,6 +749,7 @@ function renderHumanPromo(p: PromoFull, lang: Lang): string {
     `${t(lang, 'label_provider')}${sep}${providerName(lang, p.provider)}`,
     `${t(lang, 'label_difficulty')}${sep}${p.difficulty}`,
     `${t(lang, 'label_region')}${sep}${region}`,
+    `${t(lang, 'label_type')}${sep}${p.offer.type === 'free_tier' ? t(lang, 'free_tier') : p.offer.type}`,
     value ? `${t(lang, 'label_quota')}${sep}${value}` : '',
     p.offer.expires_at
       ? `${t(lang, 'label_expires')}${sep}${p.offer.expires_at}`

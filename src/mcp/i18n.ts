@@ -56,6 +56,8 @@ const EN: Dict = {
   expiring_7d: 'expiring within 7 days',
   no_card: 'no credit card required',
   best_for: 'best fit for',
+  label_type: 'Type',
+  free_tier: 'Permanent free tier',
 };
 
 const ZH: Dict = {
@@ -95,6 +97,8 @@ const ZH: Dict = {
   expiring_7d: '7 天内到期',
   no_card: '免信用卡',
   best_for: '最适合',
+  label_type: '类型',
+  free_tier: '永久免费额度',
 };
 
 // Traditional Chinese — same keys; only the glyph forms differ where applicable.
@@ -135,6 +139,8 @@ const ZH_HANT: Dict = {
   expiring_7d: '7 天內到期',
   no_card: '免信用卡',
   best_for: '最適合',
+  label_type: '類型',
+  free_tier: '永久免費額度',
 };
 
 export function t(lang: Lang, key: string): string {

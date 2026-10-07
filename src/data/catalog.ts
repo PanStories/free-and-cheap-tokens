@@ -19,6 +19,7 @@ import type {
   Difficulty,
   Category,
   CountryCode,
+  OfferType,
 } from './types.js';
 import { validatePromo } from './validate.js';
 
@@ -140,6 +141,8 @@ export interface SearchFilter {
   categories?: Category[];
   /** 默认排除 status=expired 与 status=unverified；除非显式 include */
   include_status?: Promo['status'][];
+  /** 按 offer 类型过滤（如 ['free_tier'] 只看持久免费额度） */
+  offer_type?: OfferType[];
   /** 默认 10；最大 50 */
   limit?: number;
 }
@@ -235,6 +238,7 @@ export function searchPromos(filter: SearchFilter): Promo[] {
     if (filter.query && !matchesQuery(p, filter.query)) continue;
     if (filter.provider_id && p.provider.id !== filter.provider_id) continue;
     if (filter.categories?.length && !filter.categories.some((c) => p.categories.includes(c))) continue;
+    if (filter.offer_type?.length && !filter.offer_type.includes(p.offer.type)) continue;
     if (filter.difficulty?.length && !filter.difficulty.includes(p.difficulty)) continue;
     if (!regionMatches(p, filter.region)) continue;
     if (typeof filter.requires_credit_card === 'boolean') {

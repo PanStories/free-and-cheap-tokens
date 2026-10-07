@@ -24,16 +24,16 @@
 
 # English
 
-**Current version: 1.1.1**
+**Current version: 1.2.0**
 
-A curated, **daily human-verified**, machine-readable catalog of **free tiers and cheap token promos** for AI models and inference services — served as one MCP server over Streamable HTTP.
+A curated, **daily human-verified**, machine-readable catalog of **persistent free tiers and limited-time token promos** for AI models and inference services — served as one MCP server over Streamable HTTP.
 
 ## What you get
 
 - **8 tools** — `search_promos`, `filter_promos`, `get_promo`, `list_providers`, `get_recent_updates`, `get_expiring_soon`, `what_can_i_get`, `report_promo_issue`
 - **4 resources** — `catalog://snapshot`, `catalog://daily/{date}`, `schema://promo`, `providers://index`
 - **3 prompts** — `daily-deal-brief`, `pick-for-me`, `explain-terms`
-- **17 curated promos** covering OpenAI / Anthropic / Google / Zhipu / SiliconFlow / Alibaba Cloud Model Studio / Cloudflare Workers AI / Groq …
+- **17 curated offers** (free tiers + limited-time promos) covering OpenAI / Anthropic / Google / Zhipu / SiliconFlow / Alibaba Cloud Model Studio / Cloudflare Workers AI / Groq …
 
 Every promo record carries normalized terms (22 controlled tags), an onboarding difficulty rating (**easy / medium / hard**) with an Agent fallback path, region disclosure (global / include / exclude), an expiry timestamp (including `no_fixed_expiry`), a "how to claim" step list, and a **human-verified timestamp** — the last one is our core differentiator.
 
@@ -122,16 +122,16 @@ npm run preflight       # One-shot run all of the above
 
 # 简体中文
 
-**当前版本：1.1.1**
+**当前版本：1.2.0**
 
-一份**每日人工核实**、机器可读的 **AI 模型 / 推理服务免费额度与低价 token 促销**策展清单，以一个 MCP server 的形式通过 Streamable HTTP 对外提供。
+一份**每日人工核实**、机器可读的 **AI 模型 / 推理服务持久免费额度与限时 token 促销**策展清单，以一个 MCP server 的形式通过 Streamable HTTP 对外提供。
 
 ## 你能拿到什么
 
 - **8 个 tools** — `search_promos`、`filter_promos`、`get_promo`、`list_providers`、`get_recent_updates`、`get_expiring_soon`、`what_can_i_get`、`report_promo_issue`
 - **4 个 resources** — `catalog://snapshot`、`catalog://daily/{date}`、`schema://promo`、`providers://index`
 - **3 个 prompts** — `daily-deal-brief`、`pick-for-me`、`explain-terms`
-- **17 条策展 promo**，覆盖 OpenAI / Anthropic / Google / 智谱 / 硅基流动 / 阿里云百炼 / Cloudflare Workers AI / Groq …
+- **17 条策展条目**（免费额度 + 限时促销），覆盖 OpenAI / Anthropic / Google / 智谱 / 硅基流动 / 阿里云百炼 / Cloudflare Workers AI / Groq …
 
 每条 promo 都带：归类后的条款（22 项受控标签）、上手难度分级（**easy / medium / hard**）+ Agent 降级路径、区域披露（global / include / exclude）、到期时间（含 `no_fixed_expiry`）、「如何薅」步骤（hard 项必填），以及**人工核验时间** —— 最后这项是我们的核心差异化。
 
@@ -220,16 +220,16 @@ npm run preflight       # 一键跑完上面所有
 
 # 繁體中文
 
-**目前版本：1.1.1**
+**目前版本：1.2.0**
 
-一份**每日人工核實**、機器可讀的 **AI 模型 / 推論服務免費額度與低價 token 促銷**策展清單，以單一 MCP server 的形式透過 Streamable HTTP 對外提供。
+一份**每日人工核實**、機器可讀的 **AI 模型 / 推論服務持久免費額度與限時 token 促銷**策展清單，以單一 MCP server 的形式透過 Streamable HTTP 對外提供。
 
 ## 你能拿到什麼
 
 - **8 個 tools** — `search_promos`、`filter_promos`、`get_promo`、`list_providers`、`get_recent_updates`、`get_expiring_soon`、`what_can_i_get`、`report_promo_issue`
 - **4 個 resources** — `catalog://snapshot`、`catalog://daily/{date}`、`schema://promo`、`providers://index`
 - **3 個 prompts** — `daily-deal-brief`、`pick-for-me`、`explain-terms`
-- **17 筆策展 promo**，涵蓋 OpenAI / Anthropic / Google / 智譜 / 矽基流動 / 阿里雲百鍊 / Cloudflare Workers AI / Groq …
+- **17 筆策展條目**（免費額度 + 限時促銷），涵蓋 OpenAI / Anthropic / Google / 智譜 / 矽基流動 / 阿里雲百鍊 / Cloudflare Workers AI / Groq …
 
 每筆 promo 都帶有：歸類後的條款（22 項受控標籤）、上手難度分級（**easy / medium / hard**）+ Agent 降級路徑、區域揭露（global / include / exclude）、到期時間（含 `no_fixed_expiry`）、「如何領」步驟（hard 項目必填），以及**人工核驗時間** —— 最後這項是我們的核心差異化。
 
