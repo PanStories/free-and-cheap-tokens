@@ -6,7 +6,7 @@
 [![Node](https://img.shields.io/badge/Node-24.21.0_LTS-339933)](https://nodejs.org)
 [![MCP](https://img.shields.io/badge/MCP-1.32.1-purple)](https://modelcontextprotocol.io)
 [![Apify PPE](https://img.shields.io/badge/Apify-Pay--Per--Event-0099FF)](https://apify.com)
-[![M8ven Score](https://m8ven.ai/badge/mcp/panstories/free-and-cheap-tokens?variant=verified)](https://m8ven.ai/mcp/panstories/free-and-cheap-tokens)
+[![M8ven Verified](https://m8ven.ai/badge/mcp/panstories-free-and-cheap-tokens-10wb16?variant=verified&v=0717712732828fc844bcf45df3584188)](https://m8ven.ai/mcp/panstories-free-and-cheap-tokens-10wb16?s=readme)
 
 🌐 **[English](#english)** · **[简体中文](#简体中文)** · **[繁體中文](#繁體中文)**
 
