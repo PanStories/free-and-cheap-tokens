@@ -27,7 +27,7 @@
 
 **Current version: 1.3.0**
 
-A curated, **daily human-verified**, machine-readable catalog of **persistent free tiers and limited-time token promos** for AI models and inference services — served as one MCP server over Streamable HTTP.
+A curated, **daily human-verified**, machine-readable catalog of **persistent free tiers and limited-time token promos** for AI models and inference services — exposed as a single MCP server over Streamable HTTP.
 
 ## What you get
 
