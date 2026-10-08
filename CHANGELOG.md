@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented here. Format: [Keep a Changelog](https://keepachangelog.com/) · SemVer.
 
+## [1.3.0] - 2026-10-08
+
+### Security
+
+- **Upgraded `@modelcontextprotocol/sdk` 1.30.1 → 1.32.1**, clearing **GHSA-6qxp-vccf-f47h /
+  CVE-2026-104850** (CVSS 7.5 High) — the OAuth client could send stored credentials to an
+  authorization server named by the MCP server. **Not reachable from this project**: the
+  advisory's "Am I affected" section excludes MCP *servers* built with the SDK and stdio
+  clients, and this server holds no OAuth credentials. Fixed anyway so scanners stop
+  flagging a dependency that genuinely cannot reach it.
+- `npm audit` highs reduced 8 → 6. The remainder come through `apify` SDK's
+  `proxy-agent` chain and the `apify-cli` publish toolchain, both outside the served
+  surface; `apify` is already at the latest 3.7.2.
+
+### Added
+
+- **MCP tool annotations on all 8 tools** — `readOnlyHint: true`, `destructiveHint: false`,
+  `idempotentHint: true`, `openWorldHint: false`, matching actual behaviour (every tool is a
+  pure read over the bundled catalog; `report_promo_issue` only formats a GitHub issue URL
+  and sends nothing). OpenAI's MCP directory rejects tools missing these hints.
+- **`tests/tools.test.ts`** — 14 contract tests covering every tool by name, plus an
+  annotation contract and `lang` parity checks. Test coverage 20 → 34.
+- **M8ven Trust Index badge** in the README, pointing at the independent security review.
+
 ## [Unreleased]
 
 ### Changed

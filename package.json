@@ -1,6 +1,6 @@
 {
   "name": "free-and-cheap-tokens",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "MCP server + curated data for free and cheap AI model token promotions",
   "type": "module",
   "license": "MIT",
@@ -50,7 +50,7 @@
     "apify:validate": "node -e \"const a=require('./.actor/actor.json'); if(a.pricingModel!=='PAY_PER_EVENT') throw new Error('pricingModel must be PAY_PER_EVENT'); if(!a.webServer?.requestHandler) throw new Error('webServer.requestHandler required'); if(!a.usesStandbyMode) throw new Error('usesStandbyMode required: PPE actors need Standby to expose a stable public MCP endpoint'); const evts=a.pricingEvents||{}; const required=['mcp-initialize','mcp-search','mcp-filter','mcp-get-promo','mcp-list-providers','mcp-recent-updates','mcp-expiring-soon','mcp-what-can-i-get','mcp-report-issue']; const missing=required.filter(e=>!evts[e]); if(missing.length) throw new Error('missing pricingEvents: '+missing.join(',')); console.log('✓ actor.json PPE config valid');\""
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.30.1",
+    "@modelcontextprotocol/sdk": "1.32.1",
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
     "apify": "3.7.2",

@@ -183,8 +183,22 @@ export function createMcpServer() {
     },
   );
 
-  // ─── Tools ───
-  server.setRequestHandler(ListToolsRequestSchema, async () => ({
+// ─── Tools ───
+// Every tool here is a pure read over the bundled catalog: no network calls, no
+// filesystem writes, no state mutation. `report_promo_issue` only formats a
+// GitHub issue URL for a human to open — it sends nothing itself.
+// Declaring the four MCP tool hints lets hosts warn users before invoking, and
+// is required by OpenAI's MCP directory.
+const TOOL_ANNOTATIONS = {
+  readOnly: {
+    readOnlyHint: true,
+    destructiveHint: false,
+    idempotentHint: true,
+    openWorldHint: false,
+  },
+} as const;
+
+server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
       {
         name: 'search_promos',
@@ -248,6 +262,7 @@ export function createMcpServer() {
             limit: { type: 'integer', minimum: 1, maximum: 50, default: 10 },
           },
         },
+        annotations: TOOL_ANNOTATIONS.readOnly,
       },
       {
         name: 'filter_promos',
@@ -284,11 +299,13 @@ export function createMcpServer() {
             limit: { type: 'integer', minimum: 1, maximum: 50, default: 10 },
           },
         },
+        annotations: TOOL_ANNOTATIONS.readOnly,
       },
       {
         name: 'get_promo',
         description: 'Get full details of a single promo by id.',
         inputSchema: { type: 'object', properties: { id: { type: 'string' }, lang: { type: 'string', enum: ['en', 'zh', 'zh_hant'], default: 'en', description: 'Output language for human-readable text (en = English-first).' } }, required: ['id'] },
+        annotations: TOOL_ANNOTATIONS.readOnly,
       },
       {
         name: 'list_providers',
@@ -297,6 +314,7 @@ export function createMcpServer() {
           type: 'object',
           properties: { country: { type: 'string', minLength: 2, maxLength: 2 }, lang: { type: 'string', enum: ['en', 'zh', 'zh_hant'], default: 'en', description: 'Output language for human-readable text (en = English-first).' } },
         },
+        annotations: TOOL_ANNOTATIONS.readOnly,
       },
       {
         name: 'get_recent_updates',
@@ -310,6 +328,7 @@ export function createMcpServer() {
           },
           required: ['since'],
         },
+        annotations: TOOL_ANNOTATIONS.readOnly,
       },
       {
         name: 'get_expiring_soon',
@@ -323,6 +342,7 @@ export function createMcpServer() {
             limit: { type: 'integer', minimum: 1, maximum: 50, default: 10 },
           },
         },
+        annotations: TOOL_ANNOTATIONS.readOnly,
       },
       {
         name: 'what_can_i_get',
@@ -340,6 +360,7 @@ export function createMcpServer() {
             limit: { type: 'integer', minimum: 1, maximum: 50, default: 10 },
           },
         },
+        annotations: TOOL_ANNOTATIONS.readOnly,
       },
       {
         name: 'report_promo_issue',
@@ -356,6 +377,7 @@ export function createMcpServer() {
             description: { type: 'string' },
           },
         },
+        annotations: TOOL_ANNOTATIONS.readOnly,
       },
     ],
   }));

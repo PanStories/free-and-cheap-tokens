@@ -4,8 +4,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/Node-24.21.0_LTS-339933)](https://nodejs.org)
-[![MCP](https://img.shields.io/badge/MCP-1.30.1-purple)](https://modelcontextprotocol.io)
+[![MCP](https://img.shields.io/badge/MCP-1.32.1-purple)](https://modelcontextprotocol.io)
 [![Apify PPE](https://img.shields.io/badge/Apify-Pay--Per--Event-0099FF)](https://apify.com)
+[![M8ven Score](https://m8ven.ai/badge/mcp/panstories/free-and-cheap-tokens?variant=verified)](https://m8ven.ai/mcp/panstories/free-and-cheap-tokens)
 
 🌐 **[English](#english)** · **[简体中文](#简体中文)** · **[繁體中文](#繁體中文)**
 
@@ -24,7 +25,7 @@
 
 # English
 
-**Current version: 1.2.0**
+**Current version: 1.3.0**
 
 A curated, **daily human-verified**, machine-readable catalog of **persistent free tiers and limited-time token promos** for AI models and inference services — served as one MCP server over Streamable HTTP.
 
@@ -122,7 +123,7 @@ npm run preflight       # One-shot run all of the above
 
 # 简体中文
 
-**当前版本：1.2.0**
+**当前版本：1.3.0**
 
 一份**每日人工核实**、机器可读的 **AI 模型 / 推理服务持久免费额度与限时 token 促销**策展清单，以一个 MCP server 的形式通过 Streamable HTTP 对外提供。
 
@@ -220,7 +221,7 @@ npm run preflight       # 一键跑完上面所有
 
 # 繁體中文
 
-**目前版本：1.2.0**
+**目前版本：1.3.0**
 
 一份**每日人工核實**、機器可讀的 **AI 模型 / 推論服務持久免費額度與限時 token 促銷**策展清單，以單一 MCP server 的形式透過 Streamable HTTP 對外提供。
 
