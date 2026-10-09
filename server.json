@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.PanStories/free-and-cheap-tokens",
+  "title": "Free and Cheap Tokens (FaCT)",
+  "description": "Human-verified daily catalog of free and cheap AI model API credits and token promos.",
+  "version": "1.3.0",
+  "websiteUrl": "https://apify.com/neeenja/free-and-cheap-tokens",
+  "repository": {
+    "url": "https://github.com/PanStories/free-and-cheap-tokens",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://neeenja--free-and-cheap-tokens.apify.actor/mcp"
+    }
+  ]
+}
