@@ -2,6 +2,7 @@
   "actorSpecification": 1,
   "name": "free-and-cheap-tokens",
   "version": "1.4",
+  "buildTag": "latest",
   "title": "Free and Cheap Tokens (FaCT) — AI Promo MCP Server",
   "description": "Curated, daily-verified catalog of free AI model API credits and token promotions. MCP server with 8 tools, structured terms, difficulty grading, and regional filtering. Open source · No paid placements · No affiliate links · MIT.",
   "main": "dist/index.js",
