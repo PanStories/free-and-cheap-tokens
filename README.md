@@ -117,6 +117,10 @@ npm run preflight       # One-shot run all of the above
 - Submit a new promo: see [`CONTRIBUTING.md`](CONTRIBUTING.md)
 - Error or expired promo: call `report_promo_issue`, or open a GitHub Issue (template auto-generated)
 
+## Privacy
+
+Read-only and stateless — no accounts, no cookies, no trackers, and no personal data collected. See [`PRIVACY.md`](PRIVACY.md).
+
 ---
 
 <a id="简体中文"></a>
