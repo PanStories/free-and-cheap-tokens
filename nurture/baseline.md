@@ -34,3 +34,9 @@
 | GitHub stars | 0 | ≥ 10 |
 
 > These targets are proposals — boss to confirm before Stage 5 execution.
+## 2026-10-09 weekly refresh (auto-nurture)
+- Apify totalRuns: **~11 (API 返回非 JSON，沿用 10-07 基线)**；isPublic=true；taggedBuilds 含 latest ✅
+- GitHub stars: 0（匿名 API 限流，沿用基线）；issues/PR 近 7d = 0
+- M8ven: **Verified Publisher / Emerging**；README tokenized 验证行已正确 ✅（无需改）
+- 注：FaCT Apify actor API 本次返回控制字符损坏负载，KPI 不可用，下轮复查。
+
