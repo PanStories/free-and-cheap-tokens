@@ -15,8 +15,10 @@
   "usesStandbyMode": true,
   "webServer": {
     "requestHandler": "src/handler.ts",
-    "type": "nodejs"
+    "type": "nodejs",
+    "port": 4321
   },
+  "webServerMcpPath": "/mcp",
   "pricingModel": "PAY_PER_EVENT",
   "pricingEvents": {
     "mcp-initialize": {
