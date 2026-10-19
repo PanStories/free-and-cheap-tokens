@@ -63,5 +63,10 @@
     }
   },
   "input": "./input_schema.json",
-  "output": "./output_schema.json"
+  "output": "./output_schema.json",
+  "defaultRunOptions": {
+    "maxTotalChargeUsd": 0.05,
+    "timeoutSecs": 300,
+    "memoryMbytes": 512
+  }
 }
