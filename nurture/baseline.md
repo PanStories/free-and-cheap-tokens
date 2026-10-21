@@ -40,3 +40,14 @@
 - M8ven: **Verified Publisher / Emerging**；README tokenized 验证行已正确 ✅（无需改）
 - 注：FaCT Apify actor API 本次返回控制字符损坏负载，KPI 不可用，下轮复查。
 
+
+## 2026-10-21 B4 refresh (Apify API now available)
+
+> B4 was previously blocked: APIFY_TOKEN empty in automation sandbox. The token now
+> resolves via `~/.apify/auth.json` (Apify `/users/me` → HTTP 200), so KPIs re-verified.
+
+- **Actor:** `U6XrDEcdKjN4YQIZU` · **Apify totalRuns (live):** **17** (re-verified via `GET /v2/acts/U6XrDEcdKjN4YQIZU`)
+- **Pricing (live pricingInfos):** PAY_PER_EVENT · 2 pricingInfos (mcp-search $0.005 + promo-catalog events: filter/get_promo/list_providers/recent_updates/expiring_soon $0.002-0.005, what_can_i_get $0.01).
+- **M8ven:** README badge tokenized (panstories-free-and-cheap-tokens-10wb16?variant=verified&v=...) ✅ verified.
+- GA4 / npm / mcpservers.org / Smithery remain boss-gated (B3/B5/B6) — see fix-attempt report.
+
