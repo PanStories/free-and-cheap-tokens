@@ -51,3 +51,11 @@
 - **M8ven:** README badge tokenized (panstories-free-and-cheap-tokens-10wb16?variant=verified&v=...) ✅ verified.
 - GA4 / npm / mcpservers.org / Smithery remain boss-gated (B3/B5/B6) — see fix-attempt report.
 
+
+## 2026-10-23 (Fri) weekly-light refresh
+- **KPI (Apify totalRuns, live):** **20** (Δ +3 vs 2026-10-21 B4=17). Only FaCT & Cheapest moved this week; rest of combo flat.
+- **GitHub:** 0 stars / 0 open issues / 0 open PRs (public, unauthenticated API). Flat.
+- **M8ven:** README badge tokenized (panstories-free-and-cheap-tokens-10wb16?variant=verified&v=...) ✅ verified via live raw README curl.
+- **Pricing:** no change (mcp-search $0.005 + promo events). Iron Law #4 honored — no pricing touched.
+- **Discovery:** mcpservers.org FaCT listing now returns **200** (was 404 on 2026-10-16) — new passive listing. Glama probe inconclusive (000/bot-block). Smithery 308 (unchanged).
+- GA4 (B5) / npm (B3) / Smithery+mcpservers-submit (B6) remain boss-gated. B2 (Ethics token) now RESOLVED.
