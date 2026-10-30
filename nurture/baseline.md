@@ -59,3 +59,10 @@
 - **Pricing:** no change (mcp-search $0.005 + promo events). Iron Law #4 honored — no pricing touched.
 - **Discovery:** mcpservers.org FaCT listing now returns **200** (was 404 on 2026-10-16) — new passive listing. Glama probe inconclusive (000/bot-block). Smithery 308 (unchanged).
 - GA4 (B5) / npm (B3) / Smithery+mcpservers-submit (B6) remain boss-gated. B2 (Ethics token) now RESOLVED.
+
+## 2026-10-30 (Fri) weekly-light refresh
+- **KPI (Apify totalRuns, live):** **22** (Δ +2 vs 2026-10-23). Calls creeping up.
+- **GitHub:** 0 stars / 0 open issues / 0 open PRs (public). Flat.
+- **M8ven:** B 89/100 · Verified Publisher; README badge tokenized (panstories-free-and-cheap-tokens-10wb16?variant=verified&v=...) ✅ verified via live m8ven.ai curl (0-token).
+- **Pricing:** no change. Iron Law #4 honored.
+- Blockers: B3 resolved via README softening 10-26; B5 awaiting boss GA4 SA drop; B6 CONFIRMED-LIVE 10-25 (this run mcpservers.org probe inconclusive — 404/000, likely wrong slug path, not delisting).
